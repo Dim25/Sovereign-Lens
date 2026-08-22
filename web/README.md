@@ -1,7 +1,14 @@
 # Sovereign Lens — presentation interface
 
-A brutal-white Swiss dossier for the long-horizon demo in `../demo.py`. One
-screen, 1440×900, built to be narrated in three minutes from a laptop projector.
+A brutal-white Swiss product and dossier for the long-horizon demo in
+`../demo.py`. The product combines three levels of resolution:
+
+- `/` — public concept and live-case introduction
+- `/brief` — executive situation brief
+- `/cases/uae-us-ai-infrastructure` — full analyst dossier
+
+The dossier remains one screen at 1440×900, built to be narrated in three minutes
+from a laptop projector.
 
 It is a presentation layer over the core, not a second implementation of it. The
 core's semantics — read-time bitemporal projection, snapshot digests, the
@@ -21,7 +28,7 @@ Present at 1440×900. The layout is fixed to that ratio: panels scroll inside
 themselves, the page never scrolls.
 
 ```bash
-npm test             # 34 unit and component tests
+npm test             # 35 unit and component tests
 npm run build        # typecheck + production bundle
 npm run shot         # re-capture docs/*.png at 1440×900
 ```

@@ -8,10 +8,23 @@ import type { CaseFixture } from '../types'
 
 const fixture = fixtureJson as unknown as CaseFixture
 const renderApp = () => {
+  window.history.replaceState({}, '', '/cases/uae-us-ai-infrastructure')
   const user = userEvent.setup()
   render(<App source={createFixtureSource(fixture)} />)
   return user
 }
+
+describe('product navigation', () => {
+  it('opens with a narrative homepage and links into the executive brief', async () => {
+    window.history.replaceState({}, '', '/')
+    const user = userEvent.setup()
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /the horizon already exists/i })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /open executive brief/i }))
+    expect(screen.getByRole('heading', { name: /ai power shifts/i })).toBeInTheDocument()
+    expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
+  })
+})
 
 const advance = () => screen.getByRole('button', { name: /advance 13 months/i })
 
