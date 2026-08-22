@@ -22,6 +22,33 @@ experience
 
 We do not need to invent this horizon. We can make parts of it programmable now.
 
+## What “programmable” means
+
+Programming the horizon does not mean predicting all of history. It means turning
+the handoffs between past experience and future action into explicit operations:
+
+```text
+remember(record)             preserve evidence without erasing prior state
+project(as_of)               reconstruct what was knowable at a point in time
+commit(claim, horizon)       make a future expectation falsifiable
+observe(outcome)             attach later evidence without hindsight editing
+calibrate(prediction)        measure the distance between belief and outcome
+propose(lesson)              diagnose what should change
+govern(lesson, human)        accept, reject, or constrain the change
+replay(method_version)       reproduce how an earlier judgment was reached
+transfer(memory_backend)     survive a model, vendor, or infrastructure change
+audit(before, after)         measure what a succession retained, drifted, or lost
+```
+
+Together these primitives make continuity inspectable. They let an agent inherit
+experience without treating inherited memory as unquestionable truth.
+
+The deeper opportunity is a portable continuity protocol: a way for an agent,
+institution, or community to move between models and infrastructure while carrying
+forward evidence, commitments, corrections, and purpose. The protocol should
+preserve provenance and expose loss. It should never require continuity of one
+vendor in order to claim continuity of the agent.
+
 ## From memory to learning
 
 A larger context window or a database of conversations is not, by itself,

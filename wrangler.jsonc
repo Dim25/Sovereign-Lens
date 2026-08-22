@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sovereign-lens-site",
+  "compatibility_date": "2026-08-22",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "sovereignlens.ai",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.sovereignlens.ai",
+      "custom_domain": true
+    }
+  ]
+}

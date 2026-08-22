@@ -2,6 +2,10 @@
 
 Independent multi-agent intelligence for tracking how AI reshapes state and geopolitical power.
 
+**Web:** [sovereignlens.ai](https://sovereignlens.ai)
+
+**Motto:** The horizon already exists. We can make it programmable now.
+
 --- 
 
 > ⚠️ **AI-SLOP / HACKATHON README DRAFT**
