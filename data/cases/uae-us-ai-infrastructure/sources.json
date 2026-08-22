@@ -1,0 +1,129 @@
+{
+  "case_id": "case_uae_us_ai_infrastructure",
+  "retrieved_at": "2026-08-22T00:00:00-07:00",
+  "selection_method": "Manual seed set prioritizing first-party and public-sector sources, plus legislative scrutiny.",
+  "sources": [
+    {
+      "id": "src_microsoft_g42_2023_mou",
+      "url": "https://news.microsoft.com/en-xm/2023/04/11/g42-teams-up-with-microsoft-to-explore-acceleration-of-uaes-digital-transformation/",
+      "title": "G42 teams up with Microsoft to explore acceleration of UAE's digital transformation",
+      "publisher": "Microsoft",
+      "published_at": "2023-04-11",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en",
+      "relevance": ["partnership origin", "public-sector and cloud collaboration"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_microsoft_g42_investment_2024",
+      "url": "https://blogs.microsoft.com/blog/2024/04/15/microsoft-and-g42-partner-to-accelerate-ai-innovation-in-uae-and-beyond/",
+      "title": "Microsoft and G42 partner to accelerate AI innovation in UAE and beyond",
+      "publisher": "Microsoft",
+      "published_at": "2024-04-15",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en",
+      "relevance": ["$1.5B minority investment", "Azure migration", "assurance agreement", "$1B developer fund"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_congress_g42_letter_2024",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-100/senate-section/article/S3336-5",
+      "title": "Congressional Record: July 10, 2024 letter concerning the Microsoft-G42 partnership",
+      "publisher": "U.S. Congress",
+      "published_at": "2025-06-11",
+      "source_type": "legislative_record",
+      "perspective": "oversight",
+      "language": "en",
+      "relevance": ["technology-transfer concerns", "China-related risk claims", "requested guardrails"],
+      "acquisition": "direct_url",
+      "notes": "The record republishes a congressional letter dated 2024-07-10. Claims remain attributed to its authors."
+    },
+    {
+      "id": "src_g42_responsible_ai_2024",
+      "url": "https://www.g42.ai/resources/news/another-important-step-advancing-responsible-ai-serve-world",
+      "title": "Another important step in advancing responsible AI to serve the world",
+      "publisher": "G42",
+      "published_at": "2024-09-17",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en",
+      "relevance": ["responsible AI centers", "assurance agreement implementation", "Azure migration progress"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_uae_us_ai_principles_2024",
+      "url": "https://www.uae-embassy.org/news/united-states-and-united-arab-emirates-cooperation-artificial-intelligence",
+      "title": "United States and United Arab Emirates Cooperation on Artificial Intelligence",
+      "publisher": "Embassy of the United Arab Emirates, Washington, DC",
+      "published_at": "2024-09-23",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en",
+      "relevance": ["bilateral principles", "regulatory alignment", "technology protection", "trusted trade"],
+      "acquisition": "direct_url",
+      "notes": "Republishes a joint White House/UAE statement."
+    },
+    {
+      "id": "src_openai_countries_2025",
+      "url": "https://openai.com/global-affairs/openai-for-countries/",
+      "title": "Introducing OpenAI for Countries",
+      "publisher": "OpenAI",
+      "published_at": "2025-05-07",
+      "source_type": "company_policy",
+      "perspective": "participant",
+      "language": "en",
+      "relevance": ["in-country data centers", "U.S.-aligned technology stack", "Stargate international model"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_uae_us_campus_2025",
+      "url": "https://www.uae-embassy.org/news/uae-us-presidents-attend-unveiling-phase-1-new-5gw-ai-campus-abu-dhabi",
+      "title": "UAE, US Presidents attend unveiling of Phase 1 of new 5GW AI campus in Abu Dhabi",
+      "publisher": "Embassy of the United Arab Emirates, Washington, DC",
+      "published_at": "2025-05-15",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en",
+      "relevance": ["5GW planned campus", "G42 builder", "U.S. operators", "regulated compute access"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_uae_ai_acceleration_2025",
+      "url": "https://www.uae-embassy.org/news/statement-ambassador-yousef-al-otaiba-us-uae-ai-acceleration-partnership",
+      "title": "Statement by Ambassador Yousef Al Otaiba on the U.S.-UAE AI Acceleration Partnership",
+      "publisher": "Embassy of the United Arab Emirates, Washington, DC",
+      "published_at": "2025-05-28",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en",
+      "relevance": ["200MW 2026 plan", "named industry partners", "regulated technology environment"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_commerce_chip_authorization_2025",
+      "url": "https://www.commerce.gov/news/press-releases/2025/11/statement-uae-and-saudi-chip-exports",
+      "title": "Statement on UAE and Saudi Chip Exports",
+      "publisher": "U.S. Department of Commerce",
+      "published_at": "2025-11-19",
+      "source_type": "regulatory_statement",
+      "perspective": "regulator",
+      "language": "en",
+      "relevance": ["G42 export authorization", "35,000 GB300 equivalents", "security and reporting conditions"],
+      "acquisition": "direct_url"
+    },
+    {
+      "id": "src_crs_uae_2026",
+      "url": "https://www.congress.gov/crs_external_products/RS/HTML/RS21852.html",
+      "title": "The United Arab Emirates (UAE): Issues for U.S. Policy",
+      "publisher": "Congressional Research Service",
+      "published_at": "2026-01-09",
+      "source_type": "government_analysis",
+      "perspective": "analytical_overview",
+      "language": "en",
+      "relevance": ["UAE-China-U.S. context", "chip policy", "partnership chronology", "dependency and diversion concerns"],
+      "acquisition": "direct_url"
+    }
+  ]
+}

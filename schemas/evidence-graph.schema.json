@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sovereign-lens.local/schemas/evidence-graph.schema.json",
+  "title": "Sovereign Lens evidence graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "actors", "assets", "evidence", "events", "relationships"],
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^case_[a-z0-9_]+$" },
+    "actors": { "type": "array", "items": { "$ref": "#/$defs/actor" } },
+    "assets": { "type": "array", "items": { "$ref": "#/$defs/asset" } },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z]+_[a-z0-9_]+$" },
+    "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^src_[a-z0-9_]+$" } },
+    "actor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "type"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["state", "government_agency", "company", "university", "multilateral_organization"] },
+        "country_code": { "type": ["string", "null"], "pattern": "^[A-Z]{2}$" }
+      }
+    },
+    "asset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "type", "status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["cloud_platform", "data_center", "compute_cluster", "semiconductor", "foundation_model", "software_platform", "training_program", "governance_framework"] },
+        "status": { "type": "string", "enum": ["announced", "under_construction", "operational", "retired", "unknown"] },
+        "country_code": { "type": ["string", "null"], "pattern": "^[A-Z]{2}$" }
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "source_id", "summary", "supports", "confidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "source_id": { "type": "string", "pattern": "^src_[a-z0-9_]+$" },
+        "summary": { "type": "string", "minLength": 1 }, "supports": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/id" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }, "locator": { "type": "string" }
+      }
+    },
+    "event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "date", "status", "actor_ids", "asset_ids", "source_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "type": "string", "enum": ["partnership_announced", "investment_announced", "infrastructure_planned", "infrastructure_operational", "technology_migration", "export_authorized", "governance_commitment"] },
+        "date": { "type": "string", "format": "date" }, "status": { "type": "string", "enum": ["announced", "in_progress", "completed", "cancelled", "unknown"] },
+        "actor_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "asset_ids": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } }, "source_ids": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "relationship": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "source_node_id", "target_node_id", "type", "status", "valid_from", "confidence", "source_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "source_node_id": { "$ref": "#/$defs/id" }, "target_node_id": { "$ref": "#/$defs/id" },
+        "type": { "type": "string", "enum": ["invests_in", "owns", "operates", "supplies_technology_to", "hosts_on", "authorizes_access_to", "constrains"] },
+        "status": { "type": "string", "enum": ["announced", "active", "suspended", "ended", "unknown"] },
+        "valid_from": { "type": "string", "format": "date" }, "valid_to": { "type": ["string", "null"], "format": "date" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }, "source_ids": { "$ref": "#/$defs/sourceIds" }
+      }
+    }
+  }
+}

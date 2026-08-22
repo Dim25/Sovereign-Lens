@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sovereign-lens.local/schemas/assessment.schema.json",
+  "title": "Sovereign Lens model assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "case_id", "question", "perspective", "model", "created_at", "assessment", "confidence", "drivers", "counterarguments", "missing_evidence", "source_ids"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^assessment_[a-z0-9_]+$" },
+    "case_id": { "type": "string", "pattern": "^case_[a-z0-9_]+$" },
+    "question": { "type": "string", "minLength": 1 },
+    "perspective": { "type": "string", "enum": ["capability", "dependency", "evidence_auditor"] },
+    "model": {
+      "type": "object", "additionalProperties": false, "required": ["provider", "name"],
+      "properties": { "provider": { "type": "string", "minLength": 1 }, "name": { "type": "string", "minLength": 1 }, "version": { "type": "string" } }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "assessment": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "drivers": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "counterarguments": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "missing_evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "source_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^src_[a-z0-9_]+$" } }
+  }
+}

@@ -1,0 +1,1023 @@
+{
+  "meta": {
+    "case_id": "uae_us_ai_infrastructure",
+    "title": "UAE–US AI infrastructure",
+    "question": "Does UAE compute access increase capability, dependency, or both?",
+    "t0": "2025-05-28",
+    "t1": "2026-07-01",
+    "disclosure": [
+      "Perspective text is a deterministic fixture, not a live model call.",
+      "2026 campus capacity is reported by a participant government, not independently verified.",
+      "Snapshot digest is sha256 over the canonical projected rows, truncated to 12 chars — demo.py’s construction."
+    ]
+  },
+  "timeline": [
+    {
+      "as_of": "2024-04-15",
+      "label": "Investment",
+      "note": "Microsoft–G42 investment and Azure migration announced."
+    },
+    {
+      "as_of": "2024-09-23",
+      "label": "Principles",
+      "note": "Bilateral AI cooperation principles published."
+    },
+    {
+      "as_of": "2025-05-28",
+      "label": "T0 · Commitment",
+      "note": "200 MW planned for 2026. Three perspectives assess and one prediction is registered."
+    },
+    {
+      "as_of": "2025-11-19",
+      "label": "Export control",
+      "note": "Commerce authorises accelerator exports to G42 under conditions."
+    },
+    {
+      "as_of": "2026-01-09",
+      "label": "Oversight review",
+      "note": "CRS overview of chip policy and dependency concerns enters the record."
+    },
+    {
+      "as_of": "2026-07-01",
+      "label": "T1 · Resolution",
+      "note": "500 MW reported online. Prediction resolves; methodology moves v1 → v2."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_microsoft_g42_2023_mou",
+      "title": "G42 teams up with Microsoft to explore acceleration of UAE's digital transformation",
+      "publisher": "Microsoft",
+      "url": "https://news.microsoft.com/en-xm/2023/04/11/g42-teams-up-with-microsoft-to-explore-acceleration-of-uaes-digital-transformation/",
+      "published_at": "2023-04-11",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en"
+    },
+    {
+      "id": "src_microsoft_g42_investment_2024",
+      "title": "Microsoft and G42 partner to accelerate AI innovation in UAE and beyond",
+      "publisher": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2024/04/15/microsoft-and-g42-partner-to-accelerate-ai-innovation-in-uae-and-beyond/",
+      "published_at": "2024-04-15",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en"
+    },
+    {
+      "id": "src_congress_g42_letter_2024",
+      "title": "Congressional Record: July 10, 2024 letter concerning the Microsoft–G42 partnership",
+      "publisher": "U.S. Congress",
+      "url": "https://www.congress.gov/congressional-record/volume-171/issue-100/senate-section/article/S3336-5",
+      "published_at": "2025-06-11",
+      "source_type": "legislative_record",
+      "perspective": "oversight",
+      "language": "en"
+    },
+    {
+      "id": "src_g42_responsible_ai_2024",
+      "title": "Another important step in advancing responsible AI to serve the world",
+      "publisher": "G42",
+      "url": "https://www.g42.ai/resources/news/another-important-step-advancing-responsible-ai-serve-world",
+      "published_at": "2024-09-17",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en"
+    },
+    {
+      "id": "src_uae_us_ai_principles_2024",
+      "title": "United States and United Arab Emirates Cooperation on Artificial Intelligence",
+      "publisher": "Embassy of the United Arab Emirates, Washington, DC",
+      "url": "https://www.uae-embassy.org/news/united-states-and-united-arab-emirates-cooperation-artificial-intelligence",
+      "published_at": "2024-09-23",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "src_openai_countries_2025",
+      "title": "Introducing OpenAI for Countries",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/global-affairs/openai-for-countries/",
+      "published_at": "2025-05-07",
+      "source_type": "company_policy",
+      "perspective": "participant",
+      "language": "en"
+    },
+    {
+      "id": "src_uae_us_campus_2025",
+      "title": "UAE, US Presidents attend unveiling of Phase 1 of new 5GW AI campus in Abu Dhabi",
+      "publisher": "Embassy of the United Arab Emirates, Washington, DC",
+      "url": "https://www.uae-embassy.org/news/uae-us-presidents-attend-unveiling-phase-1-new-5gw-ai-campus-abu-dhabi",
+      "published_at": "2025-05-15",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "uae_acceleration_2025",
+      "title": "Statement by Ambassador Yousef Al Otaiba on the U.S.–UAE AI Acceleration Partnership",
+      "publisher": "UAE Embassy in Washington",
+      "url": "https://www.uae-embassy.org/news/statement-ambassador-yousef-al-otaiba-us-uae-ai-acceleration-partnership",
+      "published_at": "2025-05-28",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "src_commerce_chip_authorization_2025",
+      "title": "Statement on UAE and Saudi Chip Exports",
+      "publisher": "U.S. Department of Commerce",
+      "url": "https://www.commerce.gov/news/press-releases/2025/11/statement-uae-and-saudi-chip-exports",
+      "published_at": "2025-11-19",
+      "source_type": "regulatory_statement",
+      "perspective": "regulator",
+      "language": "en"
+    },
+    {
+      "id": "src_crs_uae_2026",
+      "title": "The United Arab Emirates (UAE): Issues for U.S. Policy",
+      "publisher": "Congressional Research Service",
+      "url": "https://www.congress.gov/crs_external_products/RS/HTML/RS21852.html",
+      "published_at": "2026-01-09",
+      "source_type": "government_analysis",
+      "perspective": "analytical_overview",
+      "language": "en"
+    },
+    {
+      "id": "uae_progress_2026",
+      "title": "Pax Silica and the UAE–US Partnerships Turning AI Ambition into Reality",
+      "publisher": "UAE Embassy in Washington",
+      "url": "https://www.uae-embassy.org/news/pax-silica-and-uae-us-partnerships-turning-ai-ambition-reality",
+      "published_at": "2026-07-01",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "actor_united_states",
+      "kind": "actor",
+      "name": "United States",
+      "node_type": "state",
+      "country_code": "US",
+      "valid_from": "2023-04-11",
+      "recorded_at": "2023-04-11",
+      "source_ids": [
+        "src_uae_us_ai_principles_2024"
+      ],
+      "x": 24,
+      "y": 24,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_us_commerce",
+      "kind": "actor",
+      "name": "Dept. of Commerce",
+      "node_type": "government_agency",
+      "country_code": "US",
+      "valid_from": "2025-11-19",
+      "recorded_at": "2025-11-19",
+      "source_ids": [
+        "src_commerce_chip_authorization_2025"
+      ],
+      "x": 24,
+      "y": 96,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_us_congress",
+      "kind": "actor",
+      "name": "U.S. Congress",
+      "node_type": "government_agency",
+      "country_code": "US",
+      "valid_from": "2024-07-10",
+      "recorded_at": "2025-06-11",
+      "source_ids": [
+        "src_congress_g42_letter_2024"
+      ],
+      "x": 24,
+      "y": 168,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_microsoft",
+      "kind": "actor",
+      "name": "Microsoft",
+      "node_type": "company",
+      "country_code": "US",
+      "valid_from": "2023-04-11",
+      "recorded_at": "2023-04-11",
+      "source_ids": [
+        "src_microsoft_g42_2023_mou",
+        "src_microsoft_g42_investment_2024"
+      ],
+      "x": 24,
+      "y": 268,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_openai",
+      "kind": "actor",
+      "name": "OpenAI",
+      "node_type": "company",
+      "country_code": "US",
+      "valid_from": "2025-05-07",
+      "recorded_at": "2025-05-07",
+      "source_ids": [
+        "src_openai_countries_2025"
+      ],
+      "x": 24,
+      "y": 348,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "asset_bilateral_principles",
+      "kind": "asset",
+      "name": "Bilateral AI principles",
+      "node_type": "governance_framework",
+      "country_code": null,
+      "valid_from": "2024-09-23",
+      "recorded_at": "2024-09-23",
+      "source_ids": [
+        "src_uae_us_ai_principles_2024"
+      ],
+      "x": 336,
+      "y": 24,
+      "w": 214,
+      "h": 44
+    },
+    {
+      "id": "asset_gb300",
+      "kind": "asset",
+      "name": "GB300-class accelerators",
+      "node_type": "semiconductor",
+      "country_code": null,
+      "valid_from": "2025-11-19",
+      "recorded_at": "2025-11-19",
+      "source_ids": [
+        "src_commerce_chip_authorization_2025"
+      ],
+      "x": 336,
+      "y": 100,
+      "w": 214,
+      "h": 44
+    },
+    {
+      "id": "asset_campus",
+      "kind": "asset",
+      "name": "UAE–US AI Campus",
+      "node_type": "data_center",
+      "country_code": "AE",
+      "valid_from": "2025-05-15",
+      "recorded_at": "2025-05-15",
+      "source_ids": [
+        "src_uae_us_campus_2025",
+        "uae_acceleration_2025",
+        "uae_progress_2026"
+      ],
+      "x": 336,
+      "y": 188,
+      "w": 214,
+      "h": 52
+    },
+    {
+      "id": "asset_azure",
+      "kind": "asset",
+      "name": "Azure cloud operations",
+      "node_type": "cloud_platform",
+      "country_code": null,
+      "valid_from": "2024-04-15",
+      "recorded_at": "2024-04-15",
+      "source_ids": [
+        "src_microsoft_g42_investment_2024",
+        "src_g42_responsible_ai_2024"
+      ],
+      "x": 336,
+      "y": 284,
+      "w": 214,
+      "h": 44
+    },
+    {
+      "id": "asset_stargate_uae",
+      "kind": "asset",
+      "name": "In-country data centres",
+      "node_type": "data_center",
+      "country_code": "AE",
+      "valid_from": "2025-05-07",
+      "recorded_at": "2025-05-07",
+      "source_ids": [
+        "src_openai_countries_2025"
+      ],
+      "x": 336,
+      "y": 356,
+      "w": 214,
+      "h": 44
+    },
+    {
+      "id": "actor_uae",
+      "kind": "actor",
+      "name": "United Arab Emirates",
+      "node_type": "state",
+      "country_code": "AE",
+      "valid_from": "2023-04-11",
+      "recorded_at": "2023-04-11",
+      "source_ids": [
+        "src_uae_us_ai_principles_2024"
+      ],
+      "x": 686,
+      "y": 24,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_g42",
+      "kind": "actor",
+      "name": "G42",
+      "node_type": "company",
+      "country_code": "AE",
+      "valid_from": "2023-04-11",
+      "recorded_at": "2023-04-11",
+      "source_ids": [
+        "src_microsoft_g42_2023_mou",
+        "src_g42_responsible_ai_2024"
+      ],
+      "x": 686,
+      "y": 196,
+      "w": 176,
+      "h": 44
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_msft_g42_partnership",
+      "source_node_id": "actor_microsoft",
+      "target_node_id": "actor_g42",
+      "type": "partners_with",
+      "status": "active",
+      "valid_from": "2023-04-11",
+      "valid_to": null,
+      "recorded_at": "2023-04-11",
+      "confidence": 0.9,
+      "source_ids": [
+        "src_microsoft_g42_2023_mou"
+      ]
+    },
+    {
+      "id": "edge_msft_funds_g42",
+      "source_node_id": "actor_microsoft",
+      "target_node_id": "actor_g42",
+      "type": "funds",
+      "status": "active",
+      "valid_from": "2024-04-15",
+      "valid_to": null,
+      "recorded_at": "2024-04-15",
+      "confidence": 0.9,
+      "source_ids": [
+        "src_microsoft_g42_investment_2024"
+      ]
+    },
+    {
+      "id": "edge_msft_operates_azure",
+      "source_node_id": "actor_microsoft",
+      "target_node_id": "asset_azure",
+      "type": "operates",
+      "status": "active",
+      "valid_from": "2024-04-15",
+      "valid_to": null,
+      "recorded_at": "2024-04-15",
+      "confidence": 0.92,
+      "source_ids": [
+        "src_microsoft_g42_investment_2024"
+      ]
+    },
+    {
+      "id": "edge_g42_depends_azure",
+      "source_node_id": "actor_g42",
+      "target_node_id": "asset_azure",
+      "type": "depends_on",
+      "status": "active",
+      "valid_from": "2024-04-15",
+      "valid_to": null,
+      "recorded_at": "2024-04-15",
+      "confidence": 0.82,
+      "source_ids": [
+        "src_microsoft_g42_investment_2024",
+        "src_g42_responsible_ai_2024"
+      ],
+      "label_t": 0.36
+    },
+    {
+      "id": "edge_congress_oversees_msft",
+      "source_node_id": "actor_us_congress",
+      "target_node_id": "actor_microsoft",
+      "type": "oversees",
+      "status": "active",
+      "valid_from": "2024-07-10",
+      "valid_to": null,
+      "recorded_at": "2025-06-11",
+      "confidence": 0.75,
+      "source_ids": [
+        "src_congress_g42_letter_2024"
+      ]
+    },
+    {
+      "id": "edge_principles_govern_uae",
+      "source_node_id": "asset_bilateral_principles",
+      "target_node_id": "actor_uae",
+      "type": "governs",
+      "status": "active",
+      "valid_from": "2024-09-23",
+      "valid_to": null,
+      "recorded_at": "2024-09-23",
+      "confidence": 0.8,
+      "source_ids": [
+        "src_uae_us_ai_principles_2024"
+      ],
+      "label_t": 0.5
+    },
+    {
+      "id": "edge_us_sets_principles",
+      "source_node_id": "actor_united_states",
+      "target_node_id": "asset_bilateral_principles",
+      "type": "co_authors",
+      "status": "active",
+      "valid_from": "2024-09-23",
+      "valid_to": null,
+      "recorded_at": "2024-09-23",
+      "confidence": 0.85,
+      "source_ids": [
+        "src_uae_us_ai_principles_2024"
+      ]
+    },
+    {
+      "id": "edge_openai_provides_dc",
+      "source_node_id": "actor_openai",
+      "target_node_id": "asset_stargate_uae",
+      "type": "provides",
+      "status": "announced",
+      "valid_from": "2025-05-07",
+      "valid_to": null,
+      "recorded_at": "2025-05-07",
+      "confidence": 0.7,
+      "source_ids": [
+        "src_openai_countries_2025"
+      ]
+    },
+    {
+      "id": "edge_dc_located_uae",
+      "source_node_id": "asset_stargate_uae",
+      "target_node_id": "actor_uae",
+      "type": "located_in",
+      "status": "announced",
+      "valid_from": "2025-05-07",
+      "valid_to": null,
+      "recorded_at": "2025-05-07",
+      "confidence": 0.7,
+      "source_ids": [
+        "src_openai_countries_2025"
+      ],
+      "label_t": 0.34
+    },
+    {
+      "id": "edge_g42_builds_campus",
+      "source_node_id": "actor_g42",
+      "target_node_id": "asset_campus",
+      "type": "builds",
+      "status": "active",
+      "valid_from": "2025-05-15",
+      "valid_to": null,
+      "recorded_at": "2025-05-15",
+      "confidence": 0.85,
+      "source_ids": [
+        "src_uae_us_campus_2025"
+      ],
+      "label_t": 0.4
+    },
+    {
+      "id": "edge_campus_located_uae",
+      "source_node_id": "asset_campus",
+      "target_node_id": "actor_uae",
+      "type": "located_in",
+      "status": "active",
+      "valid_from": "2025-05-15",
+      "valid_to": null,
+      "recorded_at": "2025-05-15",
+      "confidence": 0.9,
+      "source_ids": [
+        "src_uae_us_campus_2025"
+      ],
+      "label_t": 0.62
+    },
+    {
+      "id": "edge_campus_depends_us",
+      "source_node_id": "asset_campus",
+      "target_node_id": "actor_united_states",
+      "type": "depends_on",
+      "status": "active",
+      "valid_from": "2025-05-28",
+      "valid_to": null,
+      "recorded_at": "2025-05-28",
+      "confidence": 0.74,
+      "source_ids": [
+        "uae_acceleration_2025",
+        "src_uae_us_campus_2025"
+      ],
+      "label_t": 0.3
+    },
+    {
+      "id": "edge_commerce_authorizes_chips",
+      "source_node_id": "actor_us_commerce",
+      "target_node_id": "asset_gb300",
+      "type": "authorizes",
+      "status": "active",
+      "valid_from": "2025-11-19",
+      "valid_to": null,
+      "recorded_at": "2025-11-19",
+      "confidence": 0.95,
+      "source_ids": [
+        "src_commerce_chip_authorization_2025"
+      ]
+    },
+    {
+      "id": "edge_chips_to_g42",
+      "source_node_id": "asset_gb300",
+      "target_node_id": "actor_g42",
+      "type": "exported_to",
+      "status": "conditioned",
+      "valid_from": "2025-11-19",
+      "valid_to": null,
+      "recorded_at": "2025-11-19",
+      "confidence": 0.9,
+      "source_ids": [
+        "src_commerce_chip_authorization_2025"
+      ],
+      "label_t": 0.38
+    },
+    {
+      "id": "edge_campus_needs_chips",
+      "source_node_id": "asset_campus",
+      "target_node_id": "asset_gb300",
+      "type": "depends_on",
+      "status": "active",
+      "valid_from": "2025-11-19",
+      "valid_to": null,
+      "recorded_at": "2025-11-19",
+      "confidence": 0.66,
+      "source_ids": [
+        "src_commerce_chip_authorization_2025",
+        "src_crs_uae_2026"
+      ],
+      "label_t": 0.62
+    }
+  ],
+  "facts": [
+    {
+      "id": "partnership_origin_2023",
+      "subject": "Microsoft / G42",
+      "subject_node_id": "actor_g42",
+      "predicate": "partnership",
+      "object": "Collaboration announced to accelerate UAE digital transformation and public-sector cloud adoption.",
+      "status": "announced",
+      "valid_from": "2023-04-11",
+      "valid_to": null,
+      "recorded_at": "2023-04-11",
+      "superseded_at": null,
+      "source_id": "src_microsoft_g42_2023_mou"
+    },
+    {
+      "id": "investment_and_migration_2024",
+      "subject": "Microsoft",
+      "subject_node_id": "actor_microsoft",
+      "predicate": "investment",
+      "object": "$1.5B minority investment in G42, alongside Azure migration and an assurance agreement.",
+      "status": "announced",
+      "valid_from": "2024-04-15",
+      "valid_to": null,
+      "recorded_at": "2024-04-15",
+      "superseded_at": null,
+      "source_id": "src_microsoft_g42_investment_2024"
+    },
+    {
+      "id": "oversight_technology_transfer",
+      "subject": "U.S. Congress",
+      "subject_node_id": "actor_us_congress",
+      "predicate": "oversight_concern",
+      "object": "Members raised technology-transfer and China-related risk concerns and requested guardrails.",
+      "status": "reported",
+      "valid_from": "2024-07-10",
+      "valid_to": null,
+      "recorded_at": "2025-06-11",
+      "superseded_at": null,
+      "source_id": "src_congress_g42_letter_2024"
+    },
+    {
+      "id": "assurance_implementation_2024",
+      "subject": "G42",
+      "subject_node_id": "actor_g42",
+      "predicate": "compliance_step",
+      "object": "Reported responsible-AI centres and progress on assurance-agreement implementation.",
+      "status": "announced",
+      "valid_from": "2024-09-17",
+      "valid_to": null,
+      "recorded_at": "2024-09-17",
+      "superseded_at": null,
+      "source_id": "src_g42_responsible_ai_2024"
+    },
+    {
+      "id": "bilateral_principles_2024",
+      "subject": "UAE–US AI cooperation",
+      "subject_node_id": "asset_bilateral_principles",
+      "predicate": "governance",
+      "object": "Joint principles covering regulatory alignment, technology protection and trusted trade.",
+      "status": "announced",
+      "valid_from": "2024-09-23",
+      "valid_to": null,
+      "recorded_at": "2024-09-23",
+      "superseded_at": null,
+      "source_id": "src_uae_us_ai_principles_2024"
+    },
+    {
+      "id": "in_country_datacentre_model",
+      "subject": "OpenAI",
+      "subject_node_id": "asset_stargate_uae",
+      "predicate": "programme",
+      "object": "In-country data-centre partnerships on a U.S.-aligned technology stack.",
+      "status": "announced",
+      "valid_from": "2025-05-07",
+      "valid_to": null,
+      "recorded_at": "2025-05-07",
+      "superseded_at": null,
+      "source_id": "src_openai_countries_2025"
+    },
+    {
+      "id": "campus_phase1_unveiled",
+      "subject": "UAE-US AI Campus",
+      "subject_node_id": "asset_campus",
+      "predicate": "programme",
+      "object": "Phase 1 of a planned 5 GW campus unveiled in Abu Dhabi; G42 as builder with U.S. operators.",
+      "status": "announced",
+      "valid_from": "2025-05-15",
+      "valid_to": null,
+      "recorded_at": "2025-05-15",
+      "superseded_at": null,
+      "source_id": "src_uae_us_campus_2025"
+    },
+    {
+      "id": "campus_capacity_planned",
+      "subject": "UAE-US AI Campus",
+      "subject_node_id": "asset_campus",
+      "predicate": "capacity",
+      "object": "200 MW planned in 2026 within a proposed 5 GW campus",
+      "status": "announced",
+      "valid_from": "2025-05-28",
+      "valid_to": "2026-07-01",
+      "recorded_at": "2025-05-28",
+      "superseded_at": "2026-07-01",
+      "superseded_recorded_at": "2026-07-01",
+      "source_id": "uae_acceleration_2025"
+    },
+    {
+      "id": "chip_export_authorized",
+      "subject": "U.S. Department of Commerce",
+      "subject_node_id": "actor_us_commerce",
+      "predicate": "export_authorization",
+      "object": "Exports to G42 described as ~35,000 GB300-equivalents, subject to security and reporting conditions.",
+      "status": "authorized",
+      "valid_from": "2025-11-19",
+      "valid_to": null,
+      "recorded_at": "2025-11-19",
+      "superseded_at": null,
+      "source_id": "src_commerce_chip_authorization_2025"
+    },
+    {
+      "id": "crs_dependency_context",
+      "subject": "Congressional Research Service",
+      "subject_node_id": "actor_us_congress",
+      "predicate": "analysis",
+      "object": "Overview of UAE–US–China context, chip policy, and diversion and dependency concerns.",
+      "status": "reported",
+      "valid_from": "2026-01-09",
+      "valid_to": null,
+      "recorded_at": "2026-01-09",
+      "superseded_at": null,
+      "source_id": "src_crs_uae_2026"
+    },
+    {
+      "id": "campus_capacity_reported_operational",
+      "subject": "UAE-US AI Campus",
+      "subject_node_id": "asset_campus",
+      "predicate": "capacity",
+      "object": "500 MW reported online in 2026",
+      "status": "reported_operational",
+      "valid_from": "2026-07-01",
+      "valid_to": null,
+      "recorded_at": "2026-07-01",
+      "superseded_at": null,
+      "source_id": "uae_progress_2026"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "assessment_capability_t0",
+      "perspective": "capability",
+      "as_of": "2025-05-28",
+      "assessment": "The planned in-country campus could materially expand UAE access to regional AI compute.",
+      "confidence": 0.72,
+      "methodology_version": "v1",
+      "drivers": [
+        "In-country siting, not remote access",
+        "Named U.S. industry operators",
+        "Stated 200 MW target for 2026"
+      ],
+      "counterarguments": [
+        "Capacity is planned, not built",
+        "No delivered-megawatt evidence yet"
+      ],
+      "missing_evidence": [
+        "Construction milestones",
+        "Power delivery schedule",
+        "Operator identity per phase"
+      ],
+      "source_ids": [
+        "uae_acceleration_2025",
+        "src_uae_us_campus_2025"
+      ]
+    },
+    {
+      "id": "assessment_dependency_t0",
+      "perspective": "dependency",
+      "as_of": "2025-05-28",
+      "assessment": "Capability may rise while dependency remains: U.S. firms, export approvals, chips, and cloud operations condition access.",
+      "confidence": 0.78,
+      "methodology_version": "v1",
+      "drivers": [
+        "Export approval is a U.S. decision",
+        "Cloud operations run by U.S. firms",
+        "Accelerator supply externally held"
+      ],
+      "counterarguments": [
+        "Bilateral principles add predictability",
+        "In-country siting improves data locality"
+      ],
+      "missing_evidence": [
+        "Contract termination rights",
+        "Local hosting rights",
+        "Alternative providers"
+      ],
+      "source_ids": [
+        "uae_acceleration_2025",
+        "src_uae_us_ai_principles_2024",
+        "src_microsoft_g42_investment_2024"
+      ]
+    },
+    {
+      "id": "assessment_evidence_auditor_t0",
+      "perspective": "evidence_auditor",
+      "as_of": "2025-05-28",
+      "assessment": "At this snapshot the capacity is announced, not operational; deployment evidence is still missing.",
+      "confidence": 0.91,
+      "methodology_version": "v1",
+      "drivers": [
+        "Status field reads 'announced'",
+        "Sole source is a participant government"
+      ],
+      "counterarguments": [
+        "Participant statements evidence intent"
+      ],
+      "missing_evidence": [
+        "Any non-participant operational signal"
+      ],
+      "source_ids": [
+        "uae_acceleration_2025"
+      ]
+    },
+    {
+      "id": "assessment_capability_t1",
+      "perspective": "capability",
+      "as_of": "2026-07-01",
+      "assessment": "500 MW reported online exceeds the registered 200 MW milestone. The capability claim now rests on a progress report rather than a plan.",
+      "confidence": 0.81,
+      "methodology_version": "v2",
+      "drivers": [
+        "Reported figure exceeds the milestone",
+        "Export authorisation removed a supply blocker"
+      ],
+      "counterarguments": [
+        "Reported megawatts are not measured megawatts",
+        "Utilisation is unknown"
+      ],
+      "missing_evidence": [
+        "Utilisation and allocation data",
+        "Independent power or siting confirmation"
+      ],
+      "source_ids": [
+        "uae_progress_2026",
+        "src_commerce_chip_authorization_2025"
+      ]
+    },
+    {
+      "id": "assessment_dependency_t1",
+      "perspective": "dependency",
+      "as_of": "2026-07-01",
+      "assessment": "Operating capacity does not relocate control: export authorisation, accelerator supply and cloud operations remain conditioned on U.S. decisions.",
+      "confidence": 0.8,
+      "methodology_version": "v2",
+      "drivers": [
+        "Authorisation carries security conditions",
+        "Conditions are revocable by the authoriser"
+      ],
+      "counterarguments": [
+        "In-country capacity raises the cost of withdrawal"
+      ],
+      "missing_evidence": [
+        "Revocation terms",
+        "Substitutability of accelerator supply"
+      ],
+      "source_ids": [
+        "src_commerce_chip_authorization_2025",
+        "src_crs_uae_2026",
+        "uae_progress_2026"
+      ]
+    },
+    {
+      "id": "assessment_evidence_auditor_t1",
+      "perspective": "evidence_auditor",
+      "as_of": "2026-07-01",
+      "assessment": "The operational claim comes from a participant government. Under methodology v2 this is recorded as reported_operational, not verified_operational.",
+      "confidence": 0.88,
+      "methodology_version": "v2",
+      "drivers": [
+        "One participant source for the 500 MW figure",
+        "No independent corroboration on record"
+      ],
+      "counterarguments": [
+        "A progress report is strong evidence of its own claim"
+      ],
+      "missing_evidence": [
+        "Independent operational signal",
+        "Third-party measurement"
+      ],
+      "source_ids": [
+        "uae_progress_2026"
+      ]
+    }
+  ],
+  "disagreements": [
+    {
+      "id": "axis_capability_today_t0",
+      "as_of": "2025-05-28",
+      "question": "Does the announced campus constitute a capability gain today?",
+      "divergence": "material",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "Partly",
+          "note": "Siting and named operators change the option set even before delivery."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "Not yet",
+          "note": "An option conditioned on another state's approval is not yet capability."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "No",
+          "note": "The record contains an announcement and nothing downstream of it."
+        }
+      ]
+    },
+    {
+      "id": "axis_dependency_direction_t0",
+      "as_of": "2025-05-28",
+      "question": "Does the arrangement increase UAE dependency on U.S. decisions?",
+      "divergence": "aligned",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "Yes",
+          "note": "Capability gained through a conditioned channel carries the condition."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "Yes",
+          "note": "Approvals, chips and cloud operations are all externally held."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "Yes, on current evidence",
+          "note": "Supported by the partnership and principles documents."
+        }
+      ]
+    },
+    {
+      "id": "axis_operational_threshold_t1",
+      "as_of": "2026-07-01",
+      "question": "Is the 500 MW figure sufficient to call the capacity operational?",
+      "divergence": "material",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "Yes — milestone met",
+          "note": "The reported figure exceeds the registered 200 MW threshold."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "Immaterial",
+          "note": "The threshold question does not change who can withdraw access."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "No — single participant source",
+          "note": "v2 requires an independent operational signal before 'verified'."
+        }
+      ]
+    },
+    {
+      "id": "axis_calibration_quality_t1",
+      "as_of": "2026-07-01",
+      "question": "Was the 65% prediction well calibrated?",
+      "divergence": "material",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "Yes",
+          "note": "Outcome met inside the horizon; Brier 0.1225 beats the 0.25 baseline."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "Not informative",
+          "note": "The prediction tested capacity, not the dependency question."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "Provisional",
+          "note": "Resolution leans on the same participant source; n = 1."
+        }
+      ]
+    },
+    {
+      "id": "axis_dependency_after_capacity_t1",
+      "as_of": "2026-07-01",
+      "question": "Did the capability gain reduce dependency?",
+      "divergence": "aligned",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "No",
+          "note": "Delivered capacity did not change the approval chain."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "No",
+          "note": "Conditions attached to the authorisation remain in force."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "No evidence either way",
+          "note": "Nothing in the record speaks to revocation terms."
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "prediction_campus_operational",
+      "claim": "At least 200 MW of the UAE-US AI Campus will be reported operational by 2026-12-31.",
+      "probability": 0.65,
+      "horizon_date": "2026-12-31",
+      "registered_at": "2025-05-28",
+      "snapshot_hash": "",
+      "verification_plan": "Seek an operational report naming delivered megawatts; prefer a non-participant confirmation.",
+      "status": "resolved",
+      "resolved_at": "2026-07-01",
+      "observed_outcome": "A UAE government source reported 500 MW online; independent operational confirmation remains desirable.",
+      "outcome_value": 1,
+      "brier": 0.1225,
+      "source_ids": [
+        "uae_acceleration_2025",
+        "uae_progress_2026"
+      ]
+    }
+  ],
+  "methodology_lessons": [
+    {
+      "id": "lesson_operational_corroboration",
+      "prediction_id": "prediction_campus_operational",
+      "failure_surface": "source_quality",
+      "proposed_change": "Require an independent operational signal before promoting reported_operational to verified_operational.",
+      "human_disposition": "accepted",
+      "rationale": "A participant-government progress report is strong evidence of its claim, but is not independent verification.",
+      "version_before": "v1",
+      "version_after": "v2",
+      "effective_from": "2026-07-01",
+      "reviewer": "human analyst"
+    }
+  ]
+}
