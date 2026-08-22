@@ -144,6 +144,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .signal-grid strong { display: block; margin-top: 24px; font-size: 32px; letter-spacing: -.04em; }
 .signal-grid p, .principles-grid p { margin: 7px 0 0; color: var(--muted); max-width: 340px; }
 .idea-section h2 { max-width: 970px; padding: 40px 0; }
+.horizon-thesis { max-width: 920px; margin: -18px 0 36px; font-size: clamp(18px, 1.65vw, 25px); line-height: 1.38; letter-spacing: -.02em; }
 .loop-line { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
 .loop-step { padding: 14px 10px 16px; border-right: 1px solid var(--rule); font-size: 12px; font-weight: 650; }
 .loop-step span { display: block; margin-bottom: 28px; color: var(--muted); font-size: 9px; }
@@ -151,6 +152,9 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .principles-grid { margin-top: 40px; }
 .principles-grid span { font-size: 14px; }
 .principles-grid p { font-size: 15px; line-height: 1.35; }
+.programmable-horizon { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px; margin: 42px 0 0; padding: 24px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.programmable-horizon strong { font-size: clamp(24px, 2.2vw, 36px); line-height: 1.05; letter-spacing: -.04em; }
+.programmable-horizon span { align-self: end; font-size: 15px; line-height: 1.45; }
 .public-footer { display: flex; justify-content: space-between; padding: 18px 28px; background: var(--ink); color: var(--panel); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 
 /* ---------------------------------------------------------- executive brief */

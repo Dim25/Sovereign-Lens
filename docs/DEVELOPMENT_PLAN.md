@@ -53,6 +53,22 @@ workflow logs are not a substitute.
 
 ## Build sequence
 
+### Next executable milestone — close the second loop
+
+The current demo proves one evidence-to-calibration loop. The next milestone must
+prove that its accepted lesson affects a later, independent evaluation run:
+
+1. Persist the t0 assessment, prediction, outcome and human-approved lesson.
+2. Start a fresh process or model session with no conversational context.
+3. Retrieve only relevant, authorized memory with provenance.
+4. Evaluate a second event using methodology v2.
+5. Run the same probe under v1 and v2 and show the behavioral difference.
+6. Produce a succession report: retained, drifted, lost, and newly inferred.
+
+Acceptance criterion: the second run demands the independent operational signal
+learned in the first run, cites the lesson that caused the change, and can reproduce
+the v1 result without rewriting history.
+
 ### P0 — submission baseline
 
 - Run `python3 demo.py --paced` from a clean checkout.

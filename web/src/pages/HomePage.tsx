@@ -47,7 +47,12 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
 
         <section className="idea-section">
           <div className="section-index">02 · The learning loop</div>
-          <h2>Not a feed. A record of commitments through time.</h2>
+          <h2>The disagreement is the product.<br />The horizon turns evaluation into intelligence.</h2>
+          <p className="horizon-thesis">
+            Sovereign Lens does not decide whether an initiative is “pro-US,” “pro-China,” or
+            “pro-Africa.” It preserves the evidence, asks what capability and dependency changed,
+            records competing interpretations, and returns later to learn which interpretation held up.
+          </p>
           <div className="loop-line" aria-label="Evidence to learning loop">
             {['Evidence', 'Belief', 'Prediction', 'Outcome', 'Calibration', 'Method v2'].map((step, i) => (
               <div className={i === 5 ? 'loop-step loop-step--accent' : 'loop-step'} key={step}>
@@ -64,6 +69,10 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
             <article><span>Disagreement is evidence</span><p>Competing interpretations stay visible instead of disappearing into an average.</p></article>
             <article><span>History is append-only</span><p>The system may answer differently now. It must never pretend it always knew.</p></article>
           </div>
+          <blockquote className="programmable-horizon">
+            <strong>The horizon already exists. We can make it programmable now.</strong>
+            <span>Retain the belief. Audit the handoff. Test it against reality. Govern what the next agent inherits.</span>
+          </blockquote>
         </section>
       </main>
       <footer className="public-footer"><span>Independent intelligence for AI geopolitics</span><span>Apache 2.0 · sovereignlens.ai</span></footer>

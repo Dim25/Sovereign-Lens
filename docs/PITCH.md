@@ -26,6 +26,10 @@ python3 demo.py --paced
 perspectives see exactly the same evidence: capability gain, external dependency,
 and evidence quality. We preserve disagreement instead of averaging it away.”
 
+“Sovereign Lens does not decide whether an initiative is pro-US, pro-China, or
+pro-Africa. It preserves the evidence and asks what capability, dependency, and
+optionality actually changed.”
+
 **Screen:** initial graph fact and three perspectives.
 
 ### 0:55–1:25 — Commitment
@@ -63,8 +67,10 @@ African decision power versus recurring external dependency.”
 
 ### 2:50–3:00 — Close
 
-“Sovereign Lens does not just remember documents. It remembers analytical
-commitments, tests them against time, and learns what evidence to demand next.”
+“The disagreement is the product. The horizon turns evaluation into intelligence.
+Sovereign Lens remembers analytical commitments, tests them against time, and
+learns what evidence to demand next. The horizon already exists; we can make it
+programmable now.”
 
 ## Demo use cases
 
