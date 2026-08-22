@@ -20,6 +20,9 @@
     "drivers": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
     "counterarguments": { "type": "array", "items": { "type": "string", "minLength": 1 } },
     "missing_evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "trajectory_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^trajectory_[a-z0-9_]+$" } },
+    "option_space_changes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "revisit_at": { "type": "string", "format": "date" },
     "source_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^src_[a-z0-9_]+$" } }
   }
 }

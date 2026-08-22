@@ -1,0 +1,73 @@
+{
+  "case_id": "case_uae_us_ai_infrastructure",
+  "as_of": "2026-07-01",
+  "methodology_version": "trajectory-v1",
+  "trajectories": [
+    {
+      "id": "trajectory_sovereign_accumulation",
+      "title": "Sovereign accumulation",
+      "thesis": "Imported infrastructure becomes durable UAE capability through local operation, evaluation capacity, knowledge transfer, and credible replacement options.",
+      "status": "unresolved",
+      "actor_types": ["state", "institution", "company", "ai_agent"],
+      "deltas": { "capability": "increases", "dependency": "decreases", "control": "increases", "optionality": "increases", "institutional_learning": "increases" },
+      "supporting_source_ids": ["src_microsoft_g42_investment_2024", "src_uae_us_campus_2025"],
+      "challenging_source_ids": ["src_congress_g42_letter_2024", "src_crs_uae_2026"],
+      "indicators": [
+        {
+          "id": "indicator_local_independent_evaluation",
+          "observation": "A UAE-governed institution independently evaluates deployed models and infrastructure against published methods.",
+          "supports_if": "The institution can publish findings and require remediation without provider approval.",
+          "review_by": "2027-07-01",
+          "status": "unobserved",
+          "source_ids": []
+        }
+      ],
+      "reversal_conditions": ["Core operation remains contractually or technically unavailable without a single foreign provider.", "No transferable local evaluation or operating capability is observed by the review date."],
+      "revisit_at": "2027-07-01"
+    },
+    {
+      "id": "trajectory_managed_interdependence",
+      "title": "Managed interdependence",
+      "thesis": "The UAE gains substantial capability while external dependencies remain explicit, diversified, and governable through agreements and institutional bargaining power.",
+      "status": "strengthening",
+      "actor_types": ["state", "institution", "company", "ai_agent"],
+      "deltas": { "capability": "increases", "dependency": "mixed", "control": "mixed", "optionality": "mixed", "institutional_learning": "increases" },
+      "supporting_source_ids": ["src_uae_us_ai_principles_2024", "src_commerce_chip_authorization_2025", "src_crs_uae_2026"],
+      "challenging_source_ids": ["src_congress_g42_letter_2024"],
+      "indicators": [
+        {
+          "id": "indicator_replaceability_terms",
+          "observation": "Public or auditable agreements establish continuity, portability, and replacement provisions across critical suppliers.",
+          "supports_if": "Withdrawal of one provider does not terminate the core public capability.",
+          "review_by": "2027-07-01",
+          "status": "unobserved",
+          "source_ids": []
+        }
+      ],
+      "reversal_conditions": ["Security or export conditions create unilateral interruption power without viable substitutes.", "Provider diversification exists nominally but not operationally."],
+      "revisit_at": "2027-07-01"
+    },
+    {
+      "id": "trajectory_capability_without_control",
+      "title": "Capability without control",
+      "thesis": "Operational capacity grows while chips, model access, assurance requirements, and key operating decisions remain externally controlled and difficult to replace.",
+      "status": "unresolved",
+      "actor_types": ["state", "company", "ai_agent"],
+      "deltas": { "capability": "increases", "dependency": "increases", "control": "decreases", "optionality": "decreases", "institutional_learning": "uncertain" },
+      "supporting_source_ids": ["src_congress_g42_letter_2024", "src_commerce_chip_authorization_2025", "src_crs_uae_2026"],
+      "challenging_source_ids": ["src_microsoft_g42_investment_2024", "src_uae_us_ai_principles_2024"],
+      "indicators": [
+        {
+          "id": "indicator_external_withdrawal_exposure",
+          "observation": "A material capability interruption follows a foreign export, provider, or assurance-policy change.",
+          "supports_if": "The UAE cannot restore equivalent operation through a pre-existing alternative within the stated continuity window.",
+          "review_by": "2027-07-01",
+          "status": "unobserved",
+          "source_ids": []
+        }
+      ],
+      "reversal_conditions": ["Independent local operation and evaluation are demonstrated under a provider-change test.", "Auditable multi-provider substitution materially reduces withdrawal exposure."],
+      "revisit_at": "2027-07-01"
+    }
+  ]
+}
