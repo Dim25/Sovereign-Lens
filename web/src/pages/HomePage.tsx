@@ -16,8 +16,8 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
           <div className="home-hero__bottom">
             <p>We can make it programmable now.</p>
             <p className="home-hero__description">
-              Sovereign Lens remembers what it believed, tests those beliefs against later evidence,
-              and learns under human governance.
+              Sovereign Lens observes how states and institutions program long-term trajectories
+              through capital, talent, compute, infrastructure, culture, human networks, and AI agents.
             </p>
           </div>
           <div className="home-actions">
@@ -46,13 +46,18 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         </section>
 
         <section className="idea-section">
-          <div className="section-index">02 · The learning loop</div>
+          <div className="section-index">02 · Programmable Horizon Blocks</div>
           <h2>The disagreement is the product.<br />The horizon turns evaluation into intelligence.</h2>
           <p className="horizon-thesis">
             Sovereign Lens does not decide whether an initiative is “pro-US,” “pro-China,” or
             “pro-Africa.” It preserves the evidence, asks what capability and dependency changed,
             records competing interpretations, and returns later to learn which interpretation held up.
           </p>
+          <div className="horizon-blocks" aria-label="Programmable Horizon Blocks">
+            {['Capital', 'Talent', 'Compute', 'Infrastructure', 'Energy', 'Data', 'Culture', 'Institutions', 'Law + policy', 'Human networks', 'Standards', 'AI agents'].map((block) => (
+              <span key={block}>{block}</span>
+            ))}
+          </div>
           <div className="loop-line" aria-label="Evidence to learning loop">
             {['Evidence', 'Belief', 'Prediction', 'Outcome', 'Calibration', 'Method v2'].map((step, i) => (
               <div className={i === 5 ? 'loop-step loop-step--accent' : 'loop-step'} key={step}>

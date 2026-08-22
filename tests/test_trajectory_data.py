@@ -36,14 +36,21 @@ class TrajectoryDataTests(unittest.TestCase):
                 referenced.update(indicator.get("source_ids", []))
             self.assertFalse(referenced - self.source_ids, trajectory["id"])
 
-    def test_actor_programming_is_explicit(self):
-        actor_types = {
-            actor_type
+    def test_classical_horizon_blocks_are_primary_and_ai_is_one_element(self):
+        block_types = {
+            block["type"]
             for trajectory in self.trajectory_set["trajectories"]
-            for actor_type in trajectory["actor_types"]
+            for block in trajectory["horizon_blocks"]
         }
-        self.assertIn("state", actor_types)
-        self.assertIn("ai_agent", actor_types)
+        self.assertTrue({"capital", "talent", "compute", "institutions", "law_policy"} <= block_types)
+        self.assertIn("ai_agents", block_types)
+        self.assertGreater(len(block_types - {"ai_agents"}), 1)
+
+    def test_every_horizon_block_names_its_programmers(self):
+        for trajectory in self.trajectory_set["trajectories"]:
+            for block in trajectory["horizon_blocks"]:
+                self.assertTrue(block["programming_action"])
+                self.assertTrue(block["actor_types"])
 
 
 if __name__ == "__main__":

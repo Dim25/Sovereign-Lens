@@ -8,7 +8,13 @@
       "title": "Sovereign accumulation",
       "thesis": "Imported infrastructure becomes durable UAE capability through local operation, evaluation capacity, knowledge transfer, and credible replacement options.",
       "status": "unresolved",
-      "actor_types": ["state", "institution", "company", "ai_agent"],
+      "horizon_blocks": [
+        { "type": "capital", "programming_action": "Microsoft investment and bilateral infrastructure finance allocate capital toward a UAE-based AI stack.", "direction": "increases", "actor_types": ["state", "company"] },
+        { "type": "compute", "programming_action": "Chip authorization and campus capacity expand available frontier compute under continuing external conditions.", "direction": "increases", "actor_types": ["state", "company"] },
+        { "type": "talent", "programming_action": "Operating and evaluating the stack may transfer durable expertise into UAE institutions.", "direction": "uncertain", "actor_types": ["human", "institution", "company"] },
+        { "type": "institutions", "programming_action": "Local evaluation and operating institutions could convert access into repeatable state capability.", "direction": "uncertain", "actor_types": ["state", "institution", "human"] },
+        { "type": "ai_agents", "programming_action": "Deployed AI systems may increase coordination and analytical capacity if locally governed and auditable.", "direction": "uncertain", "actor_types": ["institution", "company", "ai_agent"] }
+      ],
       "deltas": { "capability": "increases", "dependency": "decreases", "control": "increases", "optionality": "increases", "institutional_learning": "increases" },
       "supporting_source_ids": ["src_microsoft_g42_investment_2024", "src_uae_us_campus_2025"],
       "challenging_source_ids": ["src_congress_g42_letter_2024", "src_crs_uae_2026"],
@@ -30,7 +36,13 @@
       "title": "Managed interdependence",
       "thesis": "The UAE gains substantial capability while external dependencies remain explicit, diversified, and governable through agreements and institutional bargaining power.",
       "status": "strengthening",
-      "actor_types": ["state", "institution", "company", "ai_agent"],
+      "horizon_blocks": [
+        { "type": "capital", "programming_action": "Cross-border investment binds commercial incentives across the partnership.", "direction": "increases", "actor_types": ["state", "company"] },
+        { "type": "compute", "programming_action": "Regulated access expands capacity while preserving supplier and export-control dependencies.", "direction": "mixed", "actor_types": ["state", "company"] },
+        { "type": "law_policy", "programming_action": "Bilateral principles, security conditions, and export permissions program the allowed operating space.", "direction": "mixed", "actor_types": ["state", "institution"] },
+        { "type": "standards", "programming_action": "Assurance requirements align operation with a shared but externally influenced governance regime.", "direction": "mixed", "actor_types": ["state", "institution", "company"] },
+        { "type": "human_networks", "programming_action": "Technical, diplomatic, and commercial networks sustain bargaining and implementation across institutions.", "direction": "increases", "actor_types": ["human", "state", "institution", "company"] }
+      ],
       "deltas": { "capability": "increases", "dependency": "mixed", "control": "mixed", "optionality": "mixed", "institutional_learning": "increases" },
       "supporting_source_ids": ["src_uae_us_ai_principles_2024", "src_commerce_chip_authorization_2025", "src_crs_uae_2026"],
       "challenging_source_ids": ["src_congress_g42_letter_2024"],
@@ -52,7 +64,13 @@
       "title": "Capability without control",
       "thesis": "Operational capacity grows while chips, model access, assurance requirements, and key operating decisions remain externally controlled and difficult to replace.",
       "status": "unresolved",
-      "actor_types": ["state", "company", "ai_agent"],
+      "horizon_blocks": [
+        { "type": "compute", "programming_action": "Foreign chip supply and authorization conditions concentrate interruption power outside the UAE.", "direction": "increases", "actor_types": ["state", "company"] },
+        { "type": "infrastructure", "programming_action": "Physical capacity grows locally while critical operation may remain tied to foreign platforms and suppliers.", "direction": "mixed", "actor_types": ["state", "company"] },
+        { "type": "law_policy", "programming_action": "Export and assurance regimes constrain which technologies and relationships remain permissible.", "direction": "decreases", "actor_types": ["state", "institution"] },
+        { "type": "talent", "programming_action": "Local expertise may grow without acquiring authority over the upstream technical stack.", "direction": "uncertain", "actor_types": ["human", "institution", "company"] },
+        { "type": "ai_agents", "programming_action": "AI agents amplify capability but inherit access, policy, data, and compute constraints from the surrounding stack.", "direction": "mixed", "actor_types": ["company", "institution", "ai_agent"] }
+      ],
       "deltas": { "capability": "increases", "dependency": "increases", "control": "decreases", "optionality": "decreases", "institutional_learning": "uncertain" },
       "supporting_source_ids": ["src_congress_g42_letter_2024", "src_commerce_chip_authorization_2025", "src_crs_uae_2026"],
       "challenging_source_ids": ["src_microsoft_g42_investment_2024", "src_uae_us_ai_principles_2024"],

@@ -30,6 +30,29 @@ constrain, replace, and learn from a capability—not merely to access or own it
 deliberately revise its direction through changes of model, vendor, leadership,
 infrastructure, and geopolitical conditions.
 
+## Horizon Blocks: the programmable substrate
+
+The core blocks of a programmable horizon are not AI agents. They are the durable
+and recombinable capabilities through which societies and states have always shaped
+future possibility: **capital, talent, compute, infrastructure, energy, data,
+culture, institutions, law and policy, standards, and human networks**. AI agents
+are one newer block within this larger system. They may accelerate observation,
+coordination, allocation, persuasion, and decision-making, but they remain dependent
+on—and capable of changing—the classical blocks around them.
+
+States, firms, institutions, communities, and human swarms program trajectories by
+allocating these blocks, coupling them together, restricting access, transmitting
+them across generations, and deciding who may operate or replace them. Sovereign
+Lens observes this programming in real time at the state and sovereignty level.
+
+For every trajectory, the system therefore records:
+
+```text
+Horizon Block -> programming action -> responsible actors
+              -> capability / dependency / control / optionality effect
+              -> observable consequence through time
+```
+
 ## Why this changes the analytical unit
 
 A snapshot describes present assets and relationships. A trajectory describes how
