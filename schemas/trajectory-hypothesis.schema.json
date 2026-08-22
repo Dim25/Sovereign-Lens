@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sovereignlens.ai/schemas/trajectory-hypothesis.schema.json",
+  "title": "Sovereign Lens trajectory hypothesis set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "as_of", "methodology_version", "trajectories"],
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^case_[a-z0-9_]+$" },
+    "as_of": { "type": "string", "format": "date" },
+    "methodology_version": { "type": "string", "minLength": 1 },
+    "trajectories": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/trajectory" }
+    }
+  },
+  "$defs": {
+    "sourceIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^src_[a-z0-9_]+$" }
+    },
+    "delta": {
+      "type": "string",
+      "enum": ["increases", "decreases", "mixed", "unchanged", "uncertain"]
+    },
+    "indicator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "observation", "supports_if", "review_by", "status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^indicator_[a-z0-9_]+$" },
+        "observation": { "type": "string", "minLength": 1 },
+        "supports_if": { "type": "string", "minLength": 1 },
+        "review_by": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["unobserved", "observed", "partially_observed", "not_observed"] },
+        "source_ids": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "trajectory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "thesis", "status", "actor_types", "deltas", "supporting_source_ids", "challenging_source_ids", "indicators", "reversal_conditions", "revisit_at"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^trajectory_[a-z0-9_]+$" },
+        "title": { "type": "string", "minLength": 1 },
+        "thesis": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["proposed", "strengthening", "weakening", "superseded", "unresolved"] },
+        "actor_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["human", "state", "institution", "company", "ai_agent"] }
+        },
+        "deltas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["capability", "dependency", "control", "optionality", "institutional_learning"],
+          "properties": {
+            "capability": { "$ref": "#/$defs/delta" },
+            "dependency": { "$ref": "#/$defs/delta" },
+            "control": { "$ref": "#/$defs/delta" },
+            "optionality": { "$ref": "#/$defs/delta" },
+            "institutional_learning": { "$ref": "#/$defs/delta" }
+          }
+        },
+        "supporting_source_ids": { "$ref": "#/$defs/sourceIds" },
+        "challenging_source_ids": { "$ref": "#/$defs/sourceIds" },
+        "indicators": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/indicator" } },
+        "reversal_conditions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "revisit_at": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}
