@@ -102,6 +102,13 @@ claims, graph state, competing assessments, and predictions. Later evidence does
 not silently overwrite the past. It resolves earlier commitments and produces a
 calibration record.
 
+Sovereign Lens does not decide whether an initiative is “pro-US,” “pro-China,” or
+“pro-Africa.” Those labels are hypotheses, not verdicts. The system preserves the
+evidence, asks what capability, dependency, control, and optionality changed,
+records competing interpretations, and returns later to learn which interpretation
+held up. **The disagreement is the product; the horizon turns evaluation into
+intelligence.**
+
 ```text
 source-linked evidence at t0
   -> bitemporal graph snapshot
@@ -116,6 +123,11 @@ source-linked evidence at t0
 
 The system may say, “we would answer differently now.” It must never pretend, “we
 always knew.”
+
+Programmability also requires an auditable handoff. A later model or agent must be
+able to inherit the evidence, beliefs, predictions, unresolved questions, and
+authorized lessons—then demonstrate what it retained, drifted, or lost. Persistence
+is necessary; verified succession is the stronger long-horizon claim.
 
 ## Five forms of durable memory
 
