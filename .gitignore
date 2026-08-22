@@ -1,0 +1,23 @@
+# Node
+node_modules/
+web/dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets and local evidence — never commit
+.env
+.env.*
+*.key
+*.pem
+
+# Private research workspace (kept as a sibling repo; this is belt-and-braces)
+.sovereign-lens-dev-private/
+
+# OS
+.DS_Store
