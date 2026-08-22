@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Masthead } from './components/Masthead'
 import { GraphPanel } from './components/GraphPanel'
 import { FactsPanel } from './components/FactsPanel'
@@ -12,8 +12,30 @@ import { TimeScrubber } from './components/TimeScrubber'
 import { EvidenceDrawer, type EvidenceSelection } from './components/EvidenceDrawer'
 import { useCase } from './state/useCase'
 import type { DataSource, SourceId } from './types'
+import { HomePage } from './pages/HomePage'
+import { ExecutiveBrief } from './pages/ExecutiveBrief'
+import { ProductNav } from './components/ProductNav'
 
 export function App({ source }: { source: DataSource }) {
+  const [path, setPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const onPop = () => setPath(window.location.pathname)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  const navigate = (next: string) => {
+    window.history.pushState({}, '', next)
+    setPath(next)
+  }
+
+  if (path === '/') return <HomePage source={source} navigate={navigate} />
+  if (path === '/brief') return <ExecutiveBrief source={source} navigate={navigate} />
+  return <Dossier source={source} navigate={navigate} />
+}
+
+function Dossier({ source, navigate }: { source: DataSource; navigate: (path: string) => void }) {
   const view = useCase(source)
   const [evidence, setEvidence] = useState<EvidenceSelection | null>(null)
 
@@ -30,6 +52,7 @@ export function App({ source }: { source: DataSource }) {
 
   return (
     <div className="shell">
+      <ProductNav active="/cases/uae-us-ai-infrastructure" navigate={navigate} />
       <Masthead
         meta={view.meta}
         snapshot={view.snapshot}
