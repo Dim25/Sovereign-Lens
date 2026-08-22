@@ -48,19 +48,45 @@ Human-readable provenance
 
 ### What actually works today
 
-Tick only functionality that has been verified end to end:
+Three states, because two were hiding things:
 
-* [ ] Manual evidence ingestion
-* [ ] Claim and event extraction
-* [ ] Actor and relationship graph construction
-* [ ] Interactive graph visualization
-* [ ] Multiple perspective-model assessments
-* [ ] Consensus and disagreement evaluation
-* [ ] Evidence and provenance drill-down
-* [ ] Persistent assessment memory
-* [x] Retrospective calibration against later outcomes (offline demo fixture)
+* `[x]` verified end to end by a committed test or a reproducible run
+* `[~]` partly real — the code path exists and is exercised, but the qualifier beside it is doing real work
+* `[ ]` specification, not software
 
-**Everything unchecked is specification, not software.**
+Ingestion and extraction
+
+* [~] **Manual evidence ingestion** — 11 source-linked records (publisher, date, type, language, URL) are committed and inspectable. They are hand-authored; no path takes a document in.
+* [ ] **Claim and event extraction** — nothing reads a document and emits structured claims.
+
+Graph
+
+* [~] **Actor and relationship graph construction** — 12 actors and assets and 15 typed, dated relationships are projected into a graph at any `as_of` by tested code. The records are hand-authored, not derived from evidence.
+* [x] **Bitemporal snapshot with supersession preserved** — facts are filtered on `recorded_at <= as_of` before validity, so the view reproduces what was knowable then. Superseded facts stay visible rather than being deleted, and each snapshot carries a content digest.
+* [x] **Interactive graph visualization** — `web/`: a 2D relationship graph with a time scrubber, current-versus-superseded fact treatment, and a one-click thirteen-month advance.
+
+Assessment
+
+* [ ] **Multiple perspective-model assessments** — the three perspectives are **deterministic fixture text**. No provider adapter exists and no model has been called.
+* [~] **Consensus and disagreement evaluation** — divergence is preserved and shown rather than averaged, and material disagreement is distinguished from consensus. The axes are hand-authored; no evaluator compares model outputs.
+* [x] **Evidence and provenance drill-down** — every visible claim resolves to its source, publisher, and the account that source speaks for (participant, regulator, oversight). A test asserts every reference in the fixture resolves.
+
+Memory and calibration
+
+* [~] **Persistent assessment memory** — assessments, predictions and methodology lessons persist to SQLite (`python3 demo.py --db sovereign.sqlite`). Nothing yet retrieves prior beliefs across runs.
+* [x] **Falsifiable prediction ledger** — a prediction stores its probability, horizon, and the exact evidence-snapshot hash it was registered against.
+* [x] **Retrospective calibration against later outcomes** — one prediction resolves and is scored (Brier 0.1225 against a 0.25 coin-flip baseline) and the accepted lesson moves methodology v1 → v2 with history preserved. Offline demo fixture, and n = 1.
+
+Verify the ticks yourself:
+
+```bash
+python3 -m unittest discover -s tests    # 2 tests: projection, ledger and lesson
+cd web && npm install && npm test        # 34 tests, including cross-language digest conformance
+```
+
+**Anything unchecked is specification, not software.** The most consequential
+unchecked line is *multiple perspective-model assessments*: model plurality is
+the project's central claim, and no model has yet been asked anything.
 
 This project is not production-ready and should not be treated as an authoritative geopolitical intelligence source.
 
@@ -641,16 +667,33 @@ See [`docs/PITCH.md`](docs/PITCH.md) for the three-minute presentation and
 [`docs/DEVELOPMENT_PLAN.md`](docs/DEVELOPMENT_PLAN.md) for the database and build
 plan.
 
-### Planned full application
+### Presentation interface
 
-Clone the repository:
+The `web/` dossier renders the same loop as one screen, built for a projector at
+1440x900:
+
+```bash
+cd web
+npm install
+npm run dev      # http://localhost:5173
+npm test         # 34 unit and component tests
+```
+
+It reads a frozen local fixture through a `DataSource` seam, so it can be
+repointed at a `demo.py --json` export or an HTTP endpoint without changing a
+component. See [`web/README.md`](web/README.md) for the design rules, the data
+seam, and what the screen explicitly does not claim.
+
+### Planned full application
 
 ```bash
 git clone https://github.com/Dim25/Sovereign-Lens.git
 cd Sovereign-Lens
 ```
 
-The first reproducible local run path is still being assembled. Exact installation and launch commands should be added only after they have been verified end to end against the committed repository.
+The two run paths above are verified against the committed repository. The
+ingestion, extraction and provider-adapter layers are not built, so there is no
+launch command for them yet.
 
 Do not commit API keys, private evidence, restricted data, or credentials.
 
@@ -660,7 +703,29 @@ Do not commit API keys, private evidence, restricted data, or credentials.
 
 The prototype is intended to use a small set of real, source-linked records rather than documentation-only fixtures.
 
-This README does not claim a dataset size or jurisdiction count until the corresponding records are committed and inspectable. Once seed data is present, document exact counts and provenance here.
+One case is committed and inspectable: `case_uae_us_ai_infrastructure`, in
+[`web/src/data/uae-us-ai-infrastructure.fixture.json`](web/src/data/uae-us-ai-infrastructure.fixture.json).
+
+| | Count |
+|---|---|
+| Sources | 11 |
+| Actors and assets | 12 |
+| Typed relationships | 15 |
+| Facts | 11 |
+| Perspective assessments | 6 (two snapshots x three perspectives) |
+| Disagreement axes | 5 |
+| Predictions | 1 registered, 1 resolved |
+| Methodology lessons | 1 accepted |
+
+Every source is a real, public, first-party or oversight document with a live
+URL: UAE Embassy statements, Microsoft and G42 announcements, the Congressional
+Record, a Commerce export statement, and a Congressional Research Service
+overview. Two facts are lifted verbatim from `demo.py` so the screen and the
+terminal cannot disagree.
+
+The assessment text over that evidence is deterministic fixture data, not model
+output. The 2026 capacity figure is *reported* by a participant government and
+is not independently verified.
 
 Synthetic Country 1 / Country 2 examples are used only for explaining the methodology.
 
