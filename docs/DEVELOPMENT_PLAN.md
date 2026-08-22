@@ -102,6 +102,16 @@ the v1 result without rewriting history.
 - World Bank/Lawyers Hub institutional-influence case.
 - Fiji optionality case only after project-level deployment evidence is available.
 
+### P4 — trajectory sovereignty
+
+See [`PROGRAMMABLE_HORIZON_AND_TRAJECTORY_SOVEREIGNTY.md`](PROGRAMMABLE_HORIZON_AND_TRAJECTORY_SOVEREIGNTY.md).
+
+- Add `trajectory_hypothesis` as a versioned, source-linked analytical object.
+- Record capability, dependency, control, and option-space deltas per event.
+- Require distinguishing indicators and a review horizon from every model.
+- Compare competing trajectories without collapsing them into a sovereignty score.
+- Add an executive trajectory view and a succession report across agent generations.
+
 ## Verification
 
 ```bash
