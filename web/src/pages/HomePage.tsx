@@ -12,6 +12,12 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
       <main className="home">
         <section className="home-hero">
           <div className="eyebrow">Long-horizon intelligence · Open source</div>
+          <figure className="home-film">
+            <video autoPlay muted loop playsInline controls preload="metadata" poster="/media/sovereign-lens-executive-v2-poster.jpg">
+              <source src="/media/sovereign-lens-executive-v2-20s.mp4" type="video/mp4" />
+            </video>
+            <figcaption><span>00 · Executive film · 21s</span><strong>The future is a writable object</strong></figcaption>
+          </figure>
           <h1>The horizon<br />already exists<span>.</span></h1>
           <div className="home-hero__bottom">
             <p>We can make it programmable now.</p>
