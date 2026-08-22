@@ -116,7 +116,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
 
 .column-left {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) minmax(212px, 252px) auto;
+  grid-template-rows: minmax(0, 1fr) minmax(240px, 278px) auto;
   min-height: 0;
   border-right: 1px solid var(--ink);
 }
@@ -125,7 +125,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
    the ledger, the Brier score, the v1 → v2 review — is allowed below the fold. */
 .column-right {
   display: grid;
-  grid-template-rows: minmax(0, 1.46fr) minmax(0, 0.94fr) minmax(0, 0.66fr) minmax(0, 0.64fr);
+  grid-template-rows: minmax(0, 1.14fr) minmax(0, 0.48fr) minmax(0, 0.45fr) minmax(0, 0.53fr);
   min-height: 0;
   background: var(--paper);
 }
@@ -268,7 +268,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .facts tr:hover td { background: #faf8f5; }
 
 .facts__state {
-  width: 106px;
+  width: 92px;
   font-size: var(--t-micro);
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -279,9 +279,9 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .facts__state--superseded { color: var(--muted); }
 .facts__state--changed { color: var(--accent); }
 
-.facts__subject { width: 190px; font-weight: 600; }
-.facts__dates { width: 168px; font-size: var(--t-small); color: var(--muted); white-space: nowrap; }
-.facts__cite { width: 84px; text-align: right; }
+.facts__subject { width: 152px; font-weight: 600; }
+.facts__dates { width: 150px; font-size: var(--t-small); color: var(--muted); white-space: nowrap; }
+.facts__cite { width: 72px; text-align: right; }
 
 .row--superseded .facts__subject,
 .row--superseded .facts__object { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
@@ -332,6 +332,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
   text-indent: -9px;
 }
 .perspective__list li::before { content: '— '; color: var(--muted); }
+.perspective__more { color: var(--muted); font-style: italic; }
 
 .perspective__sublabel {
   font-size: var(--t-micro);

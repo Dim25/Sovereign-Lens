@@ -8,6 +8,23 @@ const LABEL: Record<Perspective, string> = {
 
 const ORDER: Perspective[] = ['capability', 'dependency', 'evidence_auditor']
 
+/** The card is a summary, not the record. It shows the first two items and says
+ *  how many it is not showing — a silent truncation would read as completeness. */
+const SHOWN = 2
+
+function Items({ label, items }: { label: string; items: string[] }) {
+  const hidden = items.length - SHOWN
+  return (
+    <>
+      <div className="perspective__sublabel">{label}</div>
+      <ul className="perspective__list">
+        {items.slice(0, SHOWN).map((item) => <li key={item}>{item}</li>)}
+        {hidden > 0 ? <li className="perspective__more">+{hidden} not shown</li> : null}
+      </ul>
+    </>
+  )
+}
+
 export function PerspectivePanel({
   assessments, onCite,
 }: {
@@ -40,29 +57,17 @@ export function PerspectivePanel({
                     <span className="perspective__confidence">{Math.round(a.confidence * 100)}%</span>
                   </div>
                   <p className="perspective__text">{a.assessment}</p>
-
-                  <div className="perspective__sublabel">Drivers</div>
-                  <ul className="perspective__list">
-                    {a.drivers.map((d) => <li key={d}>{d}</li>)}
-                  </ul>
-
-                  <div className="perspective__sublabel">Counterarguments</div>
-                  <ul className="perspective__list">
-                    {a.counterarguments.map((c) => <li key={c}>{c}</li>)}
-                  </ul>
-
-                  <div className="perspective__sublabel">Missing evidence</div>
-                  <ul className="perspective__list">
-                    {a.missing_evidence.map((m) => <li key={m}>{m}</li>)}
-                  </ul>
-
                   <button
                     className="cite"
-                    style={{ marginTop: 'auto', alignSelf: 'flex-start' }}
+                    style={{ alignSelf: 'flex-start' }}
                     onClick={() => onCite(a.assessment, `${LABEL[perspective]} · ${a.as_of}`, a.source_ids)}
                   >
                     evidence · {a.source_ids.length}
                   </button>
+
+                  <Items label="Drivers" items={a.drivers} />
+                  <Items label="Counterarguments" items={a.counterarguments} />
+                  <Items label="Missing evidence" items={a.missing_evidence} />
                 </article>
               )
             })}
