@@ -77,6 +77,7 @@ export function App({ source }: { source: DataSource }) {
         <EvidenceDrawer
           selection={evidence}
           sources={view.sources}
+          facts={[...view.snapshot.exposed, ...view.snapshot.superseded]}
           onClose={() => setEvidence(null)}
         />
       ) : null}

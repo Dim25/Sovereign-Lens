@@ -136,6 +136,27 @@ describe('evidence drawer', () => {
     await user.click(screen.getByRole('button', { name: 'United Arab Emirates' }))
     expect(screen.getByTestId('evidence-drawer')).toHaveTextContent('United Arab Emirates')
   })
+
+  it('shows every visible claim resting on the same sources, superseded included', async () => {
+    const user = renderApp()
+    await user.click(advance())
+    await user.click(screen.getByRole('button', { name: 'UAE–US AI Campus' }))
+
+    const drawer = screen.getByTestId('evidence-drawer')
+    expect(drawer).toHaveTextContent('Also resting on these sources')
+    expect(drawer).toHaveTextContent('200 MW planned in 2026 within a proposed 5 GW campus (superseded)')
+    expect(drawer).toHaveTextContent('Phase 1 of a planned 5 GW campus')
+  })
+
+  it('links an assessment to the evidence it was drawn from', async () => {
+    const user = renderApp()
+    await user.click(
+      within(screen.getByTestId('perspective-dependency')).getByRole('button', { name: /evidence/i }),
+    )
+    const drawer = screen.getByTestId('evidence-drawer')
+    expect(drawer).toHaveTextContent('Dependency · 2025-05-28')
+    expect(within(drawer).getAllByRole('link').length).toBe(3)
+  })
 })
 
 describe('scrubbing', () => {

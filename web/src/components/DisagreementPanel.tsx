@@ -34,13 +34,18 @@ export function DisagreementPanel({ axes }: { axes: DisagreementAxis[] }) {
                 <span className="axis__flag">{axis.divergence}</span>
               </div>
               <div className="axis__positions">
-                {axis.positions.map((p) => (
+                {(axis.divergence === 'aligned' ? axis.positions.slice(0, 1) : axis.positions).map((p) => (
                   <div className="position" key={p.perspective}>
                     <span className="position__who">{SHORT[p.perspective]}</span>
                     <span className="position__stance">{p.stance}</span>
                     <span className="position__note">{p.note}</span>
                   </div>
                 ))}
+                {axis.divergence === 'aligned' ? (
+                  <div className="position__note" style={{ paddingLeft: 102 }}>
+                    All three perspectives agree; positions collapsed.
+                  </div>
+                ) : null}
               </div>
             </div>
           ))}

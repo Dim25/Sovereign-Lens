@@ -1,4 +1,4 @@
-import type { SourceId, SourceRecord } from '../types'
+import type { FactRecord, SourceId, SourceRecord } from '../types'
 
 export interface EvidenceSelection {
   claim: string
@@ -21,13 +21,22 @@ const PERSPECTIVE_LABEL: Record<string, string> = {
  * evidence auditor's dissent only makes sense if that distinction is on screen.
  */
 export function EvidenceDrawer({
-  selection, sources, onClose,
+  selection, sources, facts, onClose,
 }: {
   selection: EvidenceSelection
   sources: Record<SourceId, SourceRecord>
+  /** Every fact visible at the current as_of, current or superseded. */
+  facts: FactRecord[]
   onClose: () => void
 }) {
   const records = selection.sourceIds.map((id) => sources[id]).filter(Boolean)
+  const selected = new Set(selection.sourceIds)
+
+  // How much of the current picture rests on these documents. A source carrying
+  // several claims is a concentration worth seeing before trusting any one of them.
+  const alsoResting = facts.filter(
+    (fact) => selected.has(fact.source_id) && !selection.claim.includes(fact.object),
+  )
 
   return (
     <>
@@ -63,6 +72,22 @@ export function EvidenceDrawer({
             <p className="empty" style={{ padding: 0 }}>
               This claim carries no source reference — it should not be displayed as evidence-backed.
             </p>
+          ) : null}
+
+          {alsoResting.length > 0 ? (
+            <div className="drawer__also">
+              <div className="kv__k">
+                Also resting on {records.length === 1 ? 'this source' : 'these sources'}
+              </div>
+              <ul className="perspective__list" style={{ marginTop: 6 }}>
+                {alsoResting.map((fact) => (
+                  <li key={fact.id}>
+                    {fact.subject} — {fact.object}
+                    {fact.superseded_at ? ' (superseded)' : ''}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
 
           <div className="drawer__also">
