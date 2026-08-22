@@ -56,9 +56,14 @@ a { color: var(--ink); text-underline-offset: 2px; }
 
 .shell {
   display: grid;
-  grid-template-rows: 50px minmax(0, 1fr) 92px;
+  grid-template-rows: 50px minmax(0, 1fr) 98px;
   height: 100%;
+  overflow: hidden;
 }
+
+/* Grid children default to min-height: auto, which lets a tall child push the
+   row past its track and silently clip the footer. Pin every band to its row. */
+.shell > * { min-height: 0; }
 
 .masthead {
   display: grid;
@@ -433,6 +438,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
 
 .scrubber {
   display: grid;
+  overflow: hidden;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 22px;
