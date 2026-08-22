@@ -54,7 +54,7 @@ Tick only functionality that has been verified end to end:
 * [ ] Consensus and disagreement evaluation
 * [ ] Evidence and provenance drill-down
 * [ ] Persistent assessment memory
-* [ ] Retrospective calibration against later outcomes
+* [x] Retrospective calibration against later outcomes (offline demo fixture)
 
 **Everything unchecked is specification, not software.**
 
@@ -609,6 +609,32 @@ This list describes the intended prototype architecture. The actual repository d
 
 ## Local development
 
+### Three-minute offline demo
+
+The initial demo exercises the long-horizon memory loop with Python and SQLite,
+without API keys or network access:
+
+```bash
+python3 demo.py --paced
+```
+
+It demonstrates a dated graph snapshot, three transparent perspective fixtures, a
+falsifiable prediction, later evidence, bitemporal supersession, calibration, and
+a human-reviewed methodology update. The perspective text is deterministic demo
+data, not output from live model providers.
+
+Run the tests with:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+See [`docs/PITCH.md`](docs/PITCH.md) for the three-minute presentation and
+[`docs/DEVELOPMENT_PLAN.md`](docs/DEVELOPMENT_PLAN.md) for the database and build
+plan.
+
+### Planned full application
+
 Clone the repository:
 
 ```bash
@@ -750,4 +776,3 @@ Initial prototype created during:
 ---
 
 > **We are not building another geopolitical news summarizer. We are building a living graph of how AI capability moves power between states—and using independent AI models to evaluate what those changes mean.**
-
