@@ -25,6 +25,25 @@
       "type": "string",
       "enum": ["increases", "decreases", "mixed", "unchanged", "uncertain"]
     },
+    "horizonBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "programming_action", "direction", "actor_types"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["capital", "talent", "compute", "infrastructure", "energy", "data", "culture", "institutions", "law_policy", "human_networks", "standards", "ai_agents"]
+        },
+        "programming_action": { "type": "string", "minLength": 1 },
+        "direction": { "$ref": "#/$defs/delta" },
+        "actor_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["human", "state", "institution", "company", "multilateral", "ai_agent"] }
+        }
+      }
+    },
     "indicator": {
       "type": "object",
       "additionalProperties": false,
@@ -41,17 +60,16 @@
     "trajectory": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "title", "thesis", "status", "actor_types", "deltas", "supporting_source_ids", "challenging_source_ids", "indicators", "reversal_conditions", "revisit_at"],
+      "required": ["id", "title", "thesis", "status", "horizon_blocks", "deltas", "supporting_source_ids", "challenging_source_ids", "indicators", "reversal_conditions", "revisit_at"],
       "properties": {
         "id": { "type": "string", "pattern": "^trajectory_[a-z0-9_]+$" },
         "title": { "type": "string", "minLength": 1 },
         "thesis": { "type": "string", "minLength": 1 },
         "status": { "type": "string", "enum": ["proposed", "strengthening", "weakening", "superseded", "unresolved"] },
-        "actor_types": {
+        "horizon_blocks": {
           "type": "array",
           "minItems": 1,
-          "uniqueItems": true,
-          "items": { "type": "string", "enum": ["human", "state", "institution", "company", "ai_agent"] }
+          "items": { "$ref": "#/$defs/horizonBlock" }
         },
         "deltas": {
           "type": "object",
