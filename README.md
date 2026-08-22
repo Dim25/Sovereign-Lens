@@ -507,6 +507,10 @@ The demo should prove that the system can:
 
 ## Long-horizon memory and calibration
 
+See [`docs/LONG_HORIZON_CONCEPT.md`](docs/LONG_HORIZON_CONCEPT.md) for the
+conceptual framing: the horizon already exists, and the engineering task is to
+make experience, succession, and learning auditable across agent generations.
+
 Geopolitical analysis becomes more useful when the system can compare previous assessments with later outcomes.
 
 ```text
