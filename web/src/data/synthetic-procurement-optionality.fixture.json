@@ -1,0 +1,574 @@
+{
+  "meta": {
+    "case_id": "synthetic_procurement_optionality",
+    "title": "Synthetic \u00b7 AI procurement and optionality",
+    "question": "Does an AI procurement build capability Country 1 can operate, or a dependency it cannot replace?",
+    "t0": "2025-07-23",
+    "t1": "2026-08-23",
+    "disclosure": [
+      "SYNTHETIC CASE. Country 1, Country 2, Company 1, Ministry 1, Model 1 and Evaluation Laboratory 1 are placeholders under the neutral example convention in the README. No real government, company or model is described.",
+      "Source records are illustrative and point at example.org. They are not real publications and must never be cited as evidence.",
+      "It exists to run the loop on a horizon that resolves today, which the real UAE-US case cannot do: its evidence dates are fixed by the publication dates of its sources.",
+      "The mechanism, scoring and methodology transition are the same code paths the real case uses."
+    ]
+  },
+  "timeline": [
+    {
+      "as_of": "2025-07-23",
+      "label": "T0 \u00b7 Commitment",
+      "note": "Procurement announced. Three perspectives assess and one prediction is registered."
+    },
+    {
+      "as_of": "2025-12-10",
+      "label": "Training",
+      "note": "First public-sector cohort completes."
+    },
+    {
+      "as_of": "2026-04-02",
+      "label": "Lab announced",
+      "note": "An independent national evaluation capability is announced."
+    },
+    {
+      "as_of": "2026-08-23",
+      "label": "T1 \u00b7 Resolution",
+      "note": "Oversight review contradicts the announcement. The prediction resolves against."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_procurement_notice",
+      "title": "Country 1 national AI procurement notice: Model 1 for public services",
+      "publisher": "Ministry 1",
+      "url": "https://example.org/procurement_notice",
+      "published_at": "2025-07-23",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "src_vendor_release",
+      "title": "Company 1 announces public-sector deployment of Model 1 in Country 1",
+      "publisher": "Company 1",
+      "url": "https://example.org/vendor_release",
+      "published_at": "2025-07-23",
+      "source_type": "company_announcement",
+      "perspective": "participant",
+      "language": "en"
+    },
+    {
+      "id": "src_training_report",
+      "title": "Public-sector technical training programme: first cohort completes",
+      "publisher": "Ministry 1",
+      "url": "https://example.org/training_report",
+      "published_at": "2025-12-10",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "src_lab_announcement",
+      "title": "Country 1 announces Evaluation Laboratory 1",
+      "publisher": "Ministry 1",
+      "url": "https://example.org/lab_announcement",
+      "published_at": "2026-04-02",
+      "source_type": "government_statement",
+      "perspective": "government_participant",
+      "language": "en"
+    },
+    {
+      "id": "src_oversight_review",
+      "title": "Parliamentary review: evaluation capacity not yet staffed or funded",
+      "publisher": "Parliament 1",
+      "url": "https://example.org/oversight_review",
+      "published_at": "2026-08-23",
+      "source_type": "legislative_record",
+      "perspective": "oversight",
+      "language": "en"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "actor_country1",
+      "kind": "actor",
+      "name": "Country 1",
+      "node_type": "state",
+      "country_code": "AA",
+      "valid_from": "2025-07-23",
+      "recorded_at": "2025-07-23",
+      "source_ids": [
+        "src_procurement_notice"
+      ],
+      "x": 24,
+      "y": 38,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_country2",
+      "kind": "actor",
+      "name": "Country 2",
+      "node_type": "state",
+      "country_code": "BB",
+      "valid_from": "2025-07-23",
+      "recorded_at": "2025-07-23",
+      "source_ids": [
+        "src_vendor_release"
+      ],
+      "x": 600,
+      "y": 38,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_company1",
+      "kind": "actor",
+      "name": "Company 1",
+      "node_type": "company",
+      "country_code": "BB",
+      "valid_from": "2025-07-23",
+      "recorded_at": "2025-07-23",
+      "source_ids": [
+        "src_vendor_release"
+      ],
+      "x": 600,
+      "y": 150,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "actor_ministry1",
+      "kind": "actor",
+      "name": "Ministry 1",
+      "node_type": "government_agency",
+      "country_code": "AA",
+      "valid_from": "2025-07-23",
+      "recorded_at": "2025-07-23",
+      "source_ids": [
+        "src_procurement_notice"
+      ],
+      "x": 24,
+      "y": 150,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "asset_model1",
+      "kind": "asset",
+      "name": "Model 1",
+      "node_type": "foundation_model",
+      "country_code": "BB",
+      "valid_from": "2025-07-23",
+      "recorded_at": "2025-07-23",
+      "source_ids": [
+        "src_vendor_release"
+      ],
+      "x": 312,
+      "y": 94,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "asset_training1",
+      "kind": "asset",
+      "name": "Training Programme 1",
+      "node_type": "training_program",
+      "country_code": "AA",
+      "valid_from": "2025-12-10",
+      "recorded_at": "2025-12-10",
+      "source_ids": [
+        "src_training_report"
+      ],
+      "x": 312,
+      "y": 206,
+      "w": 176,
+      "h": 44
+    },
+    {
+      "id": "asset_evallab1",
+      "kind": "asset",
+      "name": "Evaluation Laboratory 1",
+      "node_type": "governance_framework",
+      "country_code": "AA",
+      "valid_from": "2026-04-02",
+      "recorded_at": "2026-04-02",
+      "source_ids": [
+        "src_lab_announcement"
+      ],
+      "x": 312,
+      "y": 318,
+      "w": 176,
+      "h": 44
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_procures",
+      "source_node_id": "actor_ministry1",
+      "target_node_id": "asset_model1",
+      "type": "authorizes_access_to",
+      "status": "active",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "confidence": 0.95,
+      "source_ids": [
+        "src_procurement_notice"
+      ]
+    },
+    {
+      "id": "edge_supplies",
+      "source_node_id": "actor_company1",
+      "target_node_id": "asset_model1",
+      "type": "supplies_technology_to",
+      "status": "active",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "confidence": 0.96,
+      "source_ids": [
+        "src_vendor_release"
+      ]
+    },
+    {
+      "id": "edge_hosts",
+      "source_node_id": "actor_country2",
+      "target_node_id": "asset_model1",
+      "type": "hosts_on",
+      "status": "active",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "confidence": 0.88,
+      "source_ids": [
+        "src_vendor_release"
+      ]
+    },
+    {
+      "id": "edge_trains",
+      "source_node_id": "actor_company1",
+      "target_node_id": "asset_training1",
+      "type": "supplies_technology_to",
+      "status": "active",
+      "valid_from": "2025-12-10",
+      "valid_to": null,
+      "recorded_at": "2025-12-10",
+      "confidence": 0.9,
+      "source_ids": [
+        "src_training_report"
+      ]
+    },
+    {
+      "id": "edge_operates_lab",
+      "source_node_id": "actor_ministry1",
+      "target_node_id": "asset_evallab1",
+      "type": "operates",
+      "status": "announced",
+      "valid_from": "2026-04-02",
+      "valid_to": null,
+      "recorded_at": "2026-04-02",
+      "confidence": 0.7,
+      "source_ids": [
+        "src_lab_announcement"
+      ]
+    },
+    {
+      "id": "edge_depends",
+      "source_node_id": "actor_country1",
+      "target_node_id": "actor_company1",
+      "type": "depends_on",
+      "status": "active",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "confidence": 0.82,
+      "source_ids": [
+        "src_procurement_notice",
+        "src_vendor_release"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact_procured",
+      "subject": "Model 1",
+      "subject_node_id": "asset_model1",
+      "predicate": "procured_by",
+      "object": "Country 1 public services, under a three-year licence",
+      "status": "announced",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "superseded_at": null,
+      "source_id": "src_procurement_notice"
+    },
+    {
+      "id": "fact_hosted",
+      "subject": "Model 1",
+      "subject_node_id": "asset_model1",
+      "predicate": "hosted_in",
+      "object": "infrastructure operated from Country 2",
+      "status": "active",
+      "valid_from": "2025-07-23",
+      "valid_to": null,
+      "recorded_at": "2025-07-23",
+      "superseded_at": null,
+      "source_id": "src_vendor_release"
+    },
+    {
+      "id": "fact_training",
+      "subject": "Training Programme 1",
+      "subject_node_id": "asset_training1",
+      "predicate": "reported_status",
+      "object": "first public-sector cohort completed",
+      "status": "reported",
+      "valid_from": "2025-12-10",
+      "valid_to": null,
+      "recorded_at": "2025-12-10",
+      "superseded_at": null,
+      "source_id": "src_training_report"
+    },
+    {
+      "id": "fact_lab_announced",
+      "subject": "Evaluation Laboratory 1",
+      "subject_node_id": "asset_evallab1",
+      "predicate": "reported_status",
+      "object": "announced as an independent national evaluation capability",
+      "status": "announced",
+      "valid_from": "2026-04-02",
+      "valid_to": "2026-08-23",
+      "recorded_at": "2026-04-02",
+      "superseded_at": "2026-08-23",
+      "source_id": "src_lab_announcement"
+    },
+    {
+      "id": "fact_lab_unstaffed",
+      "subject": "Evaluation Laboratory 1",
+      "subject_node_id": "asset_evallab1",
+      "predicate": "reported_status",
+      "object": "not yet staffed or funded; no independent test of Model 1 has been run",
+      "status": "reported",
+      "valid_from": "2026-08-23",
+      "valid_to": null,
+      "recorded_at": "2026-08-23",
+      "superseded_at": null,
+      "source_id": "src_oversight_review"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "assess_cap_t0",
+      "perspective": "capability",
+      "as_of": "2025-07-23",
+      "assessment": "Procurement plus a training programme plausibly raises what Country 1 can do with AI in public services.",
+      "confidence": 0.68,
+      "methodology_version": "v1",
+      "drivers": [
+        "licensed access to a frontier model",
+        "funded training programme"
+      ],
+      "counterarguments": [
+        "access is not the same as operating capability"
+      ],
+      "missing_evidence": [
+        "staffing plans",
+        "who administers the deployment"
+      ],
+      "source_ids": [
+        "src_procurement_notice",
+        "src_vendor_release"
+      ]
+    },
+    {
+      "id": "assess_dep_t0",
+      "perspective": "dependency",
+      "as_of": "2025-07-23",
+      "assessment": "The model is hosted outside Country 1 and licensed for three years, so continuity depends on decisions taken elsewhere.",
+      "confidence": 0.74,
+      "methodology_version": "v1",
+      "drivers": [
+        "external hosting",
+        "fixed-term licence",
+        "single supplier"
+      ],
+      "counterarguments": [
+        "a licence is a contract, and contracts can be renegotiated"
+      ],
+      "missing_evidence": [
+        "termination and exit terms",
+        "whether local hosting is permitted"
+      ],
+      "source_ids": [
+        "src_vendor_release",
+        "src_procurement_notice"
+      ]
+    },
+    {
+      "id": "assess_aud_t0",
+      "perspective": "evidence_auditor",
+      "as_of": "2025-07-23",
+      "assessment": "Both records are participant statements published on the same day; nothing downstream of the announcement exists yet.",
+      "confidence": 0.89,
+      "methodology_version": "v1",
+      "drivers": [
+        "single-day publication",
+        "both sources are participants"
+      ],
+      "counterarguments": [
+        "participant statements are strong evidence of their own commitments"
+      ],
+      "missing_evidence": [
+        "any non-participant confirmation"
+      ],
+      "source_ids": [
+        "src_procurement_notice",
+        "src_vendor_release"
+      ]
+    },
+    {
+      "id": "assess_cap_t1",
+      "perspective": "capability",
+      "as_of": "2026-08-23",
+      "assessment": "A completed training cohort is real, but the evaluation laboratory that would make the capability independent is not operating.",
+      "confidence": 0.52,
+      "methodology_version": "v2",
+      "drivers": [
+        "training cohort completed"
+      ],
+      "counterarguments": [
+        "evaluation capacity announced but unstaffed"
+      ],
+      "missing_evidence": [
+        "laboratory budget and headcount"
+      ],
+      "source_ids": [
+        "src_training_report",
+        "src_oversight_review"
+      ]
+    },
+    {
+      "id": "assess_dep_t1",
+      "perspective": "dependency",
+      "as_of": "2026-08-23",
+      "assessment": "Thirteen months on, Country 1 still cannot independently test the model it depends on. Optionality has not improved.",
+      "confidence": 0.81,
+      "methodology_version": "v2",
+      "drivers": [
+        "no independent evaluation run",
+        "hosting unchanged"
+      ],
+      "counterarguments": [
+        "the licence term has not yet lapsed"
+      ],
+      "missing_evidence": [
+        "any replacement assessment"
+      ],
+      "source_ids": [
+        "src_oversight_review"
+      ]
+    },
+    {
+      "id": "assess_aud_t1",
+      "perspective": "evidence_auditor",
+      "as_of": "2026-08-23",
+      "assessment": "The first non-participant source in this record contradicts the participant announcement it followed.",
+      "confidence": 0.93,
+      "methodology_version": "v2",
+      "drivers": [
+        "oversight source is non-participant",
+        "contradicts prior announcement"
+      ],
+      "counterarguments": [
+        "a review is a snapshot, not a final state"
+      ],
+      "missing_evidence": [
+        "ministry response to the review"
+      ],
+      "source_ids": [
+        "src_oversight_review",
+        "src_lab_announcement"
+      ]
+    }
+  ],
+  "disagreements": [
+    {
+      "id": "axis_capability_t0",
+      "as_of": "2025-07-23",
+      "question": "Does procurement plus training constitute a capability gain?",
+      "divergence": "material",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "Yes",
+          "note": "Access and skills both increase what can be attempted."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "Conditionally",
+          "note": "A capability you cannot operate alone is borrowed, not held."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "Unsupported",
+          "note": "Two participant statements, published the same day, and nothing since."
+        }
+      ]
+    },
+    {
+      "id": "axis_optionality_t1",
+      "as_of": "2026-08-23",
+      "question": "Has Country 1's optionality improved over the period?",
+      "divergence": "aligned",
+      "positions": [
+        {
+          "perspective": "capability",
+          "stance": "No",
+          "note": "Training raised skill without raising independence."
+        },
+        {
+          "perspective": "dependency",
+          "stance": "No",
+          "note": "Hosting, licence and evaluation all still sit outside."
+        },
+        {
+          "perspective": "evidence_auditor",
+          "stance": "No",
+          "note": "The only non-participant source says the capability does not exist yet."
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "prediction_independent_evaluation",
+      "claim": "Country 1 will operate an independent evaluation laboratory capable of testing Model 1 by 2026-08-23.",
+      "probability": 0.7,
+      "horizon_date": "2026-08-23",
+      "registered_at": "2025-07-23",
+      "snapshot_hash": "",
+      "verification_plan": "Seek evidence of staffing, budget and at least one completed independent evaluation; prefer a non-participant source.",
+      "status": "resolved",
+      "resolved_at": "2026-08-23",
+      "observed_outcome": "A parliamentary review reports the laboratory announced but not staffed or funded; no independent evaluation has been run.",
+      "outcome_value": 0,
+      "brier": 0.49,
+      "source_ids": [
+        "src_lab_announcement",
+        "src_oversight_review"
+      ]
+    }
+  ],
+  "methodology_lessons": [
+    {
+      "id": "lesson_announcement_is_not_capacity",
+      "prediction_id": "prediction_independent_evaluation",
+      "failure_surface": "status_inference",
+      "proposed_change": "Require staffing and budget evidence before treating an announced evaluation capability as established.",
+      "human_disposition": "accepted",
+      "rationale": "The forecast weighted an announcement as though it were a delivered institution. The register that failed was institutional capacity, not model access.",
+      "version_before": "v1",
+      "version_after": "v2",
+      "effective_from": "2026-08-23",
+      "reviewer": "human analyst"
+    }
+  ]
+}

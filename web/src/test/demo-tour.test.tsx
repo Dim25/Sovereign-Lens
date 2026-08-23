@@ -88,3 +88,15 @@ describe('trailing-slash routes', () => {
     expect(screen.getByText('SovereignLens.ai')).toBeInTheDocument()
   })
 })
+
+// A synthetic record must not borrow the real case's credibility. The claim
+// "these are publication dates of real sources" is true of the UAE record and
+// false of the illustrative one; asserting both directions keeps it that way.
+describe('synthetic case labelling', () => {
+  it('claims real source dates on the real case', () => {
+    window.history.replaceState({}, '', '/v2')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByText(/publication dates of the underlying sources/i)).toBeInTheDocument()
+    expect(screen.queryByText(/never cite them/i)).not.toBeInTheDocument()
+  })
+})

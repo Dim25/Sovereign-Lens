@@ -58,7 +58,14 @@ export function App({ source, caseSources }: { source: DataSource; caseSources?:
   if (path === '/demo') return <DemoPage navigate={navigate} />
   if (path === '/demo1min') return <DemoOneMinutePage navigate={navigate} />
   if (path === '/demo2min') return <DemoTwoMinutePage navigate={navigate} />
-  if (path === '/v2') return <MachinePage source={source} navigate={navigate} />
+  if (path === '/v2') {
+    // ?case=<slug> lets the loop run on any registered case. The default stays
+    // the UAE record: its evidence is real, which matters more on first view
+    // than its dates being recent.
+    const pick = new URLSearchParams(window.location.search).get('case')
+    const all = caseSources ?? { 'uae-us-ai-infrastructure': source }
+    return <MachinePage source={(pick && all[pick]) || source} navigate={navigate} />
+  }
   if (path === '/horizon') return <HorizonStudio navigate={navigate} />
   if (path === '/cases/multi-alignment-option-space') return <OptionSpaceCase navigate={navigate} />
   if (path.startsWith('/build/')) return <BuildPartnersPage navigate={navigate} slug={path.slice('/build/'.length).replace(/\/$/, '')} />

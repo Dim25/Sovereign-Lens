@@ -5,6 +5,7 @@ import { createFixtureSource } from './data/adapter'
 import uaeFixture from './data/uae-us-ai-infrastructure.fixture.json'
 import chinaFijiFixture from './data/china-fiji-capability.fixture.json'
 import africaFixture from './data/africa-ai-governance-capacity.fixture.json'
+import syntheticFixture from './data/synthetic-procurement-optionality.fixture.json'
 import type { CaseFixture } from './types'
 import './styles.css'
 
@@ -14,6 +15,7 @@ const caseSources = {
   'uae-us-ai-infrastructure': createFixtureSource(uaeFixture as unknown as CaseFixture),
   'china-fiji-capability': createFixtureSource(chinaFijiFixture as unknown as CaseFixture),
   'africa-ai-governance-capacity': createFixtureSource(africaFixture as unknown as CaseFixture),
+  'synthetic-procurement-optionality': createFixtureSource(syntheticFixture as unknown as CaseFixture),
 }
 
 createRoot(document.getElementById('root')!).render(

@@ -55,7 +55,7 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
       },
       {
         key: 'assess',
-        verb: 'Three models assess the same snapshot',
+        verb: `${assessed.length} models assess the same snapshot`,
         detail: assessed.map((a) => `${a.perspective} ${pct(a.confidence)}`).join('  ·  '),
         value: `${material} material disagreement preserved, not averaged`,
         ms: 3000,
@@ -95,7 +95,7 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
         verb: 'The next run inherits the lesson',
         detail: lesson ? lesson.proposed_change : 'no lesson proposed',
         value: lesson
-          ? `methodology v1 → v2   ·   human disposition: ${lesson.human_disposition}`
+          ? `methodology ${lesson.version_before} → ${lesson.version_after}   ·   human disposition: ${lesson.human_disposition}`
           : '—',
         ms: 3400,
       },
@@ -111,6 +111,16 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
    * sits relative to them, so the loop reads as a closed run with a live
    * consequence rather than an old screenshot.
    */
+  // A synthetic case must never borrow the credibility of the real one. The
+  // provenance line below is the claim most likely to be read as a guarantee,
+  // so it states the opposite when the record is illustrative.
+  const synthetic = meta.case_id.startsWith('synthetic')
+
+  const monthsApart = useMemo(
+    () => Math.round((Date.parse(meta.t1) - Date.parse(meta.t0)) / (1000 * 60 * 60 * 24 * 30.44)),
+    [meta],
+  )
+
   const anchor = useMemo(() => {
     const days = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000)
     // toISOString() is UTC: after ~17:00 Pacific it reports tomorrow's date to a
@@ -154,10 +164,12 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
         </p>
         <p className="machine__chain">
           same evidence <i>→</i> three perspectives <i>→</i> dated prediction <i>→</i>{' '}
-          thirteen months later <i>→</i> scored outcome
+          {monthsApart} months later <i>→</i> scored outcome
         </p>
-        <p className="machine__dates">
-          Dates below are the publication dates of the underlying sources, not demo values.
+        <p className={synthetic ? 'machine__dates machine__dates--synthetic' : 'machine__dates'}>
+          {synthetic
+            ? 'Synthetic case. Entities and sources are placeholders, not real publications — never cite them. The loop below runs the same code path as the real record, on a horizon that resolves today.'
+            : 'Dates below are the publication dates of the underlying sources, not demo values.'}
         </p>
       </section>
 
@@ -213,6 +225,9 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
           Every value above is projected from the committed case record, not written for this page.
           Perspective text in this case is a deterministic fixture; the attributed multi-provider
           panel lives in the dossier.
+          {synthetic
+            ? ' This record is illustrative: it demonstrates the mechanism on a horizon that resolves today, which the real case cannot do, because its dates are fixed by its sources.'
+            : ''}
         </p>
       </footer>
     </main>
