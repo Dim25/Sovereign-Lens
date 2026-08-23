@@ -39,8 +39,10 @@ describe('case routes', () => {
     window.history.replaceState({}, '', '/cases')
     const user = userEvent.setup()
     render(<App source={sources['uae-us-ai-infrastructure']} caseSources={sources} />)
+    expect(screen.getByRole('heading', { name: /sovereignty is being written/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /sovereign strategy trajectories/i })).toBeInTheDocument()
     expect(screen.getByText('African AI-governance capacity')).toBeInTheDocument()
-    await user.click(screen.getByRole('button', { name: /china–fiji capability formation/i }))
+    await user.click(screen.getAllByRole('button', { name: /china–fiji capability formation/i })[0])
     expect(screen.getByText(/does cooperation build locally retained capability/i)).toBeInTheDocument()
   })
 
