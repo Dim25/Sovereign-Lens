@@ -9,6 +9,10 @@ A brutal-white Swiss product and dossier for the long-horizon demo in
 - `/cases/uae-us-ai-infrastructure` — full analyst dossier
 - `/cases/china-fiji-capability` — infrastructure, talent and local optionality
 - `/cases/africa-ai-governance-capacity` — continental strategy and evaluation capacity
+- `/build` — integration architecture index
+- `/build/temporal` — durable scheduling and reassessment workflow
+- `/build/stash` — cross-rollout research memory
+- `/build/coframe` — adaptive explanation with analytical invariants
 
 The dossier remains one screen at 1440×900, built to be narrated in three minutes
 from a laptop projector.

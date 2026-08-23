@@ -52,6 +52,29 @@ describe('case routes', () => {
   })
 })
 
+describe('build-partner routes', () => {
+  it('opens the integration index and the Temporal architecture note', async () => {
+    window.history.replaceState({}, '', '/build')
+    const user = userEvent.setup()
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /memory is not the horizon/i })).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /temporal/i }))
+    expect(screen.getByRole('heading', { name: /temporal × sovereign lens/i })).toBeInTheDocument()
+    expect(screen.getByText(/bitemporal ledger—not temporal event history/i)).toBeInTheDocument()
+  })
+
+  it('loads Stash and Coframe notes directly', () => {
+    window.history.replaceState({}, '', '/build/stash')
+    const { unmount } = render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /stash × sovereign lens/i })).toBeInTheDocument()
+    expect(screen.getByText(/retrieved recollection is context, never evidence/i)).toBeInTheDocument()
+    unmount()
+    window.history.replaceState({}, '', '/build/coframe')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /coframe × sovereign lens/i })).toBeInTheDocument()
+  })
+})
+
 const advance = () => screen.getByRole('button', { name: /advance 13 months/i })
 
 describe('presentation shell', () => {

@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage'
 import { ExecutiveBrief } from './pages/ExecutiveBrief'
 import { ProductNav } from './components/ProductNav'
 import { CasesPage } from './pages/CasesPage'
+import { BuildPartnersPage } from './pages/BuildPartnersPage'
 
 export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
   const [path, setPath] = useState(window.location.pathname)
@@ -35,6 +36,8 @@ export function App({ source, caseSources }: { source: DataSource; caseSources?:
   if (path === '/brief') return <ExecutiveBrief source={source} navigate={navigate} />
   const sources = caseSources ?? { 'uae-us-ai-infrastructure': source }
   if (path === '/cases') return <CasesPage sources={sources} navigate={navigate} />
+  if (path === '/build') return <BuildPartnersPage navigate={navigate} />
+  if (path.startsWith('/build/')) return <BuildPartnersPage navigate={navigate} slug={path.slice('/build/'.length).replace(/\/$/, '')} />
   const slug = path.startsWith('/cases/') ? path.slice('/cases/'.length).replace(/\/$/, '') : ''
   return <Dossier source={sources[slug] ?? source} navigate={navigate} activePath={path} />
 }
