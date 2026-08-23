@@ -219,7 +219,7 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
           </button>
           <button
             className="machine__btn machine__btn--quiet"
-            onClick={() => navigate(synthetic ? '/v2' : '/v2c')}
+            onClick={() => navigate(synthetic ? '/v2' : '/v2/today')}
           >
             {synthetic ? 'Run it on the real case →' : 'Run it on a horizon that resolves today →'}
           </button>

@@ -129,3 +129,24 @@ describe('the two machine routes', () => {
     expect(screen.getByText(/never cite them/i)).toBeInTheDocument()
   })
 })
+
+// /v2/today says what it is; /v2c is the short alias for the same record.
+describe('the today alias', () => {
+  const at = (p: string) => {
+    window.history.replaceState({}, '', p)
+    render(<App source={createFixtureSource(fixture)} caseSources={{
+      'uae-us-ai-infrastructure': createFixtureSource(fixture),
+      'synthetic-procurement-optionality': createFixtureSource(syntheticFixture as unknown as CaseFixture),
+    }} />)
+  }
+
+  it.each(['/v2/today', '/v2/today/'])('%s runs the today-resolving record', (path) => {
+    at(path)
+    expect(screen.getByText(/never cite them/i)).toBeInTheDocument()
+  })
+
+  it('does not shadow the real record at /v2', () => {
+    at('/v2')
+    expect(screen.getByText(/publication dates of the underlying sources/i)).toBeInTheDocument()
+  })
+})
