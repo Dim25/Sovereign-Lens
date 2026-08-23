@@ -8,7 +8,7 @@ import { createServer } from 'vite'
 import { mkdir } from 'node:fs/promises'
 
 const ROUTES = ['/', '/brief', '/cases', '/cases/uae-us-ai-infrastructure', '/build', '/build-day',
-  '/horizon', '/cases/multi-alignment-option-space', '/demo1min']
+  '/horizon', '/cases/multi-alignment-option-space', '/demo1min', '/demo', '/demo2min']
 const VIEWPORTS = [
   { name: 'iphone-se', width: 320, height: 568 },
   { name: 'android-sm', width: 360, height: 800 },
@@ -86,11 +86,41 @@ for (const vp of VIEWPORTS) {
         .slice(0, 6)
         .map(({ sel, right, w }) => ({ sel, right, w }))
 
+      // 44px is the stated goal. The threshold used to be 40, which silently
+      // blessed a 38px rule as passing — so it is set to the goal, and anything
+      // legitimately exempt is named here rather than accommodated by lowering it.
+      const TAP_MIN = 44
+      // Diagram elements are content, not chrome; forcing them to 44px would change
+      // geometry that is carrying meaning. Exempt by selector so every exemption is
+      // visible and reviewable rather than absorbed by a lower threshold.
+      const EXEMPT = [
+        '.graph-viewport g', '.graph-viewport [role="button"]',
+        '.strategy-map g', '.strategy-map__route',
+      ]
+
+      // WCAG 2.5.8 exempts a link inside a sentence: it is sized by the line box,
+      // and forcing it to 44px would break the paragraph it lives in. Applies only
+      // to genuinely inline links flowed among text, not block links styled as one.
+      const isInlineInProse = (el) => {
+        if (el.tagName !== 'A' || !getComputedStyle(el).display.startsWith('inline')) return false
+        const prose = el.closest('p, li, blockquote, small, dd')
+        if (!prose) return false
+        return [...prose.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 0)
+      }
+
       const small = []
       for (const el of document.querySelectorAll('a, button, [role="button"], input, select, summary')) {
         const r = el.getBoundingClientRect()
         if (r.width === 0 || r.height === 0) continue
-        if (r.height < 40) small.push({
+        if (r.height >= TAP_MIN) continue
+        if (EXEMPT.some((sel) => el.matches(sel))) continue
+        if (isInlineInProse(el)) continue
+        // A control wrapped in (or bound to) a label is tapped via that label, so
+        // the label's box is the real target. Measure what the finger can hit.
+        const label = el.closest('label') ||
+          (el.id ? document.querySelector(`label[for="${CSS.escape(el.id)}"]`) : null)
+        if (label && label.getBoundingClientRect().height >= TAP_MIN) continue
+        small.push({
           sel: el.tagName.toLowerCase() + (typeof el.className === 'string' && el.className
             ? '.' + el.className.trim().split(/\s+/)[0] : ''),
           h: Math.round(r.height), text: (el.textContent || '').trim().slice(0, 22),
@@ -103,13 +133,13 @@ for (const vp of VIEWPORTS) {
     })
 
     const pinned = report.layoutWidth > vp.width + 1
-    const bad = report.overflow > 1 || pinned
+    const bad = report.overflow > 1 || pinned || report.smallCount > 0
     if (bad) failures++
-    const tag = pinned ? 'PINNED  ' : bad ? 'OVERFLOW' : 'ok      '
+    const tag = pinned ? 'PINNED  ' : report.overflow > 1 ? 'OVERFLOW' : bad ? 'TAPS    ' : 'ok      '
     const masked = report.overflow > 1 && report.guarded <= 1 ? ' (hidden by the overflow-x guard)' : ''
-    console.log(`${tag} ${vp.name.padEnd(10)} ${route.padEnd(38)} +${report.overflow}px${masked}  taps<40px:${report.smallCount}  tiny-text:${report.tinyText}`)
-    for (const o of report.offenders) console.log(`           └─ ${o.sel} (w=${o.w}, right=${o.right})`)
-    if (bad) for (const s of report.small.slice(0, 3)) console.log(`           · tap ${s.sel} h=${s.h} "${s.text}"`)
+    console.log(`${tag} ${vp.name.padEnd(10)} ${route.padEnd(38)} +${report.overflow}px${masked}  taps<44px:${report.smallCount}  tiny-text:${report.tinyText}`)
+    if (bad) for (const o of report.offenders) console.log(`           └─ ${o.sel} (w=${o.w}, right=${o.right})`)
+    for (const s of report.small.slice(0, 4)) console.log(`           · tap ${s.sel} h=${s.h} "${s.text}"`)
 
     if (SHOTS && vp.name === 'iphone-13') {
       await page.screenshot({ path: `${OUT}${route.replace(/\W+/g, '_') || 'home'}.png`, fullPage: true })
@@ -122,7 +152,7 @@ for (const vp of VIEWPORTS) {
 await browser.close()
 await server.close()
 console.log(failures
-  ? `\n${failures} route/viewport combinations overflow horizontally.`
+  ? `\n${failures} route/viewport combinations fail (horizontal overflow or sub-44px tap targets).`
   : `\nNo horizontal overflow across ${ROUTES.length} routes x ${VIEWPORTS.length} viewports.`)
 // Exit non-zero on failure. Previously this always exited 0, so the audit could
 // report a broken layout and still pass anything that checked its status.

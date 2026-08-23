@@ -1233,6 +1233,53 @@ a { color: var(--ink); text-underline-offset: 2px; }
     font-size: 10px;
   }
 
+  /* Controls that sit inside prose or a header rather than in a button row.
+     These were missed by enumerating button classes: a `.text-link` is a button
+     that looks like a sentence, so it never matched. Padding does the work —
+     the type size and the editorial look are unchanged. */
+  .text-link,
+  .demo__top button,
+  .demo__top a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* The demo chapter markers are 3px hairlines, and they should stay 3px — the
+     thin rule is the design. Grow the hit area, not the mark: the button is 44px
+     tall and `background-clip: content-box` paints only the 3px content box, so
+     the padding is a transparent target around an unchanged hairline.
+     Both demo pages carry this: /demo is .demo__*, /demo1min is .demo-minute__*. */
+  .demo__steps button,
+  .demo__steps button.is-active,
+  .demo-minute__controls > div button,
+  .demo-minute__controls > div button.is-active {
+    height: 44px;
+    padding: 20.5px 0;
+    /* The .is-active rules set the `background` shorthand, which resets
+       background-clip to border-box — so the active marker has to be named here
+       too, or it paints the full 44px and the hairline becomes a slab. */
+    background-clip: content-box;
+  }
+  .demo__steps { gap: 4px; }
+
+  .demo-minute__top button,
+  .demo-minute__top a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* Home CTAs and every evidence citation — both are primary navigation on a
+     phone and both were sitting at 15-16px. */
+  .interface-proof__links button { min-height: 44px; display: inline-flex; align-items: center; }
+  .cite { min-height: 44px; display: inline-flex; align-items: center; }
+
+  /* The checkbox itself is small, but its wrapping label is the real target and
+     is already 46px. Enlarge the box anyway so the thing you aim at matches the
+     thing that responds. */
+  .horizon-switch input[type="checkbox"] { width: 26px; height: 26px; }
+
   /* Graph: hold a legible scale and pan, rather than shrink to illegibility.
      886x424 is the authored viewBox; 640 keeps labels above ~9px. */
   .column-left > .panel:first-child { height: auto; }
@@ -1253,12 +1300,12 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .horizon-inspector textarea,
   .horizon-inspector select { font-size: 16px; padding: 11px; }
   .horizon-switch { min-height: 46px; }
-  .horizon-switch input[type='checkbox'] { width: 22px; height: 22px; }
+  .horizon-switch input[type='checkbox'] { width: 26px; height: 26px; }
 
   /* The workflow canvas pans; say so, and let the palette wrap instead of
      hiding registers off the right edge. */
   .horizon-palette { height: auto; flex-wrap: wrap; gap: 6px; padding: 9px 12px; }
-  .horizon-palette button { min-height: 38px; font-size: 10px; padding: 8px 10px; }
+  .horizon-palette button { min-height: 44px; font-size: 10px; padding: 8px 10px; }
   .horizon-canvas__bar { height: auto; min-height: 42px; padding: 8px 12px; gap: 10px; line-height: 1.35; }
   .horizon-canvas__hint::after { content: ' · drag the board to pan'; }
   .horizon-runbar { grid-template-columns: 1fr 1fr; }
@@ -1313,7 +1360,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .facts__subject { width: auto; font-size: var(--t-lede); }
   .facts__dates { width: auto; white-space: normal; }
   .facts__cite { width: auto; text-align: left; }
-  .facts__cite .cite { min-height: 40px; display: inline-flex; align-items: center; }
+  .facts__cite .cite { min-height: 44px; display: inline-flex; align-items: center; }
 
   /* The timeline is the one strip that genuinely reads better scrolled.
      max-content keeps adjacent stop labels from colliding at any stop count. */
