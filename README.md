@@ -46,7 +46,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 
 --- 
 
-> ⚠️ **AI-SLOP / HACKATHON README DRAFT**
+> **HACKATHON README DRAFT**
 >
 > This README was produced rapidly with AI assistance during a hackathon. It intentionally mixes the working prototype with the intended architecture and has not yet received full human editing or methodological review. See **What actually works today** for the honest boundary between software and specification.
 
