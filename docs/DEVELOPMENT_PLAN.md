@@ -51,6 +51,19 @@ workflow logs are not a substitute.
 - **Object storage:** archived source artifacts where licensing and policy permit.
 - **Stash:** optional learning/retrieval across rollouts; not the sole ledger.
 
+### Micro partner adapters implemented
+
+The hackathon slice in `integrations/` now emits three portable contracts:
+
+- a deterministic Temporal workflow payload with an idempotency key, plus an optional
+  durable-timer workflow in `temporal_workflow.py`;
+- a Stash-ready memory record that explicitly marks retrieved memory as non-evidence;
+- a Coframe variant contract that locks facts, sources, confidence, disagreement and
+  snapshot hashes while allowing explanatory copy and ordering to vary.
+
+Run `python3 -m integrations.micro --out /tmp/sovereign-lens-integrations`.
+These are small integration seams, not claims of production deployment.
+
 ## Build sequence
 
 ### Next executable milestone — close the second loop

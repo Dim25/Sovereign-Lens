@@ -35,7 +35,7 @@ Present at 1440×900. The layout is fixed to that ratio: panels scroll inside
 themselves, the page never scrolls.
 
 ```bash
-npm test             # 35 unit and component tests
+npm test             # 39 unit and component tests
 npm run build        # typecheck + production bundle
 npm run shot         # re-capture docs/*.png at 1440×900
 ```

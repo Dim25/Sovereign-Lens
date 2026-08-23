@@ -17,6 +17,7 @@ import { ExecutiveBrief } from './pages/ExecutiveBrief'
 import { ProductNav } from './components/ProductNav'
 import { CasesPage } from './pages/CasesPage'
 import { BuildPartnersPage } from './pages/BuildPartnersPage'
+import { emitIntegrationEvent } from './integrations/events'
 
 export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
   const [path, setPath] = useState(window.location.pathname)
@@ -46,8 +47,10 @@ function Dossier({ source, navigate, activePath }: { source: DataSource; navigat
   const view = useCase(source)
   const [evidence, setEvidence] = useState<EvidenceSelection | null>(null)
 
-  const cite = (claim: string, label: string, sourceIds: SourceId[]) =>
+  const cite = (claim: string, label: string, sourceIds: SourceId[]) => {
+    emitIntegrationEvent('sl_evidence_opened', { case_id: view.meta.case_id, source_count: String(sourceIds.length) })
     setEvidence({ claim, label, sourceIds })
+  }
 
   const atT1 = view.asOf >= view.meta.t1
   const beforeT0 = view.asOf < view.meta.t0

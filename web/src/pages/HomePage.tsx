@@ -1,5 +1,6 @@
 import { ProductNav } from '../components/ProductNav'
 import type { DataSource } from '../types'
+import { emitIntegrationEvent } from '../integrations/events'
 
 export function HomePage({ source, navigate }: { source: DataSource; navigate: (path: string) => void }) {
   const meta = source.meta()
@@ -110,6 +111,34 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
             <strong>The horizon already exists. We can make it programmable now.</strong>
             <span>Retain the belief. Audit the handoff. Test it against reality. Govern what the next agent inherits.</span>
           </blockquote>
+        </section>
+
+        <section className="home-partners">
+          <div className="section-index">05 · Built for the long horizon</div>
+          <div className="home-partners__intro">
+            <h2>Three small integrations.<br />One accountable loop.</h2>
+            <p>This prototype keeps evidence sovereign while adding durable execution, shared agent memory and adaptive explanation. Each slice is optional, inspectable and replaceable.</p>
+          </div>
+          <div className="home-partners__grid">
+            {[
+              { slug: 'temporal', name: 'Temporal', image: '/media/interface/temporal-dossier.png', role: 'Durable execution', text: 'Wake the reassessment workflow at a prediction horizon, retry safely and resume after failure.', ref: 'docs.temporal.io' },
+              { slug: 'stash', name: 'Stash', image: '/media/interface/evidence-provenance.png', role: 'Shared memory', text: 'Retrieve prior research, corrections and unresolved questions across agents without treating memory as evidence.', ref: 'joinstash.ai/docs' },
+              { slug: 'coframe', name: 'Coframe', image: '/media/interface/executive-brief.png', role: 'Adaptive explanation', text: 'Test executive and research-reader presentations while locking facts, confidence and provenance.', ref: 'docs.coframe.com' },
+            ].map((partner, index) => (
+              <article className="home-partner" key={partner.slug}>
+                <button onClick={() => { emitIntegrationEvent('sl_horizon_viewed', { integration: partner.slug }); navigate(`/build/${partner.slug}`) }}>
+                  <div className="home-partner__image"><img src={partner.image} alt={`${partner.name} integration illustrated with the Sovereign Lens interface`} loading="lazy" /></div>
+                  <div className="home-partner__meta"><span>0{index + 1} · {partner.role}</span><span>{partner.ref}</span></div>
+                  <h3>{partner.name} × Sovereign Lens</h3>
+                  <p>{partner.text}</p>
+                  <strong>Implementation + boundary →</strong>
+                </button>
+              </article>
+            ))}
+          </div>
+          <div className="home-partners__flow" aria-label="Partner integration flow">
+            <span>Temporal schedules</span><i>→</i><span>Stash recalls</span><i>→</i><span>Sovereign Lens verifies</span><i>→</i><span>Coframe explains</span>
+          </div>
         </section>
       </main>
       <footer className="public-footer"><span>Independent intelligence for AI geopolitics</span><span>Apache 2.0 · sovereignlens.ai</span></footer>

@@ -102,7 +102,7 @@ Verify the ticks yourself:
 
 ```bash
 python3 -m unittest discover -s tests    # projection, ledger, trajectories and eight registers
-cd web && npm install && npm test        # 35 tests, including cross-language digest conformance
+cd web && npm install && npm test        # 39 tests, including cross-language digest conformance
 ```
 
 Provider credentials are not required for the offline demo. To prepare the live
@@ -669,6 +669,24 @@ This list describes the intended prototype architecture. The actual repository d
 
 ## Local development
 
+### Micro partner integrations
+
+The optional `integrations/` slice demonstrates the event-partner architecture without
+putting a hosted service in the analytical critical path:
+
+```bash
+python3 -m integrations.micro --out /tmp/sovereign-lens-integrations
+```
+
+It emits a Temporal-ready reassessment task, a Stash-ready research-memory record, and a
+Coframe presentation-safety contract. The optional Temporal workflow is in
+`integrations/temporal_workflow.py`; the web interface emits the corresponding safe UI
+events. See the live [build integration notes](https://sovereignlens.ai/build).
+
+Official references: [Temporal documentation](https://docs.temporal.io/),
+[Stash documentation](https://www.joinstash.ai/docs), and
+[Coframe documentation](https://docs.coframe.com/).
+
 ### Three-minute offline demo
 
 The initial demo exercises the long-horizon memory loop with Python and SQLite,
@@ -702,7 +720,7 @@ The `web/` dossier renders the same loop as one screen, built for a projector at
 cd web
 npm install
 npm run dev      # http://localhost:5173
-npm test         # 34 unit and component tests
+npm test         # 39 unit and component tests
 ```
 
 It reads a frozen local fixture through a `DataSource` seam, so it can be

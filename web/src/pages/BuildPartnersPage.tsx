@@ -20,7 +20,7 @@ const PARTNERS: Partner[] = [
     slug: 'temporal',
     name: 'Temporal',
     role: 'Durable execution · scheduled reassessment',
-    status: 'Proposed adapter · not in today’s critical path',
+    status: 'Micro adapter implemented · optional runtime',
     thesis: 'Make the observation loop survive days, months and infrastructure failures without making the workflow engine the analytical source of truth.',
     useNow: [
       'Schedule evidence refreshes at activation dates and forecast horizons.',
@@ -42,7 +42,7 @@ const PARTNERS: Partner[] = [
     slug: 'stash',
     name: 'Stash',
     role: 'Shared agent memory · cross-rollout learning',
-    status: 'Candidate integration · ledger remains canonical',
+    status: 'Portable memory export implemented · ledger remains canonical',
     thesis: 'Let research agents retrieve prior investigations, analyst corrections and unresolved questions instead of re-deriving them in every rollout.',
     useNow: [
       'Capture research sessions, prompts, tool calls and resulting memos.',
@@ -64,7 +64,7 @@ const PARTNERS: Partner[] = [
     slug: 'coframe',
     name: 'Coframe',
     role: 'Adaptive explanation · audience-specific interface',
-    status: 'Proposed presentation experiment',
+    status: 'Safe event contract implemented · analytical fields locked',
     thesis: 'Test how the same auditable analysis can become legible to an executive, researcher or policymaker without changing the underlying conclusion.',
     useNow: [
       'Create variants of the case entry point and explanatory copy.',
@@ -147,6 +147,7 @@ function PartnerDetail({ partner, navigate }: { partner: Partner; navigate: Navi
           <h2>Smallest credible integration</h2>
           <ol>{partner.next.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ol>
           <a className="partner-docs" href={partner.url} target="_blank" rel="noreferrer">Official documentation ↗</a>
+          <a className="partner-docs" href="https://github.com/Dim25/Sovereign-Lens/tree/main/integrations" target="_blank" rel="noreferrer">Micro implementation ↗</a>
         </section>
       </main>
     </div>
