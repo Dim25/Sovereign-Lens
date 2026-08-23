@@ -22,6 +22,7 @@ import { OptionSpaceCase } from './pages/OptionSpaceCase'
 import { BuildDayPage } from './pages/BuildDayPage'
 import { DemoPage } from './pages/DemoPage'
 import { DemoOneMinutePage } from './pages/DemoOneMinutePage'
+import { DemoTwoMinutePage } from './pages/DemoTwoMinutePage'
 import { emitIntegrationEvent } from './integrations/events'
 
 export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
@@ -46,6 +47,7 @@ export function App({ source, caseSources }: { source: DataSource; caseSources?:
   if (path === '/build-day') return <BuildDayPage navigate={navigate} />
   if (path === '/demo') return <DemoPage navigate={navigate} />
   if (path === '/demo1min') return <DemoOneMinutePage navigate={navigate} />
+  if (path === '/demo2min') return <DemoTwoMinutePage navigate={navigate} />
   if (path === '/horizon') return <HorizonStudio navigate={navigate} />
   if (path === '/cases/multi-alignment-option-space') return <OptionSpaceCase navigate={navigate} />
   if (path.startsWith('/build/')) return <BuildPartnersPage navigate={navigate} slug={path.slice('/build/'.length).replace(/\/$/, '')} />

@@ -1,0 +1,60 @@
+import { describe, expect, it } from 'vitest'
+import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { App } from '../App'
+import { createFixtureSource } from '../data/adapter'
+import fixtureJson from '../data/uae-us-ai-infrastructure.fixture.json'
+import type { CaseFixture } from '../types'
+
+const fixture = fixtureJson as unknown as CaseFixture
+
+const renderTour = () => {
+  window.history.replaceState({}, '', '/demo2min')
+  const user = userEvent.setup()
+  render(<App source={createFixtureSource(fixture)} />)
+  return user
+}
+
+// The choreography itself needs a real browser (see scripts/mobile-audit.mjs and
+// the tour checks); these cover the parts that can regress silently in a unit
+// run: the route resolving, the chapter list staying navigable, and the frame
+// being pointed at a real in-app route rather than an external recording.
+describe('two-minute tour', () => {
+  it('resolves the /demo2min route and states that it runs the live build', () => {
+    renderTour()
+    expect(screen.getByRole('main', { name: /two-minute product tour/i })).toBeInTheDocument()
+    expect(screen.getByText(/live build, not a recording/i)).toBeInTheDocument()
+  })
+
+  it('opens on the thesis chapter', () => {
+    renderTour()
+    expect(screen.getByRole('heading', { name: /sovereignty is not access/i })).toBeInTheDocument()
+    expect(screen.getByText('00 · The thesis')).toBeInTheDocument()
+  })
+
+  it('drives the real application in a same-origin frame, not an embedded video', () => {
+    renderTour()
+    const frame = screen.getByTitle('Sovereign Lens application') as HTMLIFrameElement
+    expect(frame.tagName).toBe('IFRAME')
+    // A relative src is what allows the tour to reach into the app and perform
+    // genuine interactions; an absolute or cross-origin src would break that.
+    expect(frame.getAttribute('src')).toMatch(/^\//)
+  })
+
+  it('lets a viewer jump chapters instead of waiting out the run', async () => {
+    const user = renderTour()
+    const chapters = screen.getByRole('list', { name: /tour chapters/i })
+    const buttons = within(chapters).getAllByRole('button')
+    expect(buttons.length).toBeGreaterThanOrEqual(10)
+
+    await user.click(buttons[9])
+    expect(screen.getByRole('heading', { name: /horizon studio/i })).toBeInTheDocument()
+  })
+
+  it('exposes a pause control, so the tour is not an unstoppable autoplay', async () => {
+    const user = renderTour()
+    const pause = screen.getByRole('button', { name: /^pause$/i })
+    await user.click(pause)
+    expect(screen.getByRole('button', { name: /^play$/i })).toBeInTheDocument()
+  })
+})
