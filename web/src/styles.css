@@ -831,10 +831,14 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .horizon-head__status { grid-column: 2; display: flex; justify-content: flex-end; align-items: center; gap: 8px; font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .09em; }
 .horizon-head__status i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
 .horizon-head__status i.is-running { background: #16a05d; box-shadow: 0 0 0 4px rgba(22,160,93,.12); }
-.horizon-workbench { display: grid; grid-template-columns: minmax(620px, 1fr) 310px; grid-template-rows: 560px 330px; border-bottom: 1px solid var(--ink); }
+.horizon-workbench { display: grid; grid-template-columns: minmax(620px, 1fr) 330px; grid-template-rows: 650px 330px; border-bottom: 1px solid var(--ink); }
 .horizon-canvas { min-width: 0; border-right: 1px solid var(--ink); background: #e9e7e1; overflow: auto; }
 .horizon-canvas__bar, .horizon-inspector__title, .horizon-compile > div { height: 42px; display: flex; justify-content: space-between; align-items: center; padding: 0 14px; border-bottom: 1px solid var(--ink); font-size: var(--t-micro); letter-spacing: .09em; text-transform: uppercase; }
-.horizon-grid { position: relative; width: 880px; height: 518px; background-image: radial-gradient(#aaa 0.75px, transparent .75px); background-size: 18px 18px; overflow: hidden; }
+.horizon-palette { height: 46px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid var(--ink); overflow-x: auto; }
+.horizon-palette > span { margin-right: 8px; color: var(--muted); font-size: var(--t-micro); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.horizon-palette button { flex: 0 0 auto; padding: 6px 8px; border: 1px solid var(--rule); background: var(--panel); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; }
+.horizon-palette button:hover { border-color: var(--accent); color: var(--accent); }
+.horizon-grid { position: relative; width: 1060px; height: 560px; background-image: radial-gradient(#aaa 0.75px, transparent .75px); background-size: 18px 18px; overflow: hidden; }
 .horizon-edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .horizon-edges path { fill: none; stroke: var(--ink); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
 .horizon-edges marker path { fill: var(--ink); }
@@ -842,6 +846,8 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .horizon-node:active { cursor: grabbing; }
 .horizon-node.is-selected { outline: 3px solid var(--accent); outline-offset: 2px; z-index: 2; }
 .horizon-node.is-disabled { opacity: .38; }
+.horizon-node.is-executing { outline: 4px solid var(--accent); outline-offset: 3px; z-index: 3; background: var(--accent-wash); }
+.horizon-node.is-complete::after { content: 'COMMITTED'; position: absolute; right: 8px; bottom: 8px; color: #237147; font-size: 8px; font-weight: 800; letter-spacing: .1em; }
 .horizon-node__top { display: flex; justify-content: space-between; gap: 8px; color: var(--accent); font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
 .horizon-node__top em { color: var(--muted); font-style: normal; }
 .horizon-node > strong { margin-top: 22px; font-size: 19px; letter-spacing: -.025em; }
@@ -850,15 +856,17 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .horizon-node__port--in { left: -6px; }
 .horizon-node__port--out { right: -6px; background: var(--accent); border-color: var(--accent); }
 .horizon-canvas__hint { position: absolute; bottom: 12px; left: 14px; color: var(--muted); font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .09em; }
-.horizon-inspector { background: var(--panel); }
+.horizon-inspector { background: var(--panel); overflow-y: auto; }
 .horizon-inspector__title b, .horizon-compile > div b { color: var(--accent); }
 .horizon-inspector label { display: block; padding: 13px 14px 0; color: var(--muted); font-size: var(--t-micro); letter-spacing: .08em; text-transform: uppercase; }
-.horizon-inspector input:not([type='checkbox']), .horizon-inspector textarea { display: block; width: 100%; margin-top: 6px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); padding: 9px; font: inherit; font-size: var(--t-small); text-transform: none; letter-spacing: 0; resize: none; }
+.horizon-inspector input:not([type='checkbox']), .horizon-inspector textarea, .horizon-inspector select { display: block; width: 100%; margin-top: 6px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); padding: 9px; font: inherit; font-size: var(--t-small); text-transform: none; letter-spacing: 0; resize: none; border-radius: 0; }
+.horizon-object-fields { padding-bottom: 10px; border-bottom: 1px solid var(--ink); background: #e9e7e1; }
 .horizon-switch { display: flex !important; justify-content: space-between; align-items: center; padding-bottom: 13px !important; border-bottom: 1px solid var(--rule); }
 .horizon-switch input { accent-color: var(--accent); }
 .horizon-guardrail { margin: 14px; padding: 12px; border-left: 3px solid var(--accent); background: #e9e7e1; }
 .horizon-guardrail b { font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .08em; }
 .horizon-guardrail p { margin: 8px 0 0; font-size: var(--t-small); line-height: 1.4; }
+.horizon-delete { margin: 0 14px 16px; padding: 9px; width: calc(100% - 28px); border: 1px solid var(--accent); color: var(--accent); text-align: center; font-size: var(--t-micro); font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .horizon-compile { grid-column: 1 / -1; min-width: 0; background: var(--ink); color: var(--panel); }
 .horizon-compile > div { border-color: #444; }
 .horizon-compile pre { height: 288px; overflow: auto; margin: 0; padding: 16px; color: #d5d5d5; font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -872,7 +880,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
 @media (max-width: 900px) {
   .horizon-head, .horizon-workbench { grid-template-columns: 1fr; }
   .horizon-head__status { grid-column: 1; justify-content: flex-start; }
-  .horizon-workbench { grid-template-rows: 560px auto 300px; }
+  .horizon-workbench { grid-template-rows: 650px auto 300px; }
   .horizon-canvas { border-right: 0; border-bottom: 1px solid var(--ink); }
   .horizon-inspector { padding-bottom: 18px; }
   .horizon-compile { grid-column: 1; }

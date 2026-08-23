@@ -79,6 +79,21 @@ describe('build-partner routes', () => {
   })
 })
 
+describe('programmable Horizon Studio', () => {
+  it('edits and compiles a sovereign Horizon object', async () => {
+    window.history.replaceState({}, '', '/horizon')
+    const user = userEvent.setup()
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /program what becomes possible/i })).toBeInTheDocument()
+    expect(screen.getByText(/"object_type": "programmable_horizon"/i)).toBeInTheDocument()
+    expect(screen.getByText(/"register": "capacity"/i)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /\+ permission/i }))
+    expect(screen.getByDisplayValue(/new permission write/i)).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /simulate horizon/i }))
+    expect(screen.getByText(/simulation running/i)).toBeInTheDocument()
+  })
+})
+
 const advance = () => screen.getByRole('button', { name: /advance 13 months/i })
 
 describe('presentation shell', () => {

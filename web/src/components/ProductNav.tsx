@@ -18,6 +18,7 @@ export function ProductNav({ active, navigate }: { active: string; navigate: (pa
         {item('/', 'Idea')}
         {item('/brief', 'Executive brief')}
         {item('/cases', 'Cases')}
+        {item('/horizon', 'Horizon')}
         {item('/build', 'Build')}
         <a href="https://github.com/Dim25/Sovereign-Lens">GitHub ↗</a>
       </div>

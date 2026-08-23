@@ -9,6 +9,7 @@ A brutal-white Swiss product and dossier for the long-horizon demo in
 - `/cases/uae-us-ai-infrastructure` — full analyst dossier
 - `/cases/china-fiji-capability` — infrastructure, talent and local optionality
 - `/cases/africa-ai-governance-capacity` — continental strategy and evaluation capacity
+- `/horizon` — visual editor for a versioned programmable-Horizon object
 - `/build` — integration architecture index
 - `/build/temporal` — durable scheduling and reassessment workflow
 - `/build/stash` — cross-rollout research memory

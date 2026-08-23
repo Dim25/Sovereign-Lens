@@ -17,6 +17,7 @@ import { ExecutiveBrief } from './pages/ExecutiveBrief'
 import { ProductNav } from './components/ProductNav'
 import { CasesPage } from './pages/CasesPage'
 import { BuildPartnersPage } from './pages/BuildPartnersPage'
+import { HorizonStudio } from './pages/HorizonStudio'
 import { emitIntegrationEvent } from './integrations/events'
 
 export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
@@ -38,6 +39,7 @@ export function App({ source, caseSources }: { source: DataSource; caseSources?:
   const sources = caseSources ?? { 'uae-us-ai-infrastructure': source }
   if (path === '/cases') return <CasesPage sources={sources} navigate={navigate} />
   if (path === '/build') return <BuildPartnersPage navigate={navigate} />
+  if (path === '/horizon') return <HorizonStudio navigate={navigate} />
   if (path.startsWith('/build/')) return <BuildPartnersPage navigate={navigate} slug={path.slice('/build/'.length).replace(/\/$/, '')} />
   const slug = path.startsWith('/cases/') ? path.slice('/cases/'.length).replace(/\/$/, '') : ''
   return <Dossier source={sources[slug] ?? source} navigate={navigate} activePath={path} />
