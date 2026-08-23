@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "case_id": "china_fiji_capability",
+    "title": "China–Fiji capability formation",
+    "question": "Does cooperation build locally retained capability, deepen dependency, or do both?",
+    "t0": "2023-11-17",
+    "t1": "2024-08-20",
+    "disclosure": [
+      "This record describes documented commitments, not inferred political allegiance.",
+      "Most evidence is published by a participant government and does not independently verify implementation.",
+      "Training, infrastructure and access are separated from Fiji's ability to operate, audit and replace them locally."
+    ]
+  },
+  "timeline": [
+    { "as_of": "2023-03-23", "label": "Knowledge capacity", "note": "A China–Fiji Juncao demonstration centre is presented as a knowledge-sharing and digital-innovation project." },
+    { "as_of": "2023-11-17", "label": "T0 · Commitment", "note": "Leaders reaffirm infrastructure, investment and Belt and Road cooperation." },
+    { "as_of": "2024-08-20", "label": "T1 · Expanded scope", "note": "The joint statement adds e-commerce, education, training, roads and institutional exchange." }
+  ],
+  "sources": [
+    { "id": "src_fiji_juncao_2023", "title": "China-aided Juncao technology demonstration center launched in Fiji", "publisher": "China International Development Cooperation Agency", "url": "https://en.cidca.gov.cn/2023-03/23/c_872240.htm", "published_at": "2023-03-23", "source_type": "government_statement", "perspective": "government_participant", "language": "en" },
+    { "id": "src_china_fiji_leaders_2023", "title": "Xi Jinping Meets with Fijian Prime Minister Sitiveni Rabuka", "publisher": "Ministry of Foreign Affairs of the People's Republic of China", "url": "https://www.fmprc.gov.cn/eng/gjhdq_665435/2797_665439/3392_664850/3394_664854/202311/t20231118_11182933.html", "published_at": "2023-11-18", "source_type": "government_statement", "perspective": "government_participant", "language": "en" },
+    { "id": "src_china_pacific_fact_sheet_2022", "title": "Fact Sheet: Cooperation Between China and Pacific Island Countries", "publisher": "Ministry of Foreign Affairs of the People's Republic of China", "url": "https://www.fmprc.gov.cn/eng/zy/gb/202405/t20240531_11367460.html", "published_at": "2022-05-24", "source_type": "government_fact_sheet", "perspective": "government_participant", "language": "en" },
+    { "id": "src_china_fiji_joint_2024", "title": "Joint Statement between the People's Republic of China and the Republic of Fiji", "publisher": "Ministry of Foreign Affairs of the People's Republic of China", "url": "https://www.fmprc.gov.cn/eng./xw/zyxw/202408/t20240823_11478777.html", "published_at": "2024-08-23", "source_type": "joint_government_statement", "perspective": "government_participant", "language": "en" }
+  ],
+  "nodes": [
+    { "id": "actor_china", "kind": "actor", "name": "China", "node_type": "state", "country_code": "CN", "valid_from": "2023-03-23", "recorded_at": "2023-03-23", "source_ids": ["src_fiji_juncao_2023"], "x": 24, "y": 38, "w": 176, "h": 44 },
+    { "id": "actor_fiji", "kind": "actor", "name": "Fiji", "node_type": "state", "country_code": "FJ", "valid_from": "2023-03-23", "recorded_at": "2023-03-23", "source_ids": ["src_fiji_juncao_2023"], "x": 548, "y": 38, "w": 176, "h": 44 },
+    { "id": "asset_framework", "kind": "asset", "name": "Bilateral cooperation framework", "node_type": "institutional_commitment", "country_code": null, "valid_from": "2023-11-17", "recorded_at": "2023-11-18", "source_ids": ["src_china_fiji_leaders_2023", "src_china_fiji_joint_2024"], "x": 266, "y": 36, "w": 218, "h": 48 },
+    { "id": "asset_infrastructure", "kind": "asset", "name": "Road & digital infrastructure", "node_type": "physical_capacity", "country_code": "FJ", "valid_from": "2023-11-17", "recorded_at": "2023-11-18", "source_ids": ["src_china_fiji_leaders_2023", "src_china_fiji_joint_2024"], "x": 506, "y": 164, "w": 218, "h": 48 },
+    { "id": "asset_training", "kind": "asset", "name": "Scholarships & training", "node_type": "talent_capacity", "country_code": "FJ", "valid_from": "2024-08-20", "recorded_at": "2024-08-23", "source_ids": ["src_china_pacific_fact_sheet_2022", "src_china_fiji_joint_2024"], "x": 506, "y": 286, "w": 218, "h": 48 },
+    { "id": "asset_juncao", "kind": "asset", "name": "Juncao demonstration centre", "node_type": "knowledge_infrastructure", "country_code": "FJ", "valid_from": "2023-03-23", "recorded_at": "2023-03-23", "source_ids": ["src_fiji_juncao_2023"], "x": 24, "y": 286, "w": 218, "h": 48 },
+    { "id": "asset_local_optionality", "kind": "asset", "name": "Local operating optionality", "node_type": "sovereign_capability", "country_code": "FJ", "valid_from": "2024-08-20", "recorded_at": "2024-08-23", "source_ids": ["src_china_fiji_joint_2024"], "x": 266, "y": 404, "w": 218, "h": 48 }
+  ],
+  "edges": [
+    { "id": "edge_china_framework", "source_node_id": "actor_china", "target_node_id": "asset_framework", "type": "commits_to", "status": "active", "valid_from": "2023-11-17", "valid_to": null, "recorded_at": "2023-11-18", "confidence": 0.96, "source_ids": ["src_china_fiji_leaders_2023"] },
+    { "id": "edge_fiji_framework", "source_node_id": "actor_fiji", "target_node_id": "asset_framework", "type": "commits_to", "status": "active", "valid_from": "2023-11-17", "valid_to": null, "recorded_at": "2023-11-18", "confidence": 0.96, "source_ids": ["src_china_fiji_leaders_2023"] },
+    { "id": "edge_framework_infra", "source_node_id": "asset_framework", "target_node_id": "asset_infrastructure", "type": "programs_capacity", "status": "announced", "valid_from": "2023-11-17", "valid_to": null, "recorded_at": "2023-11-18", "confidence": 0.88, "source_ids": ["src_china_fiji_leaders_2023", "src_china_fiji_joint_2024"] },
+    { "id": "edge_framework_training", "source_node_id": "asset_framework", "target_node_id": "asset_training", "type": "programs_priors", "status": "announced", "valid_from": "2024-08-20", "valid_to": null, "recorded_at": "2024-08-23", "confidence": 0.9, "source_ids": ["src_china_fiji_joint_2024"] },
+    { "id": "edge_china_juncao", "source_node_id": "actor_china", "target_node_id": "asset_juncao", "type": "provides", "status": "launched", "valid_from": "2023-03-23", "valid_to": null, "recorded_at": "2023-03-23", "confidence": 0.9, "source_ids": ["src_fiji_juncao_2023"] },
+    { "id": "edge_training_optionality", "source_node_id": "asset_training", "target_node_id": "asset_local_optionality", "type": "may_increase", "status": "unverified", "valid_from": "2024-08-20", "valid_to": null, "recorded_at": "2024-08-23", "confidence": 0.45, "source_ids": ["src_china_fiji_joint_2024"] }
+  ],
+  "facts": [
+    { "id": "fact_juncao_launched", "subject": "Juncao demonstration centre", "subject_node_id": "asset_juncao", "predicate": "reported_status", "object": "launched as a knowledge-sharing project", "status": "reported", "valid_from": "2023-03-23", "valid_to": null, "recorded_at": "2023-03-23", "superseded_at": null, "source_id": "src_fiji_juncao_2023" },
+    { "id": "fact_bri_commitment", "subject": "China–Fiji cooperation", "subject_node_id": "asset_framework", "predicate": "includes", "object": "infrastructure, investment and Belt and Road coordination", "status": "announced", "valid_from": "2023-11-17", "valid_to": null, "recorded_at": "2023-11-18", "superseded_at": null, "source_id": "src_china_fiji_leaders_2023" },
+    { "id": "fact_scope_expanded", "subject": "China–Fiji cooperation", "subject_node_id": "asset_framework", "predicate": "expanded_to", "object": "e-commerce, roads, education, scholarships and training", "status": "announced", "valid_from": "2024-08-20", "valid_to": null, "recorded_at": "2024-08-23", "superseded_at": null, "source_id": "src_china_fiji_joint_2024" },
+    { "id": "fact_local_control_unknown", "subject": "Local operating optionality", "subject_node_id": "asset_local_optionality", "predicate": "evidence_status", "object": "ownership, replacement and independent evaluation rights not documented", "status": "missing_evidence", "valid_from": "2024-08-20", "valid_to": null, "recorded_at": "2024-08-23", "superseded_at": null, "source_id": "src_china_fiji_joint_2024" }
+  ],
+  "assessments": [
+    { "id": "assess_cf_cap_t0", "perspective": "capability", "as_of": "2023-11-17", "assessment": "The framework plausibly expands physical and knowledge capacity, but operating outcomes are not yet demonstrated.", "confidence": 0.62, "methodology_version": "v1", "drivers": ["infrastructure commitment", "investment", "demonstration centre"], "counterarguments": ["announcements may not become operational capability"], "missing_evidence": ["Fiji-side implementation records", "local staffing and budgets"], "source_ids": ["src_fiji_juncao_2023", "src_china_fiji_leaders_2023"] },
+    { "id": "assess_cf_dep_t0", "perspective": "dependency", "as_of": "2023-11-17", "assessment": "Provider concentration may increase, but the record does not establish lock-in.", "confidence": 0.54, "methodology_version": "v1", "drivers": ["single prominent external provider", "externally financed capacity"], "counterarguments": ["Fiji may retain other partners and procurement options"], "missing_evidence": ["contract terms", "alternative providers"], "source_ids": ["src_china_fiji_leaders_2023"] },
+    { "id": "assess_cf_audit_t0", "perspective": "evidence_auditor", "as_of": "2023-11-17", "assessment": "The public record supports commitments more strongly than implementation.", "confidence": 0.86, "methodology_version": "v1", "drivers": ["participant-government sourcing"], "counterarguments": [], "missing_evidence": ["procurement records", "independent outcome reporting"], "source_ids": ["src_fiji_juncao_2023", "src_china_fiji_leaders_2023"] },
+    { "id": "assess_cf_cap_t1", "perspective": "capability", "as_of": "2024-08-20", "assessment": "The expanded portfolio programs infrastructure, talent and institutional priors, increasing Fiji's potential capability surface.", "confidence": 0.71, "methodology_version": "v1", "drivers": ["training", "education facilities", "e-commerce", "road infrastructure"], "counterarguments": ["potential capacity is not locally retained capacity"], "missing_evidence": ["completion milestones", "local operators", "measured outcomes"], "source_ids": ["src_china_fiji_joint_2024", "src_china_pacific_fact_sheet_2022"] },
+    { "id": "assess_cf_dep_t1", "perspective": "dependency", "as_of": "2024-08-20", "assessment": "A wider cooperation stack can deepen path dependency if finance, expertise and maintenance remain externally controlled.", "confidence": 0.64, "methodology_version": "v1", "drivers": ["bundled infrastructure and training", "provider-shaped standards"], "counterarguments": ["knowledge transfer may improve Fiji's bargaining power"], "missing_evidence": ["maintenance rights", "technology transfer terms", "exit options"], "source_ids": ["src_china_fiji_joint_2024"] },
+    { "id": "assess_cf_audit_t1", "perspective": "evidence_auditor", "as_of": "2024-08-20", "assessment": "The strongest conclusion is an expanded commitment; durable sovereign capability remains unverified.", "confidence": 0.88, "methodology_version": "v1", "drivers": ["joint statement details", "absence of independent operating evidence"], "counterarguments": [], "missing_evidence": ["Fiji government delivery reports", "independent audits"], "source_ids": ["src_china_fiji_joint_2024"] }
+  ],
+  "disagreements": [
+    { "id": "axis_cf_retention", "as_of": "2024-08-20", "question": "Does the expanded cooperation create capability Fiji can retain independently?", "divergence": "material", "positions": [
+      { "perspective": "capability", "stance": "Potentially yes", "note": "Training and infrastructure enlarge the capability surface." },
+      { "perspective": "dependency", "stance": "Conditionally", "note": "Retention depends on ownership, maintenance and exit rights." },
+      { "perspective": "evidence_auditor", "stance": "Not yet shown", "note": "The sources document commitments rather than durable outcomes." }
+    ] },
+    { "id": "axis_cf_commitment", "as_of": "2024-08-20", "question": "Did the bilateral cooperation portfolio expand?", "divergence": "aligned", "positions": [
+      { "perspective": "capability", "stance": "Yes", "note": "More capacity domains entered the record." },
+      { "perspective": "dependency", "stance": "Yes", "note": "The relationship now spans more systems." },
+      { "perspective": "evidence_auditor", "stance": "Yes, as commitment", "note": "Implementation remains a separate claim." }
+    ] }
+  ],
+  "predictions": [
+    { "id": "pred_cf_local_operation", "claim": "By the end of 2026, a named Fiji institution will publish evidence of locally operated digital or evaluation capacity attributable to the cooperation framework.", "probability": 0.55, "horizon_date": "2026-12-31", "registered_at": "2024-08-20", "snapshot_hash": "cf-20240820", "verification_plan": "Check Fiji government, procurement and institutional records for named operators, budgets and operating outcomes.", "status": "open", "resolved_at": null, "observed_outcome": null, "outcome_value": null, "brier": null, "source_ids": ["src_china_fiji_joint_2024"] }
+  ],
+  "methodology_lessons": []
+}

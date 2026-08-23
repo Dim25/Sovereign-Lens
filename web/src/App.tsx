@@ -15,8 +15,9 @@ import type { DataSource, SourceId } from './types'
 import { HomePage } from './pages/HomePage'
 import { ExecutiveBrief } from './pages/ExecutiveBrief'
 import { ProductNav } from './components/ProductNav'
+import { CasesPage } from './pages/CasesPage'
 
-export function App({ source }: { source: DataSource }) {
+export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
   const [path, setPath] = useState(window.location.pathname)
 
   useEffect(() => {
@@ -32,10 +33,13 @@ export function App({ source }: { source: DataSource }) {
 
   if (path === '/') return <HomePage source={source} navigate={navigate} />
   if (path === '/brief') return <ExecutiveBrief source={source} navigate={navigate} />
-  return <Dossier source={source} navigate={navigate} />
+  const sources = caseSources ?? { 'uae-us-ai-infrastructure': source }
+  if (path === '/cases') return <CasesPage sources={sources} navigate={navigate} />
+  const slug = path.startsWith('/cases/') ? path.slice('/cases/'.length).replace(/\/$/, '') : ''
+  return <Dossier source={sources[slug] ?? source} navigate={navigate} activePath={path} />
 }
 
-function Dossier({ source, navigate }: { source: DataSource; navigate: (path: string) => void }) {
+function Dossier({ source, navigate, activePath }: { source: DataSource; navigate: (path: string) => void; activePath: string }) {
   const view = useCase(source)
   const [evidence, setEvidence] = useState<EvidenceSelection | null>(null)
 
@@ -44,15 +48,18 @@ function Dossier({ source, navigate }: { source: DataSource; navigate: (path: st
 
   const atT1 = view.asOf >= view.meta.t1
   const beforeT0 = view.asOf < view.meta.t0
+  const start = new Date(`${view.meta.t0}T00:00:00Z`)
+  const end = new Date(`${view.meta.t1}T00:00:00Z`)
+  const horizonMonths = Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30.44))
   const advanceLabel = beforeT0
     ? `Set T0 · ${view.meta.t0}`
     : atT1
       ? 'Rewind to T0'
-      : 'Advance 13 months ▸'
+      : `Advance ${horizonMonths} months ▸`
 
   return (
     <div className="shell">
-      <ProductNav active="/cases/uae-us-ai-infrastructure" navigate={navigate} />
+      <ProductNav active={activePath} navigate={navigate} />
       <Masthead
         meta={view.meta}
         snapshot={view.snapshot}

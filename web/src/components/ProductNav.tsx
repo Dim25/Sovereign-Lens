@@ -1,12 +1,15 @@
 export function ProductNav({ active, navigate }: { active: string; navigate: (path: string) => void }) {
-  const item = (path: string, label: string) => (
+  const item = (path: string, label: string) => {
+    const selected = active === path || (path === '/cases' && active.startsWith('/cases/'))
+    return (
     <button
-      className={active === path ? 'product-nav__item product-nav__item--active' : 'product-nav__item'}
+      className={selected ? 'product-nav__item product-nav__item--active' : 'product-nav__item'}
       onClick={() => navigate(path)}
     >
       {label}
     </button>
-  )
+    )
+  }
 
   return (
     <nav className="product-nav" aria-label="Product navigation">
@@ -14,7 +17,7 @@ export function ProductNav({ active, navigate }: { active: string; navigate: (pa
       <div className="product-nav__links">
         {item('/', 'Idea')}
         {item('/brief', 'Executive brief')}
-        {item('/cases/uae-us-ai-infrastructure', 'Full dossier')}
+        {item('/cases', 'Cases')}
         <a href="https://github.com/Dim25/Sovereign-Lens">GitHub ↗</a>
       </div>
     </nav>

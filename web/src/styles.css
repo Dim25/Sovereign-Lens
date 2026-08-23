@@ -714,3 +714,29 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .disclosure ul { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 18px; }
 .disclosure li { font-size: var(--t-micro); color: var(--muted); line-height: 1.42; padding-left: 9px; text-indent: -9px; list-style: none; }
 .disclosure li::before { content: '— '; }
+
+/* ----------------------------------------------------------- case index --- */
+
+.cases-page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.cases-head { padding: 72px 5vw 48px; border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 1.35fr 1fr; gap: 32px; }
+.cases-head .eyebrow { grid-column: 1 / -1; }
+.cases-head h1 { font-size: clamp(48px, 6.7vw, 104px); line-height: .88; letter-spacing: -.065em; margin: 0; font-weight: 650; }
+.cases-head p { align-self: end; max-width: 570px; font-size: clamp(16px, 1.45vw, 22px); line-height: 1.45; margin: 0; }
+.case-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--ink); }
+.case-card { text-align: left; padding: 22px 24px 28px; min-height: 470px; background: var(--panel); border-right: 1px solid var(--ink); display: flex; flex-direction: column; transition: background .15s ease, color .15s ease; }
+.case-card:last-child { border-right: 0; }
+.case-card:hover { background: var(--ink); color: var(--panel); }
+.case-card__top, .case-card__foot { display: flex; justify-content: space-between; gap: 16px; font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .1em; }
+.case-card__register { margin-top: 70px; color: var(--accent); font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+.case-card h2 { margin: 12px 0 16px; font-size: clamp(27px, 2.6vw, 42px); line-height: .98; letter-spacing: -.04em; }
+.case-card p { margin: 0 0 22px; font-size: var(--t-body); line-height: 1.45; color: var(--ink-soft); }
+.case-card:hover p { color: #c8c8c8; }
+.case-card__question { border-top: 1px solid currentColor; padding-top: 14px; font-size: var(--t-small); line-height: 1.4; }
+.case-card__foot { margin-top: auto; padding-top: 32px; }
+.cases-principle { padding: 24px 5vw 44px; max-width: 1100px; font-size: clamp(17px, 1.6vw, 24px); line-height: 1.35; }
+
+@media (max-width: 850px) {
+  .cases-head { grid-template-columns: 1fr; padding-top: 48px; }
+  .case-cards { grid-template-columns: 1fr; }
+  .case-card { border-right: 0; border-bottom: 1px solid var(--ink); min-height: 390px; }
+}

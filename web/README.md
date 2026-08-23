@@ -5,7 +5,10 @@ A brutal-white Swiss product and dossier for the long-horizon demo in
 
 - `/` — public concept and live-case introduction
 - `/brief` — executive situation brief
+- `/cases` — comparative case index
 - `/cases/uae-us-ai-infrastructure` — full analyst dossier
+- `/cases/china-fiji-capability` — infrastructure, talent and local optionality
+- `/cases/africa-ai-governance-capacity` — continental strategy and evaluation capacity
 
 The dossier remains one screen at 1440×900, built to be narrated in three minutes
 from a laptop projector.
@@ -83,9 +86,15 @@ implementations ever drift, that test fails.
 
 ## Fixture and provenance
 
-`src/data/uae-us-ai-infrastructure.fixture.json` — 11 sources, 12 nodes, 15
+The interface ships three source-linked fixtures. The original
+`src/data/uae-us-ai-infrastructure.fixture.json` contains 11 sources, 12 nodes, 15
 relationships, 11 facts, 6 assessments, 5 disagreement axes, 1 prediction,
 1 methodology lesson.
+
+The China–Fiji and African AI-governance dossiers deliberately distinguish
+announced cooperation from implementation. They also encode two guardrails:
+external funding is provenance rather than proof of control, and a broad
+continental category is not treated as a single geopolitical actor.
 
 Every source is a real, public, first-party or oversight document with a live
 URL, drawn from the case manifest in the private research workspace: UAE Embassy

@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "case_id": "africa_ai_governance_capacity",
+    "title": "African AI-governance capacity",
+    "question": "Are African institutions converting external support into locally governed evaluation capacity?",
+    "t0": "2024-07-19",
+    "t1": "2026-07-10",
+    "disclosure": [
+      "External funding is recorded as provenance; it is not treated as evidence of donor control.",
+      "Lawyers Hub reach and index statistics are organization-reported and require independent methodological review.",
+      "Africa is not modeled as one actor: this dossier follows continental institutions and a Pan-African policy network."
+    ]
+  },
+  "timeline": [
+    { "as_of": "2024-06-17", "label": "Ministerial adoption", "note": "African ministers adopt a Continental AI Strategy framework." },
+    { "as_of": "2024-07-19", "label": "T0 · AU endorsement", "note": "The AU Executive Council endorses the continental strategy." },
+    { "as_of": "2026-07-10", "label": "T1 · Evaluation layer", "note": "Lawyers Hub presents a fellow-produced governance index spanning 54 states." }
+  ],
+  "sources": [
+    { "id": "src_au_ministers_2024", "title": "African Ministers Adopt Landmark Continental Artificial Intelligence Strategy", "publisher": "African Union", "url": "https://au.int/en/pressreleases/20240617/african-ministers-adopt-landmark-continental-artificial-intelligence-strategy", "published_at": "2024-06-17", "source_type": "multilateral_statement", "perspective": "government_participant", "language": "en" },
+    { "id": "src_au_strategy_2024", "title": "Continental Artificial Intelligence Strategy", "publisher": "African Union", "url": "https://www.au.int/en/documents/20240809/continental-artificial-intelligence-strategy", "published_at": "2024-08-09", "source_type": "multilateral_strategy", "perspective": "government_participant", "language": "en" },
+    { "id": "src_lawyershub_lab", "title": "Africa AI Policy Lab", "publisher": "Lawyers Hub", "url": "https://www.lawyershub.org/AI-Policy-Lab", "published_at": "2024-01-01", "source_type": "organization_program", "perspective": "participant", "language": "en" },
+    { "id": "src_lawyershub_index_2026", "title": "Africa AI Governance Index 2026 Launch", "publisher": "Lawyers Hub", "url": "https://www.lawyershub.org/news/post/africa-ai-governance-index-2026-launch", "published_at": "2026-07-10", "source_type": "organization_report", "perspective": "participant", "language": "en" }
+  ],
+  "nodes": [
+    { "id": "actor_au", "kind": "actor", "name": "African Union", "node_type": "multilateral_institution", "country_code": null, "valid_from": "2024-06-17", "recorded_at": "2024-06-17", "source_ids": ["src_au_ministers_2024"], "x": 24, "y": 38, "w": 190, "h": 44 },
+    { "id": "actor_lawyershub", "kind": "actor", "name": "Lawyers Hub", "node_type": "pan_african_policy_network", "country_code": "KE", "valid_from": "2024-01-01", "recorded_at": "2024-01-01", "source_ids": ["src_lawyershub_lab"], "x": 24, "y": 246, "w": 190, "h": 44 },
+    { "id": "actor_mcgovern", "kind": "actor", "name": "Patrick J. McGovern Foundation", "node_type": "foundation", "country_code": "US", "valid_from": "2024-01-01", "recorded_at": "2024-01-01", "source_ids": ["src_lawyershub_lab"], "x": 24, "y": 374, "w": 218, "h": 44 },
+    { "id": "asset_au_strategy", "kind": "asset", "name": "Continental AI Strategy", "node_type": "governance_framework", "country_code": null, "valid_from": "2024-07-19", "recorded_at": "2024-08-09", "source_ids": ["src_au_strategy_2024"], "x": 286, "y": 38, "w": 218, "h": 48 },
+    { "id": "asset_policy_lab", "kind": "asset", "name": "Africa AI Policy Lab", "node_type": "evaluation_capacity", "country_code": "KE", "valid_from": "2024-01-01", "recorded_at": "2024-01-01", "source_ids": ["src_lawyershub_lab"], "x": 286, "y": 246, "w": 218, "h": 48 },
+    { "id": "asset_index", "kind": "asset", "name": "Africa AI Governance Index", "node_type": "evaluation_instrument", "country_code": null, "valid_from": "2026-07-10", "recorded_at": "2026-07-10", "source_ids": ["src_lawyershub_index_2026"], "x": 534, "y": 246, "w": 218, "h": 48 },
+    { "id": "asset_fellows", "kind": "asset", "name": "97-country-fellow network", "node_type": "talent_network", "country_code": null, "valid_from": "2026-07-10", "recorded_at": "2026-07-10", "source_ids": ["src_lawyershub_index_2026"], "x": 534, "y": 374, "w": 218, "h": 48 },
+    { "id": "asset_state_capacity", "kind": "asset", "name": "Locally governed evaluation", "node_type": "sovereign_capability", "country_code": null, "valid_from": "2026-07-10", "recorded_at": "2026-07-10", "source_ids": ["src_au_strategy_2024", "src_lawyershub_index_2026"], "x": 534, "y": 38, "w": 218, "h": 48 }
+  ],
+  "edges": [
+    { "id": "edge_au_strategy", "source_node_id": "actor_au", "target_node_id": "asset_au_strategy", "type": "adopts", "status": "endorsed", "valid_from": "2024-07-19", "valid_to": null, "recorded_at": "2024-08-09", "confidence": 0.98, "source_ids": ["src_au_strategy_2024"] },
+    { "id": "edge_strategy_capacity", "source_node_id": "asset_au_strategy", "target_node_id": "asset_state_capacity", "type": "programs_governance", "status": "strategic", "valid_from": "2024-07-19", "valid_to": null, "recorded_at": "2024-08-09", "confidence": 0.9, "source_ids": ["src_au_strategy_2024"] },
+    { "id": "edge_hub_lab", "source_node_id": "actor_lawyershub", "target_node_id": "asset_policy_lab", "type": "operates", "status": "active", "valid_from": "2024-01-01", "valid_to": null, "recorded_at": "2024-01-01", "confidence": 0.94, "source_ids": ["src_lawyershub_lab"] },
+    { "id": "edge_funder_lab", "source_node_id": "actor_mcgovern", "target_node_id": "asset_policy_lab", "type": "funds", "status": "disclosed", "valid_from": "2024-01-01", "valid_to": null, "recorded_at": "2024-01-01", "confidence": 0.94, "source_ids": ["src_lawyershub_lab"] },
+    { "id": "edge_hub_index", "source_node_id": "actor_lawyershub", "target_node_id": "asset_index", "type": "publishes", "status": "launched", "valid_from": "2026-07-10", "valid_to": null, "recorded_at": "2026-07-10", "confidence": 0.92, "source_ids": ["src_lawyershub_index_2026"] },
+    { "id": "edge_fellows_index", "source_node_id": "asset_fellows", "target_node_id": "asset_index", "type": "produces_observations", "status": "reported", "valid_from": "2026-07-10", "valid_to": null, "recorded_at": "2026-07-10", "confidence": 0.85, "source_ids": ["src_lawyershub_index_2026"] },
+    { "id": "edge_index_capacity", "source_node_id": "asset_index", "target_node_id": "asset_state_capacity", "type": "may_increase", "status": "unverified", "valid_from": "2026-07-10", "valid_to": null, "recorded_at": "2026-07-10", "confidence": 0.5, "source_ids": ["src_lawyershub_index_2026"] }
+  ],
+  "facts": [
+    { "id": "fact_au_strategy", "subject": "African Union", "subject_node_id": "actor_au", "predicate": "endorsed", "object": "a continental, Africa-centric AI strategy", "status": "endorsed", "valid_from": "2024-07-19", "valid_to": null, "recorded_at": "2024-08-09", "superseded_at": null, "source_id": "src_au_strategy_2024" },
+    { "id": "fact_lab_program", "subject": "Africa AI Policy Lab", "subject_node_id": "asset_policy_lab", "predicate": "focuses_on", "object": "capacity building, policy research and monitoring", "status": "organization_reported", "valid_from": "2024-01-01", "valid_to": null, "recorded_at": "2024-01-01", "superseded_at": null, "source_id": "src_lawyershub_lab" },
+    { "id": "fact_lab_funding", "subject": "Africa AI Policy Lab", "subject_node_id": "asset_policy_lab", "predicate": "funded_by", "object": "Patrick J. McGovern Foundation", "status": "disclosed", "valid_from": "2024-01-01", "valid_to": null, "recorded_at": "2024-01-01", "superseded_at": null, "source_id": "src_lawyershub_lab" },
+    { "id": "fact_index_scope", "subject": "Africa AI Governance Index", "subject_node_id": "asset_index", "predicate": "reported_scope", "object": "54 states, 97 fellows and 4,320 observations", "status": "organization_reported", "valid_from": "2026-07-10", "valid_to": null, "recorded_at": "2026-07-10", "superseded_at": null, "source_id": "src_lawyershub_index_2026" },
+    { "id": "fact_use_unknown", "subject": "Locally governed evaluation", "subject_node_id": "asset_state_capacity", "predicate": "evidence_status", "object": "government adoption, budget authority and enforcement effects not yet established", "status": "missing_evidence", "valid_from": "2026-07-10", "valid_to": null, "recorded_at": "2026-07-10", "superseded_at": null, "source_id": "src_lawyershub_index_2026" }
+  ],
+  "assessments": [
+    { "id": "assess_af_cap_t0", "perspective": "capability", "as_of": "2024-07-19", "assessment": "The AU strategy creates a shared governance prior and an institutional coordination surface.", "confidence": 0.76, "methodology_version": "v1", "drivers": ["continental framework", "ministerial process", "Africa-centric framing"], "counterarguments": ["strategy adoption is not implementation"], "missing_evidence": ["national budgets", "implementation authorities"], "source_ids": ["src_au_ministers_2024", "src_au_strategy_2024"] },
+    { "id": "assess_af_dep_t0", "perspective": "dependency", "as_of": "2024-07-19", "assessment": "Local agenda-setting is visible, while financing and technical dependencies remain only partly documented.", "confidence": 0.58, "methodology_version": "v1", "drivers": ["African institutional authorship", "external program funding"], "counterarguments": ["external funding does not establish external control"], "missing_evidence": ["funding mix", "governance and editorial rights"], "source_ids": ["src_au_strategy_2024", "src_lawyershub_lab"] },
+    { "id": "assess_af_audit_t0", "perspective": "evidence_auditor", "as_of": "2024-07-19", "assessment": "The record supports institutional intent more strongly than state-level execution.", "confidence": 0.88, "methodology_version": "v1", "drivers": ["official strategy", "program self-description"], "counterarguments": [], "missing_evidence": ["country implementation records"], "source_ids": ["src_au_strategy_2024", "src_lawyershub_lab"] },
+    { "id": "assess_af_cap_t1", "perspective": "capability", "as_of": "2026-07-10", "assessment": "A Pan-African fellow network and common evaluation instrument indicate emerging locally produced evaluation capacity.", "confidence": 0.74, "methodology_version": "v1", "drivers": ["54-state scope", "97 fellows", "common indicators"], "counterarguments": ["publication reach does not prove policy effect"], "missing_evidence": ["government uptake", "independent method replication"], "source_ids": ["src_lawyershub_index_2026"] },
+    { "id": "assess_af_dep_t1", "perspective": "dependency", "as_of": "2026-07-10", "assessment": "The capacity appears African-operated, but sustainability and agenda independence cannot be inferred from public funding disclosures alone.", "confidence": 0.61, "methodology_version": "v1", "drivers": ["local operator", "externally funded lab"], "counterarguments": ["funding provenance is not proof of influence"], "missing_evidence": ["multi-year funding composition", "editorial governance"], "source_ids": ["src_lawyershub_lab", "src_lawyershub_index_2026"] },
+    { "id": "assess_af_audit_t1", "perspective": "evidence_auditor", "as_of": "2026-07-10", "assessment": "The evaluation instrument is observable; its methodological validity and downstream state use remain open questions.", "confidence": 0.9, "methodology_version": "v1", "drivers": ["published scope", "self-reported methodology claims"], "counterarguments": [], "missing_evidence": ["dataset access", "external validation", "policy citations"], "source_ids": ["src_lawyershub_index_2026"] }
+  ],
+  "disagreements": [
+    { "id": "axis_af_sovereignty", "as_of": "2026-07-10", "question": "Does a locally produced index constitute sovereign evaluation capacity?", "divergence": "material", "positions": [
+      { "perspective": "capability", "stance": "Emerging capacity", "note": "Local networks can define and measure governance conditions." },
+      { "perspective": "dependency", "stance": "Institutionally conditional", "note": "Sustainability and agenda control require governance evidence." },
+      { "perspective": "evidence_auditor", "stance": "Instrument shown; impact open", "note": "Method validity and state use need verification." }
+    ] },
+    { "id": "axis_af_funding", "as_of": "2026-07-10", "question": "Does disclosed external funding prove external influence?", "divergence": "aligned", "positions": [
+      { "perspective": "capability", "stance": "No", "note": "Funding supports capacity but does not settle control." },
+      { "perspective": "dependency", "stance": "No", "note": "It motivates a governance question, not an attribution." },
+      { "perspective": "evidence_auditor", "stance": "No", "note": "Control requires separate evidence." }
+    ] }
+  ],
+  "predictions": [
+    { "id": "pred_af_policy_use", "claim": "By the end of 2027, at least three African governments will publicly cite the continental strategy or governance index in an AI authority, budget, audit or enforceable policy instrument.", "probability": 0.6, "horizon_date": "2027-12-31", "registered_at": "2026-07-10", "snapshot_hash": "af-20260710", "verification_plan": "Monitor national gazettes, budgets, AI-authority mandates and official policy documents for attributable use.", "status": "open", "resolved_at": null, "observed_outcome": null, "outcome_value": null, "brier": null, "source_ids": ["src_au_strategy_2024", "src_lawyershub_index_2026"] }
+  ],
+  "methodology_lessons": []
+}

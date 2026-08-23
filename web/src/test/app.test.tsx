@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event'
 import { App } from '../App'
 import { createFixtureSource } from '../data/adapter'
 import fixtureJson from '../data/uae-us-ai-infrastructure.fixture.json'
+import chinaFijiJson from '../data/china-fiji-capability.fixture.json'
+import africaJson from '../data/africa-ai-governance-capacity.fixture.json'
 import type { CaseFixture } from '../types'
 
 const fixture = fixtureJson as unknown as CaseFixture
@@ -23,6 +25,30 @@ describe('product navigation', () => {
     await user.click(screen.getByRole('button', { name: /open executive brief/i }))
     expect(screen.getByRole('heading', { name: /ai power shifts/i })).toBeInTheDocument()
     expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
+  })
+})
+
+describe('case routes', () => {
+  const sources = {
+    'uae-us-ai-infrastructure': createFixtureSource(fixture),
+    'china-fiji-capability': createFixtureSource(chinaFijiJson as unknown as CaseFixture),
+    'africa-ai-governance-capacity': createFixtureSource(africaJson as unknown as CaseFixture),
+  }
+
+  it('lists all cases and opens the China–Fiji dossier', async () => {
+    window.history.replaceState({}, '', '/cases')
+    const user = userEvent.setup()
+    render(<App source={sources['uae-us-ai-infrastructure']} caseSources={sources} />)
+    expect(screen.getByText('African AI-governance capacity')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: /china–fiji capability formation/i }))
+    expect(screen.getByText(/does cooperation build locally retained capability/i)).toBeInTheDocument()
+  })
+
+  it('loads the African governance dossier directly', () => {
+    window.history.replaceState({}, '', '/cases/africa-ai-governance-capacity')
+    render(<App source={sources['uae-us-ai-infrastructure']} caseSources={sources} />)
+    expect(screen.getByText(/are african institutions converting external support/i)).toBeInTheDocument()
+    expect(screen.getByText(/external funding is recorded as provenance/i)).toBeInTheDocument()
   })
 })
 
