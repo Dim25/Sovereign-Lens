@@ -7,7 +7,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 **Motto:** The Horizon already exists. Sovereign Lens makes its programming observable.
 
 > I approached Long Horizon Agents Build Day from a different direction. Most teams
-> are extending an agent's memory—giving it a longer past. My premise is that **the
+> are extending an agent's memory - giving it a longer past. My premise is that **the
 > Horizon already exists, and it is already being programmed.**
 >
 > The Horizon is a shared, forward-facing object shaped by capital, talent, compute,
@@ -32,6 +32,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 >
 > Demo: [sovereignlens.ai](https://sovereignlens.ai)<br>
 > Code: [github.com/Dim25/Sovereign-Lens](https://github.com/Dim25/Sovereign-Lens)
+> Thanks! -Dima 
 
 ![Sovereign Lens — programmable Horizons across capital, talent, compute, infrastructure, institutions, human networks and AI agents](docs/assets/sovereign-lens-programmable-horizons.png)
 
