@@ -112,8 +112,8 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
           </div>
           <button className="china-panel-callout" onClick={() => navigate('/cases/multi-alignment-option-space')}>
             <span>04 · New model parallax</span>
-            <strong>Qwen × GLM × DeepSeek × Codex</strong>
-            <p>One option-space hypothesis. Four completed perspectives. One missing challenger. See what converged, what diverged, and what evidence would resolve it.</p>
+            <strong>Qwen × GLM × DeepSeek × Codex × Fable</strong>
+            <p>One option-space hypothesis. Five completed perspectives. See what converged, what diverged, and what evidence would resolve it.</p>
             <em>Open multi-alignment analysis →</em>
           </button>
         </section>

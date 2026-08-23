@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "multi-alignment-option-space",
+  "evidence_status": "hypothesis_derived_from_one_secondary_source_outcomes_not_verified",
+  "provider": "Anthropic",
+  "provider_route": "firstParty",
+  "requested_model": "claude-fable-5",
+  "canonical_model": "claude-fable-5",
+  "claude_code_version": "2.1.241",
+  "session_id": "f57fbafa-1f97-4985-ab7e-baeffd624654",
+  "generated_at": "2026-08-23T02:58:32Z",
+  "prompt_version": "option-space-parallax-v1-carnegie",
+  "tools_enabled": false,
+  "web_search_requests": 0,
+  "stop_reason": "tool_use",
+  "terminal_reason": "completed",
+  "cost_usd": 0.137346,
+  "usage": {
+    "input_tokens": 2,
+    "cache_read_input_tokens": 4676,
+    "output_tokens": 2653,
+    "thinking_tokens": 1214
+  },
+  "analysis": {
+    "model_thesis": "Receiving states adopting externally supplied infrastructure, standards, training pipelines, institutions, and governance vocabulary gain capability while accumulating layer-specific switching costs. Multi-alignment is valuable only if those layers remain genuinely substitutable.",
+    "capability": "Observe new domestic compute access, deployed services, locally trained engineers and regulators, and institutions able to execute policy as dated, sourced events.",
+    "dependency": "Track hardware and cloud lock-in, maintenance contracts, standards conformity, vendor-specific personnel pipelines, imported institutional templates, and governance vocabulary separately.",
+    "optionality": "Infer option space from revealed substitutability: parallel operating stacks, rotating procurement, credible open-source exit ramps, and the practical compatibility of commitments.",
+    "strongest_counterargument": "AI software may be less path-dependent than railway or telecommunications infrastructure because APIs, open weights, containers, and transferable skills make several layers near-commodity.",
+    "missing_evidence": [
+      "Longitudinal attempted stack switches with documented cost, duration, and outcome",
+      "Primary procurement and contract terms",
+      "Evidence of personnel skill transfer across stacks",
+      "Evidence that governance vocabulary changed a concrete regulatory or procurement outcome"
+    ],
+    "falsifier": "The thesis is weakened if deep single-supplier adopters switch quickly and cheaply and multi-aligned states show no greater revealed procurement, regulatory, or model-substitution flexibility."
+  }
+}

@@ -3,6 +3,7 @@ import { optionSpaceRuns } from '../data/option-space-model-runs'
 
 export function OptionSpaceCase({ navigate }: { navigate: (path: string) => void }) {
   const completed = optionSpaceRuns.filter((run) => run.status === 'complete')
+  const pending = optionSpaceRuns.length - completed.length
   return (
     <div className="option-case">
       <ProductNav active="/cases" navigate={navigate} />
@@ -11,7 +12,7 @@ export function OptionSpaceCase({ navigate }: { navigate: (path: string) => void
         <h1>Who is programming<br />whose capacity to choose<span>?</span></h1>
         <div className="option-case__dek">
           <p>Do not ask only which supplier gained influence. Observe how infrastructure, finance, standards, talent, and institutions change the receiving state's future option space.</p>
-          <dl><div><dt>Models</dt><dd>{completed.length} completed · 1 pending</dd></div><div><dt>Evidence status</dt><dd>One secondary source · outcomes unverified</dd></div></dl>
+          <dl><div><dt>Models</dt><dd>{completed.length} completed · {pending} pending</dd></div><div><dt>Evidence status</dt><dd>One secondary source · outcomes unverified</dd></div></dl>
         </div>
       </header>
 
@@ -54,7 +55,7 @@ export function OptionSpaceCase({ navigate }: { navigate: (path: string) => void
         <section className="option-case__synthesis">
           <div className="section-index">03 · Parallax synthesis</div>
           <div><h2>Consensus</h2><p>Access can expand capability while layered technical and institutional dependencies reduce practical reversibility.</p></div>
-          <div><h2>Divergence</h2><p>Qwen stresses illusory optionality; GLM stresses breadth versus depth; DeepSeek stresses redundancy and cross-pollination; Codex stresses tested substitution and evaluation control.</p></div>
+          <div><h2>Divergence</h2><p>Qwen stresses illusory optionality; GLM stresses breadth versus depth; DeepSeek stresses redundancy; Codex stresses evaluation control; Fable questions whether AI stacks are truly as path-dependent as physical infrastructure.</p></div>
           <div><h2>What resolves it</h2><p>Contracts, workload-level concentration, interoperability tests, local operating rights, and an observed migration between stacks.</p></div>
         </section>
       </main>

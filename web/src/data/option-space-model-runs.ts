@@ -54,8 +54,13 @@ export const optionSpaceRuns: OptionSpaceRun[] = [
     falsifier: 'A state migrates between ecosystems without significant cost or capability loss, or single-source reliance yields superior capability.',
   },
   {
-    model: 'Claude Fable 5', provider: 'Anthropic-compatible challenger', generatedAt: 'Not run', status: 'pending',
-    thesis: 'Pending authenticated provider run.', capability: '—', dependency: '—', optionality: '—',
-    counterargument: '—', missingEvidence: [], falsifier: '—',
+    model: 'claude-fable-5', provider: 'Anthropic · first-party', generatedAt: '2026-08-23T02:58:32Z', status: 'complete',
+    thesis: 'Externally supplied infrastructure, standards, training, institutions, and governance vocabulary can trade near-term capability for long-term optionality; multi-alignment matters only when its layers remain genuinely substitutable.',
+    capability: 'Observe new usable compute, deployed services, locally trained engineers and regulators, and institutions able to execute policy—not announcements alone.',
+    dependency: 'Track hardware, cloud, maintenance, standards, personnel pipelines, institutional templates, and governance vocabulary as separate lock-in channels.',
+    optionality: 'Parallel commitments must be interoperable and load-bearing. Infer option space from revealed substitution, not stated diversification policy.',
+    counterargument: 'AI may be more fluid than railway or telecom infrastructure: APIs, open weights, containers, and transferable skills could make several layers near-commodity.',
+    missingEvidence: ['Observed stack-switching cost and duration', 'Primary procurement and contract terms', 'Cross-stack personnel portability', 'Governance language changing concrete decisions'],
+    falsifier: 'Deep single-stack adopters switch quickly and cheaply, while multi-aligned states show no greater procurement, regulatory, or model-substitution flexibility.',
   },
 ]

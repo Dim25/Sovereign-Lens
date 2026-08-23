@@ -45,14 +45,15 @@ describe('product navigation', () => {
 })
 
 describe('build-day and multi-model story routes', () => {
-  it('shows genuine Alibaba model perspectives and the pending challenger boundary', () => {
+  it('shows genuine Alibaba perspectives and the completed Fable challenger', () => {
     window.history.replaceState({}, '', '/cases/multi-alignment-option-space')
     render(<App source={createFixtureSource(fixture)} />)
     expect(screen.getByRole('heading', { name: /who is programming.*capacity to choose/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /qwen3.8-max/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /glm-5.2/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /deepseek-v4-pro/i })).toBeInTheDocument()
-    expect(screen.getByText(/pending authenticated provider run/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /claude-fable-5/i })).toBeInTheDocument()
+    expect(screen.getByText(/5 completed.*0 pending/i)).toBeInTheDocument()
   })
 
   it('documents the build order and no-working-software baseline', () => {
