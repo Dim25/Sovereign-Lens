@@ -62,6 +62,7 @@ describe('build-day and multi-model story routes', () => {
     expect(screen.getByRole('heading', { name: /one day.*one observable horizon/i })).toBeInTheDocument()
     expect(screen.getByText(/no working application/i)).toBeInTheDocument()
     expect(screen.getByText(/toolchain in build order/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/feature and toolchain overview/i)).toBeInTheDocument()
   })
 })
 
@@ -139,6 +140,8 @@ describe('presentation shell', () => {
     expect(screen.getByTestId('as-of')).toHaveTextContent('2025-05-28')
     expect(screen.getByTestId('digest').textContent).toMatch(/^[0-9a-f]{12}$/)
     expect(screen.getByTestId('methodology-version')).toHaveTextContent('v1')
+    expect(screen.getByLabelText(/evidence-to-calibration walkthrough/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/executive-first walkthrough/i)).toBeInTheDocument()
   })
 
   it('shows three perspectives against one snapshot', () => {

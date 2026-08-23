@@ -39,6 +39,9 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 
 ![Sovereign Lens — programmable Horizons across capital, talent, compute, infrastructure, institutions, human networks and AI agents](docs/assets/sovereign-lens-programmable-horizons.png)
 
+**Watch:** [25-second feature overview](https://sovereignlens.ai/build-day) ·
+[UAE evidence-to-calibration walkthrough](https://sovereignlens.ai/cases/uae-us-ai-infrastructure)
+
 --- 
 
 > ⚠️ **AI-SLOP / HACKATHON README DRAFT**

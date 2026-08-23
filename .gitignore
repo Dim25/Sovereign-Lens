@@ -23,3 +23,11 @@ venv/
 
 # OS
 .DS_Store
+
+# Generated video intermediates and local review masters
+promo/feature-overview/clips/
+promo/feature-overview/final/
+promo/feature-overview/review/
+promo/feature-overview/source/
+promo/feature-overview/work/
+/feature-overview/

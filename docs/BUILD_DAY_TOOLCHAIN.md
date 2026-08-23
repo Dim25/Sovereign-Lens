@@ -63,11 +63,22 @@ The first-party Claude Fable 5 run is recorded separately in
 - **Build-partner pages** documenting Temporal, Stash, and Coframe integrations
   together with their independence boundaries.
 - **Build Day provenance page** listing tools, build order, baseline disclosure,
-  core modules, and a proposed 30-second toolchain film.
+  core modules, and the delivered 25-second toolchain film.
 - **Responsive Swiss interface** verified at desktop and 390-pixel mobile widths.
 - **Open deployment** on Cloudflare with Apache-2.0 source on GitHub.
 
-## Proposed 30-second toolchain film
+## Delivered films
+
+- [25-second feature overview](https://sovereignlens.ai/build-day)
+- [35-second UAE evidence-to-calibration walkthrough](https://sovereignlens.ai/cases/uae-us-ai-infrastructure)
+- 30-second executive-first UAE alternate, selectable on the same case page
+
+The UAE films use real screenshots from the live instrument. Captions are limited
+to one short wayfinding line per scene so the product remains readable. HappyHorse
+generation metadata and the reproducible FFmpeg assembly are documented in
+[`promo/feature-overview`](../promo/feature-overview/README.md).
+
+## Film narrative
 
 - **00–05:** an empty evidence ledger becomes a temporal graph.
 - **05–12:** capital, talent, compute, infrastructure, standards, and institutions
@@ -78,6 +89,6 @@ The first-party Claude Fable 5 run is recorded separately in
 - **27–30:** Strategy Atlas zooms into Horizon Studio. Closing line: “The Horizon
   already exists. Make its programming observable.”
 
-The film should show the instrument and its objects, not people presenting at a
-planning board. Provider logos may appear only as small provenance labels attached
-to actual runs or production steps.
+The delivered films show the instrument and its objects, not people presenting at
+a planning board. Provider names appear only as provenance attached to actual runs
+or production steps.

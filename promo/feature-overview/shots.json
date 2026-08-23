@@ -1,0 +1,49 @@
+{
+  "provider": "Alibaba Cloud Model Studio",
+  "model": "happyhorse-1.1",
+  "generated_at": "2026-08-22",
+  "shots": [
+    {
+      "id": "01-horizon",
+      "mode": "text-to-video",
+      "task_id": "c3dd45c3-083b-420b-837c-13f9844208dd",
+      "prompt_summary": "The future as a writable object: compute, capital, talent, culture, institutions, and AI agents forming a shared Horizon; brutal-white Swiss visual language; no presenters."
+    },
+    {
+      "id": "02-atlas",
+      "mode": "image-to-video",
+      "task_id": "efdc0d21-506e-46cb-8de2-7af469e1a326",
+      "prompt_summary": "Animate the real Strategy Atlas screenshot with restrained camera movement; preserve interface geometry and avoid synthetic text."
+    },
+    {
+      "id": "03-dossier",
+      "mode": "image-to-video",
+      "task_id": "e9c0dc38-cc04-4b45-85d3-a3e532fd9065",
+      "prompt_summary": "Animate the real temporal dossier screenshot as an auditable intelligence instrument; no invented panels or labels."
+    },
+    {
+      "id": "04-models",
+      "mode": "image-to-video",
+      "task_id": "8bf6549a-d970-4b98-97ec-a187cfaa0d95",
+      "prompt_summary": "Animate the real model-parallax interface; emphasize parallel perspectives and preserved disagreement."
+    },
+    {
+      "id": "05-build",
+      "mode": "image-to-video",
+      "task_id": "9b36dc77-d3fd-45dc-8a65-01d67c1b4a21",
+      "prompt_summary": "Animate the Build Day module inventory and open toolchain in a precise Swiss editorial style."
+    },
+    {
+      "id": "06-executive",
+      "mode": "image-to-video",
+      "task_id": "fbe5cab2-cad0-450c-b1cc-f5c65d44c68e",
+      "prompt_summary": "Executive situation-state transition with physical compute capacity and conditional control; no people presenting."
+    },
+    {
+      "id": "07-provenance",
+      "mode": "image-to-video",
+      "task_id": "8b01828d-78c9-40bc-b99c-c8260e3b3c2b",
+      "prompt_summary": "Source-level provenance, retrieval dates, evidence chains, and auditability as a cinematic information layer."
+    }
+  ]
+}

@@ -115,6 +115,26 @@ function Dossier({ source, navigate, activePath }: { source: DataSource; navigat
         canAdvance
       />
 
+      {view.meta.case_id.replaceAll('_', '-') === 'uae-us-ai-infrastructure' ? (
+        <details className="case-films">
+          <summary>Watch case workflow · 2 cuts</summary>
+          <div className="case-films__body">
+            <article>
+              <div><span>Primary · 35s</span><strong>Evidence → calibration</strong></div>
+              <video controls playsInline preload="metadata" poster="/media/uae-evidence-loop-poster.jpg" aria-label="UAE case evidence-to-calibration walkthrough">
+                <source src="/media/uae-evidence-loop-35s.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article>
+              <div><span>Alternate · 30s</span><strong>Executive-first cut</strong></div>
+              <video controls playsInline preload="metadata" aria-label="UAE case executive-first walkthrough">
+                <source src="/media/uae-executive-cut-30s.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </details>
+      ) : null}
+
       {evidence ? (
         <EvidenceDrawer
           selection={evidence}
