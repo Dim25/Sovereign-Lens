@@ -14,7 +14,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
       <main className="home">
         <section className="home-hero">
           <div className="home-hero__brand">
-            <strong>Sovereign Lens</strong>
+            <strong>SovereignLens.ai</strong>
           </div>
           <figure className="home-film">
             <video autoPlay muted loop playsInline controls preload="metadata" poster="/media/sovereign-lens-executive-v2-poster.jpg">

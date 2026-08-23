@@ -21,7 +21,7 @@ describe('product navigation', () => {
     window.history.replaceState({}, '', '/')
     const user = userEvent.setup()
     render(<App source={createFixtureSource(fixture)} />)
-    expect(screen.getAllByText('Sovereign Lens').length).toBeGreaterThan(1)
+    expect(screen.getByText('SovereignLens.ai')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /the horizon already exists/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /from public evidence.*to sovereign trajectory/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /temporal dossier/i })).toBeInTheDocument()
