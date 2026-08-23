@@ -4,6 +4,8 @@ A long-horizon evaluator that preserves geopolitical AI commitments, revisits th
 
 **Web:** [sovereignlens.ai](https://sovereignlens.ai)
 
+**Current recommendations:** [Next steps audit — 2026-08-23](docs/NEXT_STEPS_2026-08-23.md)
+
 **Motto:** The Horizon already exists. Sovereign Lens makes its programming observable.
 
 > I approached Long Horizon Agents Build Day from a different direction. Most teams
