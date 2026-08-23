@@ -40,3 +40,6 @@ promo/demo1min/final/
 
 # Mobile audit output
 web/docs/mobile/
+
+# Scratch input for the OG artwork; the versioned copy is docs/assets/og-source.png
+_img/

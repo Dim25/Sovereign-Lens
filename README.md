@@ -1,6 +1,6 @@
 # Sovereign-Lens
 
-Independent multi-agent intelligence for tracking how AI reshapes state and geopolitical power.
+A long-horizon evaluator that preserves geopolitical AI commitments, revisits them as the world changes, and learns without rewriting history.
 
 **Web:** [sovereignlens.ai](https://sovereignlens.ai)
 
@@ -43,13 +43,13 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 
 --- 
 
-> **HACKATHON README DRAFT**
+> **Prototype status and implementation boundaries**
 >
 > This README was produced rapidly with AI assistance during a hackathon. It intentionally mixes the working prototype with the intended architecture and has not yet received full human editing or methodological review. See **What actually works today** for the honest boundary between software and specification.
 
 # Sovereign Lens
 
-**Independent multi-agent intelligence for tracking how AI reshapes state and geopolitical power.**
+**A long-horizon evaluator that preserves geopolitical AI commitments, revisits them as the world changes, and learns without rewriting history.**
 
 Sovereign Lens is an open-source, evidence-first system for observing how artificial intelligence changes geopolitical influence, technological dependency, national capability, and state sovereignty.
 
