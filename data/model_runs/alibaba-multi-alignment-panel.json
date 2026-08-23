@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
   "case_id": "multi-alignment-option-space",
-  "evidence_status": "supplied_analyst_commentary_not_verified_case_evidence",
+  "evidence_status": "hypothesis_derived_from_one_secondary_source_outcomes_not_verified",
+  "source": {
+    "publisher": "Carnegie Endowment for International Peace",
+    "author": "Arindrajit Basu",
+    "title": "China's Pivot on Global AI",
+    "published_at": "2026-05-21",
+    "url": "https://carnegieendowment.org/research/2026/05/chinas-pivot-on-global-ai",
+    "role": "secondary_analysis"
+  },
   "provider": "Alibaba Cloud Model Studio",
   "region": "ap-southeast-1",
   "endpoint_profile": "token-plan",

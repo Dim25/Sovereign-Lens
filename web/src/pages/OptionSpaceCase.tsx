@@ -7,11 +7,11 @@ export function OptionSpaceCase({ navigate }: { navigate: (path: string) => void
     <div className="option-case">
       <ProductNav active="/cases" navigate={navigate} />
       <header className="option-case__hero">
-        <div className="eyebrow">Case 04 · Multi-alignment · analyst commentary</div>
+        <div className="eyebrow">Case 04 · Multi-alignment · source-linked analytical hypothesis</div>
         <h1>Who is programming<br />whose capacity to choose<span>?</span></h1>
         <div className="option-case__dek">
           <p>Do not ask only which supplier gained influence. Observe how infrastructure, finance, standards, talent, and institutions change the receiving state's future option space.</p>
-          <dl><div><dt>Models</dt><dd>{completed.length} completed · 1 pending</dd></div><div><dt>Evidence status</dt><dd>Commentary to test—not verified case evidence</dd></div></dl>
+          <dl><div><dt>Models</dt><dd>{completed.length} completed · 1 pending</dd></div><div><dt>Evidence status</dt><dd>One secondary source · outcomes unverified</dd></div></dl>
         </div>
       </header>
 
@@ -26,9 +26,12 @@ export function OptionSpaceCase({ navigate }: { navigate: (path: string) => void
         </section>
 
         <section className="option-case__source">
-          <div className="section-index">01 · Supplied interpretation</div>
+          <div className="section-index">01 · Source → hypothesis</div>
           <blockquote>“Don't measure who is winning influence. Measure who is programming whose Horizon of possible action.”</blockquote>
-          <p>The supplied story argues that China increasingly presents multilateral development and capacity-building while U.S. strategy emphasizes an American technology stack. Receiving states may use Chinese systems while engaging the U.S., EU, UN, domestic, and open-source alternatives. Sovereign Lens treats these as hypotheses requiring source-linked verification.</p>
+          <p><a href="https://carnegieendowment.org/research/2026/05/chinas-pivot-on-global-ai">Carnegie's May 2026 analysis ↗</a> documents a claimed pivot in China's AI diplomacy from infrastructure and technical standards toward global rules, norms, capacity-building institutions, UN processes, and the proposed WAICO. It also argues that Global South countries have not given wholesale normative buy-in and continue engaging multiple powers. Sovereign Lens converts that analysis into testable receiving-state questions; it does not treat Carnegie's interpretation as proof of lock-in or intent.</p>
+          <div className="option-case__trajectory" aria-label="Carnegie trajectory interpreted through Programmable Horizons">
+            {['Infrastructure', 'Capability', 'Standards', 'Trained personnel', 'Institutions', 'Governance vocabulary', 'Future option space'].map((step, index) => <span key={step}><b>{String(index + 1).padStart(2, '0')}</b>{step}</span>)}
+          </div>
         </section>
 
         <section className="option-case__models">
