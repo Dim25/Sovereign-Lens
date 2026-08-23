@@ -22,10 +22,12 @@ Sovereign Lens is an open-source, evidence-first system for observing how artifi
 
 ## The contribution: the programmable Horizon
 
-The Horizon is not an agent's long-term memory. It is shared, forward-facing state
-outside any one agent: the accumulated option space produced by capital, talent,
-compute, energy, infrastructure, data, culture, institutions, human networks,
-standards, and AI systems.
+Most long-horizon agent projects ask how an agent can remember more of its past.
+This project starts from a different premise: **the Horizon already exists, and it
+is already being programmed.** The Horizon is not an agent's long-term memory. It
+is a shared, forward-facing object outside any one agent—the accumulated option
+space produced by capital, talent, compute, energy, infrastructure, data, culture,
+institutions, human networks, standards, and AI systems.
 
 States and other institutions already program this Horizon. Sovereign Lens observes
 their public actions as writes to eight registers: **timers, commitments, parameters,
@@ -37,7 +39,20 @@ Multiple models analyze the same write independently. Consensus becomes an
 observation; divergence becomes parallax—a measurement of how different model
 cultures parse the same change. The observer is therefore also observable.
 
+The hackathon contribution has two parts:
+
+1. **The approach — Programmable Horizons:** represent long-term trajectories as
+   inspectable, versioned objects composed from classical assets, human agency,
+   institutions, and AI agents—not as agent memory alone.
+2. **The instrument — Sovereign Lens:** observe one of the largest active Horizon-
+   programming processes in real time: states and institutions reshaping sovereign
+   capability, dependency, control, and optionality around AI.
+
+In one line: **everyone is extending the agent's past; Sovereign Lens makes the
+programmable future observable.**
+
 See the [concept memo](docs/PROGRAMMABLE_HORIZON_AND_TRAJECTORY_SOVEREIGNTY.md),
+the [hackathon contribution memo](docs/TODAYS_CONTRIBUTION.md),
 the [`trajectory_hypothesis` schema](schemas/trajectory-hypothesis.schema.json),
 and the [open-source promo production package](promo/README.md).
 
