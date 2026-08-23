@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { App } from '../App'
 import { createFixtureSource } from '../data/adapter'
 import fixtureJson from '../data/uae-us-ai-infrastructure.fixture.json'
+import syntheticFixture from '../data/synthetic-procurement-optionality.fixture.json'
 import type { CaseFixture } from '../types'
 
 const fixture = fixtureJson as unknown as CaseFixture
@@ -98,5 +99,33 @@ describe('synthetic case labelling', () => {
     render(<App source={createFixtureSource(fixture)} />)
     expect(screen.getByText(/publication dates of the underlying sources/i)).toBeInTheDocument()
     expect(screen.queryByText(/never cite them/i)).not.toBeInTheDocument()
+  })
+})
+
+// Two front doors onto the same machine, each pinned to its own record.
+describe('the two machine routes', () => {
+  const at = (p: string) => {
+    window.history.replaceState({}, '', p)
+    render(<App source={createFixtureSource(fixture)} caseSources={{
+      'uae-us-ai-infrastructure': createFixtureSource(fixture),
+      'synthetic-procurement-optionality': createFixtureSource(syntheticFixture as unknown as CaseFixture),
+    }} />)
+  }
+
+  it('/v2 runs the real record and offers the today-resolving one', () => {
+    at('/v2')
+    expect(screen.getByText(/publication dates of the underlying sources/i)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /resolves today/i })).toBeInTheDocument()
+  })
+
+  it('/v2c runs the synthetic record and offers the real one', () => {
+    at('/v2c')
+    expect(screen.getByText(/never cite them/i)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /run it on the real case/i })).toBeInTheDocument()
+  })
+
+  it('/v2c/ resolves the same as /v2c', () => {
+    at('/v2c/')
+    expect(screen.getByText(/never cite them/i)).toBeInTheDocument()
   })
 })

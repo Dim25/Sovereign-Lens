@@ -58,12 +58,15 @@ export function App({ source, caseSources }: { source: DataSource; caseSources?:
   if (path === '/demo') return <DemoPage navigate={navigate} />
   if (path === '/demo1min') return <DemoOneMinutePage navigate={navigate} />
   if (path === '/demo2min') return <DemoTwoMinutePage navigate={navigate} />
-  if (path === '/v2') {
-    // ?case=<slug> lets the loop run on any registered case. The default stays
-    // the UAE record: its evidence is real, which matters more on first view
-    // than its dates being recent.
-    const pick = new URLSearchParams(window.location.search).get('case')
+  if (path === '/v2' || path === '/v2c') {
+    // Two front doors onto the same machine. /v2 runs the real record — its
+    // evidence is real, which matters more on first view than its dates being
+    // recent. /v2c runs the illustrative one, whose horizon resolves today.
+    // ?case=<slug> still selects any registered case.
     const all = caseSources ?? { 'uae-us-ai-infrastructure': source }
+    const pick = path === '/v2c'
+      ? 'synthetic-procurement-optionality'
+      : new URLSearchParams(window.location.search).get('case')
     return <MachinePage source={(pick && all[pick]) || source} navigate={navigate} />
   }
   if (path === '/horizon') return <HorizonStudio navigate={navigate} />

@@ -217,6 +217,12 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
           <button className="machine__btn" onClick={() => navigate(`/cases/${meta.case_id.replaceAll('_', '-')}`)}>
             Open the real dossier →
           </button>
+          <button
+            className="machine__btn machine__btn--quiet"
+            onClick={() => navigate(synthetic ? '/v2' : '/v2c')}
+          >
+            {synthetic ? 'Run it on the real case →' : 'Run it on a horizon that resolves today →'}
+          </button>
           <button className="machine__btn machine__btn--quiet" onClick={() => navigate('/')}>
             Why it matters
           </button>
