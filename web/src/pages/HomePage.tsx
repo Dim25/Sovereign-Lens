@@ -31,9 +31,10 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
             </p>
           </div>
           <div className="home-actions">
-            <button className="button-primary button-tour" onClick={() => navigate('/demo2min')}>
-              ▶ Watch the 2-minute tour<em>the whole loop, running live</em>
+            <button className="button-primary button-tour" onClick={() => navigate('/v2')}>
+              ▶ See the loop in 20 seconds<em>a belief registered, scored, and inherited</em>
             </button>
+            <button className="button-secondary" onClick={() => navigate('/demo2min')}>2-minute tour →</button>
             <button className="button-secondary" onClick={() => navigate('/brief')}>Open executive brief →</button>
             <button className="button-secondary" onClick={() => navigate('/cases/uae-us-ai-infrastructure')}>Explore the evidence</button>
           </div>

@@ -102,6 +102,30 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
     ]
   }, [source, meta])
 
+  /**
+   * The dates in the loop are the publication dates of the underlying sources
+   * — a Microsoft investment post, a congressional record, an export
+   * authorisation. They are fixed because they are real; moving them to make
+   * the demo look current would be inventing provenance, which is the one
+   * thing this system exists to make impossible. What can move is where TODAY
+   * sits relative to them, so the loop reads as a closed run with a live
+   * consequence rather than an old screenshot.
+   */
+  const anchor = useMemo(() => {
+    const days = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000)
+    // toISOString() is UTC: after ~17:00 Pacific it reports tomorrow's date to a
+    // viewer for whom it is still today. en-CA formats as YYYY-MM-DD locally.
+    const today = new Date().toLocaleDateString('en-CA')
+    const registered = source.predictions(meta.t0)[0]
+    return {
+      today,
+      span: days(meta.t0, meta.t1),
+      sinceClose: days(meta.t1, today),
+      horizon: registered?.horizon_date,
+      toHorizon: registered ? days(today, registered.horizon_date) : 0,
+    }
+  }, [source, meta])
+
   const total = steps.reduce((s, x) => s + x.ms, 0)
   const [active, setActive] = useState(0)
   const [done, setDone] = useState(false)
@@ -132,6 +156,9 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
           same evidence <i>→</i> three perspectives <i>→</i> dated prediction <i>→</i>{' '}
           thirteen months later <i>→</i> scored outcome
         </p>
+        <p className="machine__dates">
+          Dates below are the publication dates of the underlying sources, not demo values.
+        </p>
       </section>
 
       <ol className="machine__steps">
@@ -155,6 +182,17 @@ export function MachinePage({ source, navigate }: { source: DataSource; navigate
           )
         })}
       </ol>
+
+      <div className="machine__now">
+        <b>Today · {anchor.today}</b>
+        <span>
+          The run above spans {anchor.span} days of dated evidence, commitment to resolution.
+          It closed {anchor.sinceClose} days ago, and methodology v2 governs every evaluation from
+          here{anchor.horizon && anchor.toHorizon > 0
+            ? `, including the original ${anchor.horizon} horizon still ${anchor.toHorizon} days out`
+            : ''}.
+        </span>
+      </div>
 
       <footer className="machine__foot">
         <div className="machine__status" role="status">
