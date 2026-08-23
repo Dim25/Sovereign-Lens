@@ -51,8 +51,33 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
           </div>
         </section>
 
+        <section className="interface-proof">
+          <div className="section-index">02 · See the instrument</div>
+          <div className="interface-proof__intro">
+            <h2>From public evidence<br />to sovereign trajectory.</h2>
+            <p>The interface preserves the graph, competing interpretations, prediction ledger,
+              later outcome, and source-level provenance in one auditable temporal record.</p>
+          </div>
+          <div className="interface-montage">
+            <button className="interface-shot interface-shot--primary" onClick={() => navigate('/cases/uae-us-ai-infrastructure')}>
+              <img src="/media/interface/temporal-dossier.png" alt="Sovereign Lens temporal dossier showing evidence graph, model perspectives, prediction resolution, and calibration" loading="lazy" />
+              <span><b>01</b> Temporal dossier · later evidence resolves the prior commitment</span>
+            </button>
+            <div className="interface-montage__stack">
+              <button className="interface-shot" onClick={() => navigate('/brief')}>
+                <img src="/media/interface/executive-brief.png" alt="Sovereign Lens executive situation brief" loading="lazy" />
+                <span><b>02</b> Executive state · changes, dependencies, what to watch next</span>
+              </button>
+              <button className="interface-shot" onClick={() => navigate('/cases/uae-us-ai-infrastructure')}>
+                <img src="/media/interface/evidence-provenance.png" alt="Sovereign Lens evidence drawer with source-level provenance" loading="lazy" />
+                <span><b>03</b> Evidence receipt · every conclusion drills back to sources</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section className="idea-section">
-          <div className="section-index">02 · Programmable Horizon Blocks</div>
+          <div className="section-index">03 · Programmable Horizon Blocks</div>
           <h2>The disagreement is the product.<br />The horizon turns evaluation into intelligence.</h2>
           <p className="horizon-thesis">
             Sovereign Lens does not decide whether an initiative is “pro-US,” “pro-China,” or
@@ -74,7 +99,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         </section>
 
         <section className="principles-section">
-          <div className="section-index">03 · Why it matters</div>
+          <div className="section-index">04 · Why it matters</div>
           <div className="principles-grid">
             <article><span>Capability ≠ control</span><p>Access can grow while ownership, optionality, and replacement power remain elsewhere.</p></article>
             <article><span>Disagreement is evidence</span><p>Competing interpretations stay visible instead of disappearing into an average.</p></article>
