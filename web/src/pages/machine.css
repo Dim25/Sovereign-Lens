@@ -1,0 +1,225 @@
+/* /v2 — the machine.
+   Same Swiss language as the rest of the site: paper, ink, hairlines, one
+   accent. The accent is load-bearing here — it marks the step currently
+   executing and nothing else. Every control is >=44px from the start. */
+
+.machine {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------------------------------ head --- */
+
+.machine__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right));
+  background: var(--ink);
+  color: var(--panel);
+}
+
+.machine__brand {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--panel);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.machine__runtime {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b9b2a6;
+}
+
+/* ------------------------------------------------------------------ lede --- */
+
+.machine__lede {
+  padding: 40px max(20px, env(safe-area-inset-left)) 26px;
+  max-width: 1100px;
+}
+
+.machine__lede h1 {
+  margin: 0;
+  font-size: clamp(38px, 6.2vw, 78px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.machine__lede p {
+  margin: 16px 0 0;
+  max-width: 720px;
+  font-size: clamp(16px, 1.5vw, 21px);
+  line-height: 1.36;
+  color: var(--ink-soft);
+}
+
+.machine__chain {
+  margin-top: 18px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink) !important;
+  line-height: 1.9 !important;
+}
+
+.machine__chain i { font-style: normal; color: var(--accent); padding: 0 4px; }
+
+/* ----------------------------------------------------------------- steps --- */
+
+.machine__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 44px;
+  align-items: start;
+  gap: 0 8px;
+  padding: 15px max(20px, env(safe-area-inset-left));
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.step__n {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: var(--rule);
+  padding-top: 3px;
+}
+
+.step__body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.step__verb {
+  font-size: clamp(17px, 1.9vw, 26px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.step__detail { font-size: 13px; line-height: 1.4; color: var(--ink-soft); }
+
+.step__value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.step__mark {
+  justify-self: end;
+  font-size: 15px;
+  line-height: 1;
+  padding-top: 4px;
+  color: var(--rule);
+}
+
+/* Queued steps stay legible — dimming them to near-invisible would hide the
+   shape of the loop, which is the one thing this page exists to show. */
+.step--queued { color: var(--muted); }
+.step--queued .step__verb { color: var(--muted); }
+.step--queued .step__detail, .step--queued .step__value { opacity: 0.55; }
+
+.step--done .step__n { color: var(--ink); }
+.step--done .step__mark { color: var(--ink); }
+
+.step--live { background: var(--panel); }
+.step--live .step__n { color: var(--accent); }
+.step--live .step__mark { color: var(--accent); }
+.step--live .step__verb { color: var(--ink); }
+
+/* The executing step draws its own progress along the bottom hairline. */
+.step__fill {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  animation: machine-fill linear forwards;
+}
+
+@keyframes machine-fill { from { width: 0 } to { width: 100% } }
+
+/* ------------------------------------------------------------------ foot --- */
+
+.machine__foot {
+  margin-top: auto;
+  padding: 20px max(20px, env(safe-area-inset-left))
+           max(20px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--ink);
+  background: var(--panel);
+}
+
+.machine__status {
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 720px;
+  color: var(--ink);
+}
+
+.machine__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+.machine__btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--panel);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.machine__btn:hover { background: var(--accent); border-color: var(--accent); }
+
+.machine__btn--quiet { background: var(--panel); color: var(--ink); }
+.machine__btn--quiet:hover { background: var(--ink); color: var(--panel); }
+
+.machine__honest {
+  margin: 16px 0 0;
+  max-width: 720px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- mobile --- */
+
+@media (max-width: 700px) {
+  .machine__lede { padding: 26px 16px 20px; }
+  .machine__lede h1 { font-size: clamp(34px, 10.5vw, 50px); }
+  .machine__chain { line-height: 2 !important; }
+  .step { grid-template-columns: 34px minmax(0, 1fr) 24px; padding: 13px 16px; }
+  .step__verb { font-size: 18px; }
+  .step__detail { font-size: 12.5px; }
+  .step__value { font-size: 11px; }
+  .machine__foot { padding: 16px 16px max(16px, env(safe-area-inset-bottom)); }
+  .machine__btn { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step__fill { animation: none; width: 100%; }
+}
