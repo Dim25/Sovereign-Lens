@@ -27,7 +27,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 > analytical parallax. The system can later compare each interpretation with what
 > actually happened.
 >
-> **Everyone is extending the agent's past. I'm making the programmable future
+> **[sovereignlens.ai](https://sovereignlens.ai) makes the programmable future
 > observable.**
 >
 > Demo: [sovereignlens.ai](https://sovereignlens.ai)<br>
