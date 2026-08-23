@@ -11,8 +11,10 @@ const ROUTES = ['/', '/brief', '/cases', '/cases/uae-us-ai-infrastructure', '/bu
   '/horizon', '/cases/multi-alignment-option-space', '/demo1min']
 const VIEWPORTS = [
   { name: 'iphone-se', width: 320, height: 568 },
+  { name: 'android-sm', width: 360, height: 800 },
   { name: 'iphone-13', width: 390, height: 844 },
   { name: 'pixel-7', width: 412, height: 915 },
+  { name: 'iphone-pm', width: 430, height: 932 },
 ]
 const SHOTS = process.argv.includes('--shots')
 const OUT = new URL('../docs/mobile/', import.meta.url).pathname
@@ -39,7 +41,18 @@ for (const vp of VIEWPORTS) {
     const report = await page.evaluate(() => {
       const vw = document.documentElement.clientWidth
       const doc = document.scrollingElement
+
+      // `body { overflow-x: hidden }` is a guard against sideways scrolling, but it
+      // also clamps scrollWidth — so measuring through it reports zero overflow on a
+      // layout that is genuinely clipping content. Lift the guard, measure the real
+      // extent, then put it back. `guarded` is what the user can scroll; `overflow`
+      // is what actually sticks out. Fail on the second.
+      const guarded = Math.round(doc.scrollWidth - vw)
+      const unguard = document.createElement('style')
+      unguard.textContent = 'html,body{overflow-x:visible !important}'
+      document.head.appendChild(unguard)
       const overflow = Math.round(doc.scrollWidth - vw)
+      unguard.remove()
 
       // An element only counts as an offender if no ancestor scrolls horizontally
       // on purpose. Deliberate scroll strips (wide tables) are fine.
@@ -56,6 +69,7 @@ for (const vp of VIEWPORTS) {
         if (r.width === 0 || r.height === 0) continue
         if (r.right > vw + 1 && !inScroller(el)) {
           offenders.push({
+            el,
             sel: el.tagName.toLowerCase() + (el.className && typeof el.className === 'string'
               ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.') : ''),
             right: Math.round(r.right), w: Math.round(r.width),
@@ -63,8 +77,14 @@ for (const vp of VIEWPORTS) {
         }
       }
       // Keep only the outermost offenders — children inherit their parent's overflow.
-      const trimmed = offenders.filter((o, i) =>
-        !offenders.some((p, j) => j !== i && o.sel.startsWith(p.sel) === false && false)).slice(0, 6)
+      const offending = new Set(offenders.map((o) => o.el))
+      const trimmed = offenders
+        .filter((o) => {
+          for (let p = o.el.parentElement; p; p = p.parentElement) if (offending.has(p)) return false
+          return true
+        })
+        .slice(0, 6)
+        .map(({ sel, right, w }) => ({ sel, right, w }))
 
       const small = []
       for (const el of document.querySelectorAll('a, button, [role="button"], input, select, summary')) {
@@ -79,14 +99,15 @@ for (const vp of VIEWPORTS) {
       const tinyText = [...document.querySelectorAll('p, li, td, dd')]
         .filter((el) => parseFloat(getComputedStyle(el).fontSize) < 12 && el.textContent.trim().length > 40)
         .length
-      return { overflow, layoutWidth: vw, offenders: trimmed, small: small.slice(0, 8), smallCount: small.length, tinyText }
+      return { overflow, guarded, layoutWidth: vw, offenders: trimmed, small: small.slice(0, 8), smallCount: small.length, tinyText }
     })
 
     const pinned = report.layoutWidth > vp.width + 1
     const bad = report.overflow > 1 || pinned
     if (bad) failures++
     const tag = pinned ? 'PINNED  ' : bad ? 'OVERFLOW' : 'ok      '
-    console.log(`${tag} ${vp.name.padEnd(10)} ${route.padEnd(38)} +${report.overflow}px  taps<40px:${report.smallCount}  tiny-text:${report.tinyText}`)
+    const masked = report.overflow > 1 && report.guarded <= 1 ? ' (hidden by the overflow-x guard)' : ''
+    console.log(`${tag} ${vp.name.padEnd(10)} ${route.padEnd(38)} +${report.overflow}px${masked}  taps<40px:${report.smallCount}  tiny-text:${report.tinyText}`)
     for (const o of report.offenders) console.log(`           └─ ${o.sel} (w=${o.w}, right=${o.right})`)
     if (bad) for (const s of report.small.slice(0, 3)) console.log(`           · tap ${s.sel} h=${s.h} "${s.text}"`)
 
@@ -100,5 +121,9 @@ for (const vp of VIEWPORTS) {
 
 await browser.close()
 await server.close()
-console.log(failures ? `\n${failures} route/viewport combinations overflow horizontally.` : '\nNo horizontal overflow at any tested viewport.')
-process.exit(0)
+console.log(failures
+  ? `\n${failures} route/viewport combinations overflow horizontally.`
+  : `\nNo horizontal overflow across ${ROUTES.length} routes x ${VIEWPORTS.length} viewports.`)
+// Exit non-zero on failure. Previously this always exited 0, so the audit could
+// report a broken layout and still pass anything that checked its status.
+process.exit(failures ? 1 : 0)
