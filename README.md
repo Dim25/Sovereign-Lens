@@ -137,8 +137,8 @@ Graph
 
 Assessment
 
-* [ ] **Multiple perspective-model assessments** — the three perspectives are **deterministic fixture text**. No provider adapter exists and no model has been called.
-* [~] **Consensus and disagreement evaluation** — divergence is preserved and shown rather than averaged, and material disagreement is distinguished from consensus. The axes are hand-authored; no evaluator compares model outputs.
+* [~] **Multiple perspective-model assessments** — one same-prompt option-space panel has attributed runs from Qwen 3.8 Max, GLM 5.2, DeepSeek V4 Pro, and Claude Fable 5, plus a disclosed local Codex analysis. Run metadata and one rejected truncated response are committed under `data/model_runs/`. The main temporal dossier still uses deterministic fixture text, and there is not yet a general-purpose provider adapter feeding arbitrary cases into the graph.
+* [~] **Consensus and disagreement evaluation** — divergence is preserved and shown rather than averaged, and material disagreement is distinguished from consensus. The option-space synthesis compares real provider outputs, but the synthesis remains human-authored; no tested evaluator generates axes automatically.
 * [x] **Evidence and provenance drill-down** — every visible claim resolves to its source, publisher, and the account that source speaks for (participant, regulator, oversight). A test asserts every reference in the fixture resolves.
 
 Memory and calibration
@@ -154,14 +154,14 @@ python3 -m unittest discover -s tests    # projection, ledger, trajectories and 
 cd web && npm install && npm test        # 43 tests, including cross-language digest conformance
 ```
 
-Provider credentials are not required for the offline demo. To prepare the live
-multi-model panel, copy `.env.example` to `.env`, then follow
+Provider credentials are not required for the offline demo. To reproduce or extend
+the multi-model panel, copy `.env.example` to `.env`, then follow
 [`docs/API_ACCESS.md`](docs/API_ACCESS.md) and run
 `python3 scripts/check_api_config.py`.
 
-**Anything unchecked is specification, not software.** The most consequential
-unchecked line is *multiple perspective-model assessments*: model plurality is
-the project's central claim, and no model has yet been asked anything.
+**Anything unchecked is specification, not software.** Model plurality has now
+been demonstrated on one bounded analytical question; automated extraction and a
+general evidence-to-provider-to-evaluator pipeline remain future work.
 
 This project is not production-ready and should not be treated as an authoritative geopolitical intelligence source.
 

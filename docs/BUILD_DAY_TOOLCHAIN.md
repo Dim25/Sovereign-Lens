@@ -15,7 +15,7 @@ during the build day.
 |---:|---|---|---|
 | 1 | Concept and specification | Human direction, Codex, Claude | Programmable Horizons thesis, eight registers, schemas, cases, pitch |
 | 2 | Evidence and temporal core | Python, JSON Schema, SQLite, NetworkX | Source manifests, bitemporal graph, supersession, ledger, calibration |
-| 3 | Model parallax | Codex, Qwen 3.8 Max, GLM 5.2, DeepSeek V4 Pro | Same-prompt perspectives, missing evidence, falsifiers, divergence |
+| 3 | Model parallax | Codex, Qwen 3.8 Max, GLM 5.2, DeepSeek V4 Pro, Claude Fable 5 | Same-prompt perspectives, missing evidence, falsifiers, divergence |
 | 4 | Long-horizon adapters | Temporal, Stash, Coframe | Durable reassessment, shared memory boundary, adaptive explanation |
 | 5 | Product instrument | React, TypeScript, Vite, SVG | Brief, dossier, atlas, provenance, model comparison, Horizon Studio |
 | 6 | Visual narrative | Alibaba Model Studio, HappyHorse, FFmpeg | Executive film and visual explanation of writable Horizons |
@@ -26,6 +26,8 @@ The first attributed Alibaba panel run is recorded in
 [`data/model_runs/alibaba-multi-alignment-panel.json`](../data/model_runs/alibaba-multi-alignment-panel.json).
 The demo preserves one incomplete Qwen attempt as a failed run rather than silently
 promoting its truncated response.
+The first-party Claude Fable 5 run is recorded separately in
+[`data/model_runs/claude-fable5-multi-alignment.json`](../data/model_runs/claude-fable5-multi-alignment.json).
 
 ## Core modules shipped
 
@@ -37,6 +39,33 @@ promoting its truncated response.
 6. Horizon Studio
 7. Source-level provenance drawer
 8. Executive brief and temporal dossier
+
+## Public feature inventory
+
+- **Narrative homepage** with the Programmable Horizons thesis and mobile-first
+  executive film.
+- **Executive brief** summarizing material changes, dependencies, uncertainty,
+  watch-next evidence, model range, and prediction status.
+- **Temporal dossier** combining an evidence graph, facts, assessments,
+  disagreement, ledger, calibration, methodology, and disclosure.
+- **Strategy atlas** comparing UAE–US infrastructure, China–Fiji capability
+  formation, and African evaluation/governance capacity without treating them as
+  fixed political blocs.
+- **Horizon Studio** for composing capacity, prior, permission, institutional,
+  timer, and verification writes as a versioned future object.
+- **Multi-alignment option-space case** grounded in Carnegie secondary analysis
+  and evaluated by five disclosed perspectives.
+- **Source-level provenance drawer** resolving visible claims to their evidence.
+- **Bitemporal graph projection** preserving what was knowable at each `as_of`,
+  including superseded facts and snapshot digests.
+- **Prediction and calibration ledger** retaining prior commitments, later
+  outcomes, Brier scoring, and methodology revision.
+- **Build-partner pages** documenting Temporal, Stash, and Coframe integrations
+  together with their independence boundaries.
+- **Build Day provenance page** listing tools, build order, baseline disclosure,
+  core modules, and a proposed 30-second toolchain film.
+- **Responsive Swiss interface** verified at desktop and 390-pixel mobile widths.
+- **Open deployment** on Cloudflare with Apache-2.0 source on GitHub.
 
 ## Proposed 30-second toolchain film
 
