@@ -5,10 +5,38 @@
  */
 import { chromium, devices } from 'playwright'
 import { createServer } from 'vite'
-import { mkdir } from 'node:fs/promises'
+import { mkdir, readFile } from 'node:fs/promises'
 
-const ROUTES = ['/', '/brief', '/cases', '/cases/uae-us-ai-infrastructure', '/build', '/build-day',
-  '/horizon', '/cases/multi-alignment-option-space', '/demo1min', '/demo', '/demo2min']
+/**
+ * Read the route list out of the router instead of maintaining one by hand.
+ *
+ * /demo shipped as a route in App.tsx and appeared in nobody's audit, carrying
+ * the same defect as /demo1min unobserved, because both audits used hand-written
+ * lists and a hand-written list goes stale without ever saying so. Deriving the
+ * literal routes means adding one to App.tsx adds it to the audit.
+ *
+ * Parameterised routes cannot be derived — the router matches them by prefix, so
+ * a representative path has to be named. Those are listed below, and any
+ * `startsWith` prefix in the router with no representative here fails the run
+ * rather than being skipped quietly.
+ */
+const SAMPLES = ['/cases/uae-us-ai-infrastructure', '/build/temporal']
+
+async function discoverRoutes() {
+  const app = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8')
+  const literal = [...app.matchAll(/path === '([^']+)'/g)].map((m) => m[1])
+  const prefixes = [...app.matchAll(/path\.startsWith\('([^']+)'\)/g)].map((m) => m[1])
+  const uncovered = prefixes.filter((prefix) => !SAMPLES.some((s) => s.startsWith(prefix)))
+  if (uncovered.length) {
+    console.error(`Router has parameterised routes with no sample in SAMPLES: ${uncovered.join(', ')}`)
+    console.error('Add a representative path to SAMPLES in this file, then re-run.')
+    process.exit(2)
+  }
+  if (!literal.includes('/')) literal.unshift('/')
+  return [...new Set([...literal, ...SAMPLES])]
+}
+
+const ROUTES = await discoverRoutes()
 const VIEWPORTS = [
   { name: 'iphone-se', width: 320, height: 568 },
   { name: 'android-sm', width: 360, height: 800 },
@@ -18,6 +46,8 @@ const VIEWPORTS = [
 ]
 const SHOTS = process.argv.includes('--shots')
 const OUT = new URL('../docs/mobile/', import.meta.url).pathname
+
+console.log(`Auditing ${ROUTES.length} routes derived from App.tsx: ${ROUTES.join(' ')}\n`)
 
 const server = await createServer({ server: { port: 5177, strictPort: true }, logLevel: 'error' })
 await server.listen()

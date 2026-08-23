@@ -1081,7 +1081,8 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .build-head h1, .partner-detail__head h1 { font-size: 52px; }
   .partner-card, .partner-detail__grid section { padding-left: 14px; padding-right: 14px; }
   .partner-card { min-height: 360px; }
-  .partner-docs + .partner-docs { margin-left: 0; display: table; }
+  .partner-docs + .partner-docs { margin-left: 0; }
+  .partner-docs { display: flex; width: fit-content; }
   .home-partners { padding: 48px 0 56px; }
   .home-partners__intro { padding: 0; }
   .home-partners__intro h2 { font-size: 42px; }
@@ -1274,6 +1275,9 @@ a { color: var(--ink); text-underline-offset: 2px; }
      phone and both were sitting at 15-16px. */
   .interface-proof__links button { min-height: 44px; display: inline-flex; align-items: center; }
   .cite { min-height: 44px; display: inline-flex; align-items: center; }
+  /* Partner detail links — standalone calls to action, not links inside a
+     sentence, so the WCAG inline exemption does not cover them. */
+  .partner-docs { display: inline-flex; align-items: center; min-height: 44px; }
 
   /* The checkbox itself is small, but its wrapping label is the real target and
      is already 46px. Enlarge the box anyway so the thing you aim at matches the
