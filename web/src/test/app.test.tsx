@@ -26,6 +26,8 @@ describe('product navigation', () => {
     expect(screen.getByRole('img', { name: /temporal dossier/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /executive situation brief/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /source-level provenance/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /strategy atlas/i }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('button', { name: /horizon studio/i })).toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: /open executive brief/i }))
     expect(screen.getByRole('heading', { name: /ai power shifts/i })).toBeInTheDocument()
     expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
@@ -39,6 +41,26 @@ describe('product navigation', () => {
     expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
     expect(screen.getByText(/perspective range/i)).toBeInTheDocument()
     expect(screen.getByText(/long-horizon commitment/i)).toBeInTheDocument()
+  })
+})
+
+describe('build-day and multi-model story routes', () => {
+  it('shows genuine Alibaba model perspectives and the pending challenger boundary', () => {
+    window.history.replaceState({}, '', '/cases/multi-alignment-option-space')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /who is programming.*capacity to choose/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /qwen3.8-max/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /glm-5.2/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /deepseek-v4-pro/i })).toBeInTheDocument()
+    expect(screen.getByText(/pending authenticated provider run/i)).toBeInTheDocument()
+  })
+
+  it('documents the build order and no-working-software baseline', () => {
+    window.history.replaceState({}, '', '/build-day')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('heading', { name: /one day.*one observable horizon/i })).toBeInTheDocument()
+    expect(screen.getByText(/no working application/i)).toBeInTheDocument()
+    expect(screen.getByText(/toolchain in build order/i)).toBeInTheDocument()
   })
 })
 

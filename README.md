@@ -84,6 +84,7 @@ programmable future observable.**
 
 See the [concept memo](docs/PROGRAMMABLE_HORIZON_AND_TRAJECTORY_SOVEREIGNTY.md),
 the [hackathon contribution memo](docs/TODAYS_CONTRIBUTION.md),
+the [build-day toolchain and provenance record](docs/BUILD_DAY_TOOLCHAIN.md),
 the [`trajectory_hypothesis` schema](schemas/trajectory-hypothesis.schema.json),
 and the [open-source promo production package](promo/README.md).
 
@@ -150,7 +151,7 @@ Verify the ticks yourself:
 
 ```bash
 python3 -m unittest discover -s tests    # projection, ledger, trajectories and eight registers
-cd web && npm install && npm test        # 41 tests, including cross-language digest conformance
+cd web && npm install && npm test        # 43 tests, including cross-language digest conformance
 ```
 
 Provider credentials are not required for the offline demo. To prepare the live
@@ -768,7 +769,7 @@ The `web/` dossier renders the same loop as one screen, built for a projector at
 cd web
 npm install
 npm run dev      # http://localhost:5173
-npm test         # 41 unit and component tests
+npm test         # 43 unit and component tests
 ```
 
 It reads a frozen local fixture through a `DataSource` seam, so it can be

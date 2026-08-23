@@ -96,6 +96,26 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
               </button>
             </div>
           </div>
+          <div className="observe-program-intro">
+            <h3>See the writes.<br />Shape the Horizon.</h3>
+            <p>The strategy atlas observes how sovereignty is being programmed. Horizon Studio turns those writes into a versioned object that can be inspected, simulated, revised, and governed.</p>
+          </div>
+          <div className="instrument-pair">
+            <button className="instrument-preview" onClick={() => navigate('/cases')}>
+              <img src="/media/interface/strategy-map.png" alt="Sovereign Lens strategy atlas mapping conditional compute access, capability formation, and evaluation sovereignty" loading="lazy" />
+              <span><b>01 · Observe</b><strong>Strategy atlas</strong><em>Relationships under observation—not political blocs.</em></span>
+            </button>
+            <button className="instrument-preview" onClick={() => navigate('/horizon')}>
+              <img src="/media/interface/horizon-studio.png" alt="Horizon Studio visual editor showing capacity, priors, permissions, institutions, timers, verification, and human governance" loading="lazy" />
+              <span><b>02 · Program</b><strong>Horizon Studio</strong><em>Classical assets and agents compiled into a governed future object.</em></span>
+            </button>
+          </div>
+          <button className="china-panel-callout" onClick={() => navigate('/cases/multi-alignment-option-space')}>
+            <span>04 · New model parallax</span>
+            <strong>Qwen × GLM × DeepSeek × Codex</strong>
+            <p>One option-space hypothesis. Four completed perspectives. One missing challenger. See what converged, what diverged, and what evidence would resolve it.</p>
+            <em>Open multi-alignment analysis →</em>
+          </button>
         </section>
 
         <section className="idea-section">
@@ -121,8 +141,16 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
           </div>
         </section>
 
+        <section className="core-modules">
+          <div className="section-index">04 · Core modules built today</div>
+          <div className="core-modules__grid">
+            {['Evidence ledger', 'Temporal graph', 'Strategy atlas', 'Model parallax', 'Prediction ledger', 'Horizon Studio', 'Provenance', 'Executive brief'].map((module, index) => <span key={module}><b>{String(index + 1).padStart(2, '0')}</b>{module}</span>)}
+          </div>
+          <button onClick={() => navigate('/build-day')}><strong>See the complete build-day toolchain</strong><span>What was built, in which order, with which tools →</span></button>
+        </section>
+
         <section className="principles-section">
-          <div className="section-index">04 · Why it matters</div>
+          <div className="section-index">05 · Why it matters</div>
           <div className="principles-grid">
             <article><span>Capability ≠ control</span><p>Access can grow while ownership, optionality, and replacement power remain elsewhere.</p></article>
             <article><span>Disagreement is evidence</span><p>Competing interpretations stay visible instead of disappearing into an average.</p></article>
@@ -135,7 +163,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         </section>
 
         <section className="home-partners">
-          <div className="section-index">05 · Built for the long horizon</div>
+          <div className="section-index">06 · Built for the long horizon</div>
           <div className="home-partners__intro">
             <h2>Three small integrations.<br />One accountable loop.</h2>
             <p>This prototype keeps evidence sovereign while adding durable execution, shared agent memory and adaptive explanation. Each slice is optional, inspectable and replaceable.</p>

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "case_id": "multi-alignment-option-space",
+  "evidence_status": "supplied_analyst_commentary_not_verified_case_evidence",
+  "provider": "Alibaba Cloud Model Studio",
+  "region": "ap-southeast-1",
+  "endpoint_profile": "token-plan",
+  "prompt_version": "option-space-parallax-v1",
+  "shared_question": "May multi-alignment expand AI capability while also increasing switching costs, and what must Sovereign Lens observe?",
+  "runs": [
+    {
+      "response_id": "chatcmpl-0e8ca7a8-6dcf-42a4-8782-21ed4414b711",
+      "requested_model": "qwen3.8-max",
+      "returned_model": "qwen3.8-max",
+      "generated_at": "2026-08-23T02:45:45Z",
+      "finish_reason": "stop",
+      "prompt_tokens": 163,
+      "completion_tokens": 505,
+      "reasoning_tokens": 128
+    },
+    {
+      "response_id": "chatcmpl-08fa5426-1571-4d42-ac03-249529755756",
+      "requested_model": "glm-5.2",
+      "returned_model": "glm-5.2",
+      "generated_at": "2026-08-23T02:46:06Z",
+      "finish_reason": "stop",
+      "prompt_tokens": 133,
+      "completion_tokens": 664,
+      "reasoning_tokens": 370
+    },
+    {
+      "response_id": "chatcmpl-f77ea065-715c-43b0-a784-9dcd739bad5c",
+      "requested_model": "deepseek-v4-pro",
+      "returned_model": "deepseek-v4-pro",
+      "generated_at": "2026-08-23T02:46:29Z",
+      "finish_reason": "stop",
+      "prompt_tokens": 124,
+      "completion_tokens": 874,
+      "reasoning_tokens": 584
+    }
+  ],
+  "failed_runs": [
+    {
+      "model": "qwen3.8-max",
+      "reason": "Initial long-schema attempt ended with finish_reason length and was not promoted into the demo."
+    }
+  ]
+}
