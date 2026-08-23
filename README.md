@@ -6,6 +6,8 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 
 **Motto:** The Horizon already exists. Sovereign Lens makes its programming observable.
 
+![Sovereign Lens — programmable Horizons across capital, talent, compute, infrastructure, institutions, human networks and AI agents](docs/assets/sovereign-lens-programmable-horizons.png)
+
 --- 
 
 > ⚠️ **AI-SLOP / HACKATHON README DRAFT**
@@ -102,7 +104,7 @@ Verify the ticks yourself:
 
 ```bash
 python3 -m unittest discover -s tests    # projection, ledger, trajectories and eight registers
-cd web && npm install && npm test        # 39 tests, including cross-language digest conformance
+cd web && npm install && npm test        # 40 tests, including cross-language digest conformance
 ```
 
 Provider credentials are not required for the offline demo. To prepare the live
@@ -720,7 +722,7 @@ The `web/` dossier renders the same loop as one screen, built for a projector at
 cd web
 npm install
 npm run dev      # http://localhost:5173
-npm test         # 39 unit and component tests
+npm test         # 40 unit and component tests
 ```
 
 It reads a frozen local fixture through a `DataSource` seam, so it can be

@@ -167,6 +167,14 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .interface-shot span { display: flex; gap: 12px; padding: 9px 11px; border-top: 1px solid var(--ink); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .interface-shot span b { color: var(--accent); }
 .interface-shot:hover img { transform: scale(1.012); filter: saturate(1) contrast(1.04); }
+.instrument-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.instrument-preview { min-width: 0; border: 1px solid var(--ink); background: var(--panel); overflow: hidden; }
+.instrument-preview img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; filter: saturate(.82); transition: transform 220ms ease, filter 220ms ease; }
+.instrument-preview > span { display: grid; grid-template-columns: auto 1fr; gap: 5px 18px; padding: 12px; border-top: 1px solid var(--ink); }
+.instrument-preview b { grid-row: span 2; color: var(--accent); font-size: var(--t-micro); text-transform: uppercase; letter-spacing: .1em; }
+.instrument-preview strong { font-size: 18px; letter-spacing: -.025em; }
+.instrument-preview em { color: var(--muted); font-size: var(--t-small); font-style: normal; }
+.instrument-preview:hover img { transform: scale(1.012); filter: saturate(1); }
 .idea-section h2 { max-width: 970px; padding: 40px 0; }
 .horizon-thesis { max-width: 920px; margin: -18px 0 36px; font-size: clamp(18px, 1.65vw, 25px); line-height: 1.38; letter-spacing: -.02em; }
 .horizon-blocks { display: grid; grid-template-columns: repeat(8, 1fr); margin-bottom: 28px; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
@@ -226,6 +234,7 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .product-nav__item, .product-nav a { flex: 0 0 auto; }
   .home-hero__bottom, .live-case__header { grid-template-columns: 1fr; }
   .interface-proof__intro, .interface-montage { grid-template-columns: 1fr; }
+  .instrument-pair { grid-template-columns: 1fr; }
   .interface-shot--primary, .interface-montage__stack .interface-shot { min-height: 260px; }
   .signal-grid, .principles-grid { grid-template-columns: 1fr; }.signal-grid article, .principles-grid article { border-right: 0; border-bottom: 1px solid var(--ink); }
   .loop-line { grid-template-columns: repeat(2, 1fr); }
@@ -993,6 +1002,8 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .interface-proof__intro { padding: 28px 0 20px; gap: 18px; }
   .interface-proof__intro p { font-size: 13px; }
   .interface-shot--primary, .interface-montage__stack .interface-shot { min-height: 220px; }
+  .instrument-preview > span { grid-template-columns: 1fr; gap: 4px; }
+  .instrument-preview b { grid-row: auto; }
   .horizon-blocks { grid-template-columns: repeat(2, 1fr); }
   .horizon-thesis { margin-top: -10px; font-size: 17px; }
   .programmable-horizon { grid-template-columns: 1fr; gap: 18px; }
