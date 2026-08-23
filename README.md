@@ -104,7 +104,7 @@ Verify the ticks yourself:
 
 ```bash
 python3 -m unittest discover -s tests    # projection, ledger, trajectories and eight registers
-cd web && npm install && npm test        # 40 tests, including cross-language digest conformance
+cd web && npm install && npm test        # 41 tests, including cross-language digest conformance
 ```
 
 Provider credentials are not required for the offline demo. To prepare the live
@@ -722,7 +722,7 @@ The `web/` dossier renders the same loop as one screen, built for a projector at
 cd web
 npm install
 npm run dev      # http://localhost:5173
-npm test         # 40 unit and component tests
+npm test         # 41 unit and component tests
 ```
 
 It reads a frozen local fixture through a `DataSource` seam, so it can be

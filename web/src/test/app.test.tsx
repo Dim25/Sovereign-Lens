@@ -29,6 +29,16 @@ describe('product navigation', () => {
     expect(screen.getByRole('heading', { name: /ai power shifts/i })).toBeInTheDocument()
     expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
   })
+
+  it('preserves the diagram-led executive brief as a direct route', () => {
+    window.history.replaceState({}, '', '/brief')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('img', { name: /actor and asset relationship graph/i })).toBeInTheDocument()
+    expect(screen.getByText(/power & dependency graph/i)).toBeInTheDocument()
+    expect(screen.getByText(/sovereignty deltas/i)).toBeInTheDocument()
+    expect(screen.getByText(/perspective range/i)).toBeInTheDocument()
+    expect(screen.getByText(/long-horizon commitment/i)).toBeInTheDocument()
+  })
 })
 
 describe('case routes', () => {
