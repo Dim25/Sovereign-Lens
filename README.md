@@ -32,9 +32,10 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 >
 > Demo: [sovereignlens.ai](https://sovereignlens.ai)<br>
 > Code: [github.com/Dim25/Sovereign-Lens](https://github.com/Dim25/Sovereign-Lens)
-
-
-> Thanks! -Dima (Let's Connect: https://www.linkedin.com/in/dim25  
+> 
+> Thanks!
+> 
+> -Dima (Let's Connect: https://www.linkedin.com/in/dim25  
 
 ![Sovereign Lens — programmable Horizons across capital, talent, compute, infrastructure, institutions, human networks and AI agents](docs/assets/sovereign-lens-programmable-horizons.png)
 
