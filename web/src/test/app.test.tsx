@@ -68,6 +68,8 @@ describe('build-partner routes', () => {
     const { unmount } = render(<App source={createFixtureSource(fixture)} />)
     expect(screen.getByRole('heading', { name: /stash × sovereign lens/i })).toBeInTheDocument()
     expect(screen.getByText(/retrieved recollection is context, never evidence/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /questions that determine adoption/i })).toBeInTheDocument()
+    expect(screen.getAllByText(/stale-hit rate/i).length).toBeGreaterThan(0)
     unmount()
     window.history.replaceState({}, '', '/build/coframe')
     render(<App source={createFixtureSource(fixture)} />)

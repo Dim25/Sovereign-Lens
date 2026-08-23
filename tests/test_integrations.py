@@ -14,7 +14,10 @@ class IntegrationMicroTests(unittest.TestCase):
         self.assertEqual(temporal_record(self.task)["idempotency_key"], temporal_record(self.task)["idempotency_key"])
 
     def test_stash_memory_cannot_masquerade_as_evidence(self):
-        self.assertFalse(stash_memory(self.task)["memory_is_evidence"])
+        memory = stash_memory(self.task)
+        self.assertFalse(memory["memory_is_evidence"])
+        self.assertEqual(memory["review"]["status"], "unreviewed")
+        self.assertEqual(memory["retention"]["review_at"], self.task.due_at)
 
     def test_coframe_locks_analytical_fields(self):
         self.assertIn("source_ids", coframe_contract()["locked_fields"])

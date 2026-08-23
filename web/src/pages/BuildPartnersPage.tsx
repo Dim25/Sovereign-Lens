@@ -13,6 +13,8 @@ type Partner = {
   boundary: string
   next: string[]
   url: string
+  questions?: { theme: string; question: string; why: string }[]
+  evaluation?: { label: string; target: string }[]
 }
 
 const PARTNERS: Partner[] = [
@@ -59,6 +61,26 @@ const PARTNERS: Partner[] = [
     boundary: 'Memory can be stale, incomplete or poisoned. A retrieved recollection is context, never evidence by itself. Durable claims still require a source ID, observation time and content hash.',
     next: ['Connect the development workspace and capture research sessions.', 'Define a minimal memory record with provenance and retention policy.', 'Compare retrieval against a local append-only adapter.', 'Add a human promotion step before memory changes methodology.'],
     url: 'https://www.joinstash.ai/docs',
+    questions: [
+      { theme: 'Retrieval', question: 'Can search filter by case, valid time, recorded time, source jurisdiction, author and review status before semantic ranking?', why: 'A semantically similar but temporally stale memory can produce a confidently wrong sovereignty assessment.' },
+      { theme: 'Provenance', question: 'Does every result return an immutable memory ID, original author, creation time, source session and exact excerpt?', why: 'An agent must be able to explain why a memory entered context and reproduce the retrieval later.' },
+      { theme: 'Supersession', question: 'Can a correction supersede earlier memory without deleting it, while retrieval prefers the current record and exposes the old one?', why: 'Sovereign Lens preserves changed beliefs instead of rewriting analytical history.' },
+      { theme: 'Isolation', question: 'Can permissions be enforced by source, case, field and agent—and before embeddings or results leave the tenant boundary?', why: 'Research may combine public evidence, private notes and restricted material.' },
+      { theme: 'Deletion', question: 'What happens to raw text, embeddings, caches, summaries and backups after deletion or a retention deadline?', why: 'A credible right to forget must cover derived memory, not only the visible page.' },
+      { theme: 'Poisoning', question: 'What prevents one compromised session or retrieved document from becoming durable shared instruction?', why: 'Cross-agent memory increases the blast radius of prompt injection and analyst error.' },
+      { theme: 'Human review', question: 'Can unreviewed memory remain separate from approved lessons, with a signed promotion event and rollback?', why: 'Only reviewed lessons may change the versioned Sovereign Lens methodology.' },
+      { theme: 'Evaluation', question: 'Can we log retrieval candidates, ranks, filters and the final context bundle?', why: 'We need to score recall, stale-hit rate and downstream effects against the local adapter.' },
+      { theme: 'Portability', question: 'Can we export sessions, pages, links and metadata—and reproduce the retrieval policy self-hosted?', why: 'Institutional memory cannot become hostage to one service.' },
+      { theme: 'Operations', question: 'What are the API/MCP limits, indexing latency, regional hosting choices and failure behavior?', why: 'The observation loop needs predictable degradation when Stash is unavailable.' },
+    ],
+    evaluation: [
+      { label: 'Recall@5', target: '≥ 0.80 on 25 known prior decisions' },
+      { label: 'Stale-hit rate', target: '≤ 0.05 after superseding corrections' },
+      { label: 'Provenance', target: '100% carry immutable origin metadata' },
+      { label: 'Isolation', target: '0 unauthorized results across adversarial probes' },
+      { label: 'Recovery', target: 'Local ledger completes when Stash is unavailable' },
+      { label: 'Behavioral lift', target: 'Reviewed lesson beats the no-memory control' },
+    ],
   },
   {
     slug: 'coframe',
@@ -149,6 +171,35 @@ function PartnerDetail({ partner, navigate }: { partner: Partner; navigate: Navi
           <a className="partner-docs" href={partner.url} target="_blank" rel="noreferrer">Official documentation ↗</a>
           <a className="partner-docs" href="https://github.com/Dim25/Sovereign-Lens/tree/main/integrations" target="_blank" rel="noreferrer">Micro implementation ↗</a>
         </section>
+        {partner.questions ? (
+          <section className="partner-deep-dive">
+            <div className="partner-section-label">05 · Ask the Stash team</div>
+            <div className="partner-deep-dive__head">
+              <h2>Questions that determine adoption</h2>
+              <p>Ask for a live demonstration against one corrected Sovereign Lens case—not only a verbal answer.</p>
+            </div>
+            <div className="partner-questions">
+              {partner.questions.map((item, index) => (
+                <article key={item.question}>
+                  <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.theme}</strong></div>
+                  <h3>{item.question}</h3>
+                  <p>{item.why}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+        {partner.evaluation ? (
+          <section className="partner-eval">
+            <div className="partner-section-label">06 · 60-minute bake-off</div>
+            <h2>Adopt only if memory improves the next rollout.</h2>
+            <p className="partner-eval__method">Seed 25 prior decisions, supersede five, restrict five, then start a fresh agent. Run identical questions with no memory, the local adapter and Stash. Freeze prompts and score the result.</p>
+            <div className="partner-eval__gates">
+              {partner.evaluation.map((item) => <div key={item.label}><strong>{item.label}</strong><span>{item.target}</span></div>)}
+            </div>
+            <blockquote>Integrate Stash when it improves relevant recall without increasing stale or unauthorized context—and when accumulated institutional memory remains exportable and reproducible.</blockquote>
+          </section>
+        ) : null}
       </main>
     </div>
   )
