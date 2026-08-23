@@ -55,6 +55,14 @@ describe('build-day and multi-model story routes', () => {
     expect(screen.getByRole('link', { name: /mp4/i })).toHaveAttribute('href', '/media/sovereign-lens-demo-loop-90s.mp4')
   })
 
+  it('offers a clean one-minute interface demo', () => {
+    window.history.replaceState({}, '', '/demo1min')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('main', { name: /one-minute demo/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /the horizon already exists/i })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /sovereign lens interface/i })).toBeInTheDocument()
+  })
+
   it('shows genuine Alibaba perspectives and the completed Fable challenger', () => {
     window.history.replaceState({}, '', '/cases/multi-alignment-option-space')
     render(<App source={createFixtureSource(fixture)} />)

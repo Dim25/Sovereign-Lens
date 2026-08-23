@@ -42,6 +42,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 **Watch:** [25-second feature overview](https://sovereignlens.ai/build-day) ·
 [UAE evidence-to-calibration walkthrough](https://sovereignlens.ai/cases/uae-us-ai-infrastructure) ·
 [90-second automated product demo](https://sovereignlens.ai/demo)
+· [clean 60-second demo](https://sovereignlens.ai/demo1min)
 
 --- 
 
