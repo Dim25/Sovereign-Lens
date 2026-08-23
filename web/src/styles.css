@@ -221,7 +221,8 @@ a { color: var(--ink); text-underline-offset: 2px; }
 .executive-grid > section { min-height: 0; background: var(--panel); border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
 .executive-section-head { display: flex; justify-content: space-between; gap: 20px; padding: 8px 13px; border-bottom: 1px solid var(--rule); font-size: 9px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
 .executive-section-head span:last-child { color: var(--muted); font-weight: 500; }
-.executive-graph { grid-row: span 2; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.executive-graph { grid-row: span 2; display: grid; grid-template-rows: auto minmax(0, 1fr); min-width: 0; }
+.executive-grid > section, .executive-graph > .panel, .executive-graph .panel__body { min-width: 0; }
 .executive-graph > .panel { border: 0; }
 .material-change { padding-bottom: 16px; }
 .material-change h2 { margin: 25px 18px 12px; font-size: 36px; line-height: .95; letter-spacing: -.045em; }
@@ -1159,7 +1160,12 @@ a { color: var(--ink); text-underline-offset: 2px; }
   .option-case__synthesis .section-index { grid-column: auto; }.option-case__synthesis > div:not(.section-index) { border-right: 0; border-bottom: 1px solid var(--rule); }
   .build-day__modules > div:last-child { grid-template-columns: repeat(2,1fr); }.build-day__timeline article { grid-template-columns: 34px 1fr; }.build-day__timeline article > p { grid-column: 2; }
   .build-day__video { grid-template-columns: 1fr; }.build-day__video .section-index { grid-column: auto; }.build-day__video i { transform: rotate(90deg); }.build-day__video div:not(.section-index) { min-height: 0; }
-  .case-films { right: 8px; bottom: 8px; width: calc(100vw - 16px); }.case-films__body { grid-template-columns: 1fr; max-height: 72vh; overflow: auto; }
+  /* A fixed overlay at bottom:8px lands behind the sticky scrubber, and a
+     floating panel is the wrong object on a 390px screen anyway. Put it
+     back in flow, where it reads as the last section of the dossier. */
+  .case-films { position: static; width: auto; margin: 0; border-left: 0; border-right: 0; box-shadow: none; }
+  .case-films > summary { min-height: 46px; display: flex; align-items: center; font-size: 10px; }
+  .case-films__body { grid-template-columns: 1fr; }
   .demo__image { inset: 47px 0 auto; width: 100%; height: 43%; object-position: top left; }.demo__shade { inset: auto 0 54px; width: 100%; height: 53%; border: 0; border-top: 1px solid var(--ink); }.demo__top { padding: 13px 14px; }.demo__top > div { gap: 10px; }.demo__top span { max-width: 120px; text-align: right; line-height: 1.4; }.demo__copy { left: 18px; bottom: 88px; width: calc(100vw - 36px); }.demo__copy h1 { margin-bottom: 10px; font-size: clamp(38px, 12.5vw, 54px); }.demo__copy p { font-size: 14px; }.demo__copy small { margin-top: 9px; font-size: 9px; }.demo__eyebrow { margin-bottom: 8px; font-size: 9px; }.demo__controls { grid-template-columns: 42px 60px 1fr 42px; }.demo__controls > span { display: none; }.demo__steps { gap: 3px; padding: 0 8px; }
 }
 
@@ -1174,4 +1180,152 @@ a { color: var(--ink); text-underline-offset: 2px; }
 
 @media (max-width: 700px) {
   .demo-minute { grid-template: 48px 40% 1fr 54px / 1fr; }.demo-minute__top { grid-area: 1 / 1; padding: 0 12px; }.demo-minute__top div { gap: 8px; }.demo-minute__visual { grid-area: 2 / 1; border-bottom: 1px solid var(--ink); }.demo-minute__copy { grid-area: 3 / 1; justify-content: flex-start; padding: 22px 18px; border: 0; }.demo-minute__copy h1 { margin: 12px 0; font-size: clamp(42px, 13vw, 56px); }.demo-minute__copy p { font-size: 14px; }.demo-minute__copy small { margin-top: 12px; font-size: 8px; }.demo-minute__controls { grid-area: 4 / 1; grid-template-columns: 42px 60px 1fr 42px; }.demo-minute__controls > span { display: none; }.demo-minute__controls > div { gap: 3px; padding: 0 8px; }
+}
+
+/* ==================================================== mobile: real devices ===
+   The page previously declared `width=1440` in its viewport meta, which pinned
+   the layout viewport on phones and left every query below dead. With
+   `width=device-width` live, this section makes the layout genuinely flexible
+   rather than merely narrow: tables re-form as records, the graph keeps a
+   legible scale instead of shrinking to nothing, and every control is
+   thumb-sized. Same Swiss language throughout — hairlines, ink, one accent. */
+
+/* Preserve the desktop clip; mobile re-opens it as a scroll axis below. */
+.graph-viewport { overflow: hidden; }
+
+@media (max-width: 700px) {
+  :root {
+    --t-micro: 10px;
+    --t-small: 12px;
+    --t-body: 13.5px;
+    --t-lede: 15px;
+    --pad: 12px;
+  }
+
+  /* Notch and home-indicator clearance, now that viewport-fit=cover is set. */
+  .product-nav {
+    min-height: 48px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+  .public-footer { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+
+  /* Thumb-sized navigation. 8.5px type was legible only on a scaled desktop. */
+  .product-nav__brand { font-size: 11px; letter-spacing: .1em; }
+  .product-nav__item, .product-nav a, .product-nav__brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 10px;
+  }
+  .product-nav__links {
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-nav__item, .product-nav__links a { scroll-snap-align: start; scroll-margin-left: 12px; }
+
+  /* Primary actions: full-width targets, never a 10px-tall strip. */
+  .button-primary, .button-secondary, .scrubber__advance, .horizon-delete {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* Graph: hold a legible scale and pan, rather than shrink to illegibility.
+     886x424 is the authored viewBox; 640 keeps labels above ~9px. */
+  .column-left > .panel:first-child { height: auto; }
+  .graph-viewport { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+  .graph-viewport > .graph { min-width: 640px; height: 300px; }
+  .graph__legend { flex-wrap: wrap; gap: 4px 14px; line-height: 1.5; }
+  /* The graph keeps its scale and pans; say so, since the cut edge is the
+     only other clue and this language has no scrollbars to lean on. */
+  .graph__legend::after { content: 'swipe graph to pan'; color: var(--accent); }
+
+  /* The scrubber is persistent furniture; keep it under a fifth of the screen. */
+  .scrubber { padding: 6px 10px max(6px, env(safe-area-inset-bottom)); }
+  .scrubber__note { margin-top: 5px; font-size: var(--t-micro); line-height: 1.35; }
+  .stop { width: auto; min-width: 108px; min-height: 44px; justify-content: flex-start; }
+
+  /* iOS zooms the page for any field under 16px. */
+  .horizon-inspector input:not([type='checkbox']),
+  .horizon-inspector textarea,
+  .horizon-inspector select { font-size: 16px; padding: 11px; }
+  .horizon-switch { min-height: 46px; }
+  .horizon-switch input[type='checkbox'] { width: 22px; height: 22px; }
+
+  /* The workflow canvas pans; say so, and let the palette wrap instead of
+     hiding registers off the right edge. */
+  .horizon-palette { height: auto; flex-wrap: wrap; gap: 6px; padding: 9px 12px; }
+  .horizon-palette button { min-height: 38px; font-size: 10px; padding: 8px 10px; }
+  .horizon-canvas__bar { height: auto; min-height: 42px; padding: 8px 12px; gap: 10px; line-height: 1.35; }
+  .horizon-canvas__hint::after { content: ' · drag the board to pan'; }
+  .horizon-runbar { grid-template-columns: 1fr 1fr; }
+  .horizon-runbar > *:last-child { grid-column: 1 / -1; border-right: 0; }
+  .horizon-compile pre { height: 200px; font-size: 11px; }
+
+  /* Evidence drawer is a sheet on a phone, not a side panel. */
+  .drawer {
+    top: auto;
+    height: 88dvh;
+    border-left: 0;
+    border-top: 1px solid var(--ink);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .drawer__close { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* ------------------------------------------- records instead of a table --- */
+/* Below 640px a five-column ledger cannot stay a table without becoming a
+   horizontal scroll strip, which hides the superseded/current distinction the
+   panel exists to show. Each row becomes a record; the state stays a badge. */
+
+@media (max-width: 640px) {
+  .facts, .facts tbody, .facts tr, .facts td { display: block; width: auto; }
+  .facts { min-width: 0; }
+  .facts thead { display: none; }
+
+  .facts tr {
+    padding: 11px var(--pad) 13px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .facts tr:hover td { background: none; }
+  .facts td { padding: 0; border: 0; }
+  .facts td + td { margin-top: 7px; }
+
+  .facts td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    font-size: var(--t-micro);
+    font-weight: 700;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .facts__state {
+    width: auto;
+    margin-bottom: 3px;
+    font-size: var(--t-micro);
+  }
+  .facts__subject { width: auto; font-size: var(--t-lede); }
+  .facts__dates { width: auto; white-space: normal; }
+  .facts__cite { width: auto; text-align: left; }
+  .facts__cite .cite { min-height: 40px; display: inline-flex; align-items: center; }
+
+  /* The timeline is the one strip that genuinely reads better scrolled.
+     max-content keeps adjacent stop labels from colliding at any stop count. */
+  .scrubber__stops { min-width: max-content; gap: 14px; }
+  .scrubber__rail { min-width: max-content; right: auto; width: 100%; }
+}
+
+/* ------------------------------------------------------ small phones (SE) --- */
+
+@media (max-width: 380px) {
+  .home { padding: 0 12px; }
+  .executive-kpis { grid-template-columns: 1fr; }
+  .graph-viewport > .graph { min-width: 560px; }
+  .horizon-blocks { grid-template-columns: 1fr; }
 }

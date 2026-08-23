@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "shot": "node scripts/screenshot.mjs"
+    "shot": "node scripts/screenshot.mjs",
+    "audit:mobile": "node scripts/mobile-audit.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

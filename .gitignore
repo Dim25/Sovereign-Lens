@@ -37,3 +37,6 @@ promo/demo/demo-*.jpg
 promo/demo/home-*.jpg
 promo/demo1min/work/
 promo/demo1min/final/
+
+# Mobile audit output
+web/docs/mobile/

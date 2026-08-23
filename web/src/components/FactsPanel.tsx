@@ -35,19 +35,19 @@ export function FactsPanel({ snapshot, onCite }: Props) {
           {state}
           {isChanged ? ' ▲' : ''}
         </td>
-        <td className="facts__subject">{fact.subject}</td>
-        <td className="facts__object">
+        <td className="facts__subject" data-label="Subject">{fact.subject}</td>
+        <td className="facts__object" data-label="Statement">
           {fact.object}
           <div className="panel__note" style={{ marginTop: 3 }}>
             {fact.predicate} · {fact.status}
           </div>
         </td>
-        <td className="facts__dates">
+        <td className="facts__dates" data-label="Validity">
           valid {fact.valid_from} → {fact.valid_to ?? 'open'}
           <br />
           recorded {fact.recorded_at}
         </td>
-        <td className="facts__cite">
+        <td className="facts__cite" data-label="Source">
           <button className="cite" onClick={() => onCite(fact)}>
             evidence
           </button>

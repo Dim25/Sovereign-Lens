@@ -96,7 +96,7 @@ export function GraphPanel({
           {snapshot.nodes.length} nodes · {snapshot.edges.length} relationships valid at as_of
         </span>
       </div>
-      <div className="panel__body panel__body--flush" style={{ overflow: 'hidden' }}>
+      <div className="panel__body panel__body--flush graph-viewport">
         <svg className="graph" viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label="Actor and asset relationship graph">
           <defs>
             <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
