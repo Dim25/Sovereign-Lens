@@ -6,6 +6,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
   const meta = source.meta()
   const snapshot = source.snapshot(meta.t1)
   const material = source.disagreements(meta.t1).filter((axis) => axis.divergence === 'material')
+  const perspectives = source.assessments(meta.t1)
 
   return (
     <div className="public-page">
@@ -49,6 +50,21 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
             <article><span>What changed</span><strong>500 MW</strong><p>reported online in 2026</p></article>
             <article><span>What it means</span><strong>Capability ↑</strong><p>with continuing U.S. operational leverage</p></article>
             <article><span>What is unresolved</span><strong>{material.length} material</strong><p>verification disagreement preserved</p></article>
+          </div>
+          <div className="model-parallax">
+            <div className="model-parallax__head">
+              <span>Model parallax · same evidence</span>
+              <span>Qwen / Alibaba Model Studio configured in the evaluation panel</span>
+            </div>
+            <div className="model-parallax__grid">
+              {perspectives.slice(0, 3).map((item) => (
+                <article key={item.id}>
+                  <span>{item.perspective.replace('_', ' ')}</span>
+                  <p>{item.assessment}</p>
+                  <strong>{Math.round(item.confidence * 100)}% confidence</strong>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
