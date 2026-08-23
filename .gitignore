@@ -13,6 +13,7 @@ venv/
 # Secrets and local evidence — never commit
 .env
 .env.*
+!.env.example
 *.key
 *.pem
 

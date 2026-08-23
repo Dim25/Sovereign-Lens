@@ -4,7 +4,7 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 
 **Web:** [sovereignlens.ai](https://sovereignlens.ai)
 
-**Motto:** The horizon already exists. We can make it programmable now.
+**Motto:** The Horizon already exists. Sovereign Lens makes its programming observable.
 
 --- 
 
@@ -17,6 +17,27 @@ Independent multi-agent intelligence for tracking how AI reshapes state and geop
 **Independent multi-agent intelligence for tracking how AI reshapes state and geopolitical power.**
 
 Sovereign Lens is an open-source, evidence-first system for observing how artificial intelligence changes geopolitical influence, technological dependency, national capability, and state sovereignty.
+
+## The contribution: the programmable Horizon
+
+The Horizon is not an agent's long-term memory. It is shared, forward-facing state
+outside any one agent: the accumulated option space produced by capital, talent,
+compute, energy, infrastructure, data, culture, institutions, human networks,
+standards, and AI systems.
+
+States and other institutions already program this Horizon. Sovereign Lens observes
+their public actions as writes to eight registers: **timers, commitments, parameters,
+defaults, permissions, priors, capacities, and categories**. Each write records who
+acted, what changed, when it activates, how binding and reversible it is, which
+sovereign capabilities it affects, and the evidence supporting that observation.
+
+Multiple models analyze the same write independently. Consensus becomes an
+observation; divergence becomes parallax—a measurement of how different model
+cultures parse the same change. The observer is therefore also observable.
+
+See the [concept memo](docs/PROGRAMMABLE_HORIZON_AND_TRAJECTORY_SOVEREIGNTY.md),
+the [`trajectory_hypothesis` schema](schemas/trajectory-hypothesis.schema.json),
+and the [open-source promo production package](promo/README.md).
 
 It is not intended to be another geopolitical news summarizer. Sovereign Lens converts source-linked evidence into a living graph of AI-related actors, assets, relationships, claims, and events. Multiple AI models then evaluate the same evidence independently, while a separate evaluation layer exposes where they agree, where they disagree, which assumptions drive their conclusions, and what evidence could change their views.
 
@@ -80,9 +101,14 @@ Memory and calibration
 Verify the ticks yourself:
 
 ```bash
-python3 -m unittest discover -s tests    # 2 tests: projection, ledger and lesson
-cd web && npm install && npm test        # 34 tests, including cross-language digest conformance
+python3 -m unittest discover -s tests    # projection, ledger, trajectories and eight registers
+cd web && npm install && npm test        # 35 tests, including cross-language digest conformance
 ```
+
+Provider credentials are not required for the offline demo. To prepare the live
+multi-model panel, copy `.env.example` to `.env`, then follow
+[`docs/API_ACCESS.md`](docs/API_ACCESS.md) and run
+`python3 scripts/check_api_config.py`.
 
 **Anything unchecked is specification, not software.** The most consequential
 unchecked line is *multiple perspective-model assessments*: model plurality is

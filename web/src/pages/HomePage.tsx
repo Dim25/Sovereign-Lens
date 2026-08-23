@@ -77,15 +77,16 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         </section>
 
         <section className="idea-section">
-          <div className="section-index">03 · Programmable Horizon Blocks</div>
-          <h2>The disagreement is the product.<br />The horizon turns evaluation into intelligence.</h2>
+          <div className="section-index">03 · The writable Horizon</div>
+          <h2>Eight registers.<br />A live commit log of the future.</h2>
           <p className="horizon-thesis">
-            Sovereign Lens does not decide whether an initiative is “pro-US,” “pro-China,” or
-            “pro-Africa.” It preserves the evidence, asks what capability and dependency changed,
-            records competing interpretations, and returns later to learn which interpretation held up.
+            States already program sovereign trajectories through timers, commitments, parameters,
+            defaults, permissions, priors, capacities, and categories. Sovereign Lens observes those
+            writes across capital, talent, compute, infrastructure, culture, institutions, human networks,
+            and AI systems—then asks multiple models what changed.
           </p>
           <div className="horizon-blocks" aria-label="Programmable Horizon Blocks">
-            {['Capital', 'Talent', 'Compute', 'Infrastructure', 'Energy', 'Data', 'Culture', 'Institutions', 'Law + policy', 'Human networks', 'Standards', 'AI agents'].map((block) => (
+            {['Timers', 'Commitments', 'Parameters', 'Defaults', 'Permissions', 'Priors', 'Capacities', 'Categories'].map((block) => (
               <span key={block}>{block}</span>
             ))}
           </div>

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "providers": {
+    "openai": {
+      "role": "perspective",
+      "required_for_mvp": true,
+      "api_key_env": "OPENAI_API_KEY",
+      "model_env": "OPENAI_MODEL",
+      "default_model": "gpt-5.6-sol",
+      "base_url": "https://api.openai.com/v1"
+    },
+    "qwen": {
+      "role": "perspective",
+      "required_for_mvp": true,
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "model_env": "QWEN_MODEL",
+      "default_model": "qwen3.8-max",
+      "base_url_env": "DASHSCOPE_BASE_URL",
+      "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "region_note": "International endpoint; record the selected Alibaba deployment region on every assessment."
+    },
+    "mistral": {
+      "role": "perspective",
+      "required_for_mvp": true,
+      "api_key_env": "MISTRAL_API_KEY",
+      "model_env": "MISTRAL_MODEL",
+      "default_model": "mistral-large-2512",
+      "base_url": "https://api.mistral.ai/v1"
+    },
+    "anthropic": {
+      "role": "blind_evaluator",
+      "required_for_mvp": true,
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "model_env": "ANTHROPIC_MODEL",
+      "default_model": "claude-opus-4-1",
+      "base_url": "https://api.anthropic.com",
+      "model_note": "claude-fable-5 was not found in public Anthropic documentation on 2026-08-22; override only after confirming it in the account's model list."
+    },
+    "xai": {
+      "role": "challenger",
+      "required_for_mvp": false,
+      "api_key_env": "XAI_API_KEY",
+      "model_env": "XAI_MODEL",
+      "default_model": "grok-4.6",
+      "base_url": "https://api.x.ai/v1"
+    },
+    "google": {
+      "role": "expanded_panel",
+      "required_for_mvp": false,
+      "api_key_env": "GEMINI_API_KEY",
+      "model_env": "GEMINI_MODEL",
+      "default_model": "gemini-3.1-pro-preview",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "model_note": "Preview endpoint; use gemini-3.7-flash as the stable longitudinal control."
+    },
+    "deepseek": {
+      "role": "expanded_panel",
+      "required_for_mvp": false,
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model_env": "DEEPSEEK_MODEL",
+      "default_model": "deepseek-v4-pro",
+      "base_url": "https://api.deepseek.com"
+    },
+    "zai": {
+      "role": "expanded_panel",
+      "required_for_mvp": false,
+      "api_key_env": "ZAI_API_KEY",
+      "model_env": "ZAI_MODEL",
+      "default_model": "glm-5",
+      "base_url_env": "ZAI_BASE_URL",
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "model_note": "glm-5.3 was not found in public Z.AI documentation on 2026-08-22; override after account-level confirmation."
+    }
+  }
+}

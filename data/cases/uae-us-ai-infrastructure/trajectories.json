@@ -8,6 +8,11 @@
       "title": "Sovereign accumulation",
       "thesis": "Imported infrastructure becomes durable UAE capability through local operation, evaluation capacity, knowledge transfer, and credible replacement options.",
       "status": "unresolved",
+      "register_writes": [
+        { "id": "write_capacity_campus", "register": "capacity", "operation": "build", "description": "The proposed campus writes future compute and infrastructure capacity into the UAE option space.", "author_types": ["state", "company"], "activation_date": "2025-05-15", "binding_strength": "announced", "revocability": "difficult", "source_ids": ["src_uae_us_campus_2025"] },
+        { "id": "write_prior_local_capability", "register": "prior", "operation": "initialize", "description": "Operating and evaluation programs may initialize locally retained technical and institutional capability.", "author_types": ["institution", "company", "human"], "activation_date": "2024-04-15", "binding_strength": "announced", "revocability": "conditional", "source_ids": ["src_microsoft_g42_investment_2024"] },
+        { "id": "write_category_trusted_stack", "register": "category", "operation": "classify", "description": "Bilateral principles classify parts of the technology relationship as trusted and governable under shared safeguards.", "author_types": ["state"], "activation_date": "2024-09-23", "binding_strength": "announced", "revocability": "conditional", "source_ids": ["src_uae_us_ai_principles_2024"] }
+      ],
       "horizon_blocks": [
         { "type": "capital", "programming_action": "Microsoft investment and bilateral infrastructure finance allocate capital toward a UAE-based AI stack.", "direction": "increases", "actor_types": ["state", "company"] },
         { "type": "compute", "programming_action": "Chip authorization and campus capacity expand available frontier compute under continuing external conditions.", "direction": "increases", "actor_types": ["state", "company"] },
@@ -36,6 +41,11 @@
       "title": "Managed interdependence",
       "thesis": "The UAE gains substantial capability while external dependencies remain explicit, diversified, and governable through agreements and institutional bargaining power.",
       "status": "strengthening",
+      "register_writes": [
+        { "id": "write_commitment_bilateral_principles", "register": "commitment", "operation": "bind", "description": "The bilateral principles commit successor activity to a shared security and technology-protection framework.", "author_types": ["state"], "activation_date": "2024-09-23", "binding_strength": "announced", "revocability": "conditional", "source_ids": ["src_uae_us_ai_principles_2024"] },
+        { "id": "write_timer_capacity_milestone", "register": "timer", "operation": "schedule", "description": "The partnership schedules an initial operational-capacity milestone for 2026.", "author_types": ["state", "company"], "activation_date": "2026-01-01", "binding_strength": "announced", "revocability": "conditional", "source_ids": ["src_uae_ai_acceleration_2025"] },
+        { "id": "write_default_regulated_operation", "register": "default", "operation": "default", "description": "Absent a later change, regulated access and technology-protection conditions remain the operating baseline.", "author_types": ["state", "institution"], "activation_date": "2024-09-23", "binding_strength": "regulatory", "revocability": "conditional", "source_ids": ["src_uae_us_ai_principles_2024", "src_commerce_chip_authorization_2025"] }
+      ],
       "horizon_blocks": [
         { "type": "capital", "programming_action": "Cross-border investment binds commercial incentives across the partnership.", "direction": "increases", "actor_types": ["state", "company"] },
         { "type": "compute", "programming_action": "Regulated access expands capacity while preserving supplier and export-control dependencies.", "direction": "mixed", "actor_types": ["state", "company"] },
@@ -64,6 +74,10 @@
       "title": "Capability without control",
       "thesis": "Operational capacity grows while chips, model access, assurance requirements, and key operating decisions remain externally controlled and difficult to replace.",
       "status": "unresolved",
+      "register_writes": [
+        { "id": "write_permission_chip_exports", "register": "permission", "operation": "grant", "description": "Export authorization grants bounded access to advanced chips subject to security and reporting conditions.", "author_types": ["state", "institution"], "activation_date": "2025-11-19", "binding_strength": "regulatory", "revocability": "conditional", "source_ids": ["src_commerce_chip_authorization_2025"] },
+        { "id": "write_parameter_compute_scale", "register": "parameter", "operation": "set", "description": "Named campus and accelerator quantities set the scale against which implementation and dependence are evaluated.", "author_types": ["state", "company"], "activation_date": "2025-05-28", "binding_strength": "announced", "revocability": "conditional", "source_ids": ["src_uae_ai_acceleration_2025", "src_uae_us_campus_2025"] }
+      ],
       "horizon_blocks": [
         { "type": "compute", "programming_action": "Foreign chip supply and authorization conditions concentrate interruption power outside the UAE.", "direction": "increases", "actor_types": ["state", "company"] },
         { "type": "infrastructure", "programming_action": "Physical capacity grows locally while critical operation may remain tied to foreign platforms and suppliers.", "direction": "mixed", "actor_types": ["state", "company"] },

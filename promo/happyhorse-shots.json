@@ -1,0 +1,31 @@
+{
+  "project": "Sovereign Lens launch film",
+  "format": { "aspect_ratio": "16:9", "resolution": "1080p", "duration_seconds_per_shot": 5, "audio": false },
+  "visual_language": "Brutal white Swiss editorial design, black ink on warm white, hairline technical rules, restrained signal red only for material change, geopolitical institutional intelligence rather than sci-fi dashboard, no globe, no flags, no military imagery, no logos, no generated text.",
+  "shots": [
+    {
+      "id": "01_existing_horizon",
+      "prompt": "An immense thin black horizon line crosses a warm-white field. Subtle archival layers—paper records, legal ledgers, infrastructure plans, generational marks—accumulate along it across centuries. Slow precise forward camera movement. The line is continuous before the camera arrives, conveying a future already in progress. Minimal Swiss editorial composition."
+    },
+    {
+      "id": "02_horizon_blocks",
+      "prompt": "Abstract but materially grounded flows representing capital, technical talent, compute hardware, energy, data infrastructure, law, culture and human networks move through a clean institutional diagram. Each flow has a distinct physical texture: paper, silicon, cable, grid, handwriting, crowds. They combine and redirect one another in real time. AI appears as one luminous analytical node among many, never central."
+    },
+    {
+      "id": "03_programmers",
+      "prompt": "A precise overhead choreography of public institutions, engineers, diplomats, researchers, companies and communities moving physical tokens across a vast white planning table. The tokens represent compute, capital, policy, talent and infrastructure. A small AI system assists with pattern recognition at one edge. Human and institutional agency remains dominant. Documentary realism fused with Swiss information design."
+    },
+    {
+      "id": "04_live_case",
+      "prompt": "A monumental data-center campus under construction in an arid Gulf landscape, observed through an evidence-first analytical overlay: ownership lines, conditional access paths, regulatory gates and source provenance marks. No futuristic glow. Capability visibly expands while control routes extend beyond the frame. Slow lateral camera, sober geopolitical documentary tone."
+    },
+    {
+      "id": "05_competing_trajectories",
+      "prompt": "One infrastructure decision branches into three clean temporal paths on a warm-white field. Path one builds local institutions and knowledge, path two forms balanced interdependence, path three concentrates external control. The paths remain simultaneous hypotheses, with observable evidence markers appearing through time. Restrained red identifies only the unresolved divergence."
+    },
+    {
+      "id": "06_observatory",
+      "prompt": "A calm, visually rich institutional observatory where a source-linked evidence graph, trajectory branches and a time ledger converge into a single auditable record. Human analysts compare model interpretations while later evidence resolves earlier claims. The camera pulls back to reveal continuity across time, ending on a clean warm-white field suitable for a logo and URL overlay."
+    }
+  ]
+}

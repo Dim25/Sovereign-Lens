@@ -53,6 +53,27 @@ Horizon Block -> programming action -> responsible actors
               -> observable consequence through time
 ```
 
+## The eight writable registers
+
+Horizon Blocks describe the material being programmed. Eight registers describe
+the form of the write:
+
+| Register | What it writes into the future |
+|---|---|
+| Timer | activations, deadlines, review clauses, and sunsets |
+| Commitment | treaties, contracts, constitutions, and obligations binding successors |
+| Parameter | thresholds and quantities that reweight downstream decisions |
+| Default | what executes when nobody acts again |
+| Permission | who may access, export, operate, modify, or replace a capability |
+| Prior | curricula, corpora, benchmarks, specifications, and inherited assumptions |
+| Capacity | compute, energy, fabs, datacenters, institutions, and trained people |
+| Category | the legal and technical ontology future rules execute against |
+
+Every observed public action becomes a candidate `register_write`: author and
+author class, register, operation, activation date, binding strength, revocability,
+jurisdiction, source provenance, and the capabilities or trajectories it changes.
+This is the commit log of the programmable Horizon.
+
 ## Why this changes the analytical unit
 
 A snapshot describes present assets and relationships. A trajectory describes how

@@ -52,6 +52,24 @@ class TrajectoryDataTests(unittest.TestCase):
                 self.assertTrue(block["programming_action"])
                 self.assertTrue(block["actor_types"])
 
+    def test_case_exercises_all_eight_writable_registers(self):
+        registers = {
+            write["register"]
+            for trajectory in self.trajectory_set["trajectories"]
+            for write in trajectory["register_writes"]
+        }
+        self.assertEqual(
+            registers,
+            {"timer", "commitment", "parameter", "default", "permission", "prior", "capacity", "category"},
+        )
+
+    def test_every_write_has_authorship_and_provenance(self):
+        for trajectory in self.trajectory_set["trajectories"]:
+            for write in trajectory["register_writes"]:
+                self.assertTrue(write["author_types"])
+                self.assertTrue(write["source_ids"])
+                self.assertFalse(set(write["source_ids"]) - self.source_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

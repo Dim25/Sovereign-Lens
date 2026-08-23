@@ -1,0 +1,23 @@
+{
+  "project": "Sovereign Lens executive v2",
+  "format": { "aspect_ratio": "16:9", "resolution": "1080p", "duration_seconds_per_shot": 5, "audio": false },
+  "visual_language": "Cinematic geopolitical documentary with restrained brutal-white Swiss information design. Material, architectural and institutional imagery. No conference rooms, no people presenting at boards, no globe, no flags, no military imagery, no science-fiction holograms, no logos, no generated text.",
+  "shots": [
+    {
+      "id": "07_eight_registers",
+      "prompt": "The future represented as eight physically distinct but connected institutional registers being written in real time: a legislative calendar activating a timer, a treaty archive receiving a commitment, a numeric threshold changing a control system, a default pathway engaging automatically, a permission gate opening and closing, educational archives and model corpora establishing priors, massive infrastructure establishing capacity, and legal classifications sorting systems into categories. Elegant macro cinematography, precise causality, no readable text."
+    },
+    {
+      "id": "08_capacity_construction",
+      "prompt": "A vast AI datacenter is materially constructed from the ground up in an arid landscape: survey lines, poured foundations, cranes placing structural modules, electrical substations, cooling systems, fiber trenches and rows of compute halls. Time-lapse progression from empty land to operating infrastructure. Emphasize concrete, electricity, chips, water and logistics as programmable future capacity, not a futuristic fantasy."
+    },
+    {
+      "id": "09_priors_learning_culture",
+      "prompt": "A living learning culture accumulates across generations: children learning mathematics, university laboratories, engineers practicing hardware maintenance, multilingual archives being digitized, local-language datasets curated, apprenticeship and research rituals transmitted between generations. Flow naturally across spaces through match cuts. Show culture, curricula, talent and institutional memory programming the priors of future human and AI systems. No presentation boards."
+    },
+    {
+      "id": "10_state_write_events",
+      "prompt": "A rapid causal montage of state sovereignty being programmed now: legislation formally enters a public register, an export permission changes a logistics route, capital clears for infrastructure, technical standards alter a control room, a compute facility powers on, and a model evaluation result changes an authorization gate. Each public act visibly changes what becomes possible next. Sober documentary realism, auditable chain of cause and effect."
+    }
+  ]
+}

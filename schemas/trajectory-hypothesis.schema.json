@@ -44,6 +44,25 @@
         }
       }
     },
+    "registerWrite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "register", "operation", "description", "author_types", "binding_strength", "revocability", "source_ids"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^write_[a-z0-9_]+$" },
+        "register": { "type": "string", "enum": ["timer", "commitment", "parameter", "default", "permission", "prior", "capacity", "category"] },
+        "operation": { "type": "string", "enum": ["schedule", "bind", "set", "default", "grant", "revoke", "initialize", "build", "classify"] },
+        "description": { "type": "string", "minLength": 1 },
+        "author_types": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "string", "enum": ["human", "state", "institution", "company", "multilateral", "ai_agent", "hybrid"] }
+        },
+        "activation_date": { "type": ["string", "null"], "format": "date" },
+        "binding_strength": { "type": "string", "enum": ["descriptive", "announced", "contractual", "regulatory", "statutory", "unknown"] },
+        "revocability": { "type": "string", "enum": ["easy", "conditional", "difficult", "irreversible", "unknown"] },
+        "source_ids": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
     "indicator": {
       "type": "object",
       "additionalProperties": false,
@@ -60,12 +79,13 @@
     "trajectory": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "title", "thesis", "status", "horizon_blocks", "deltas", "supporting_source_ids", "challenging_source_ids", "indicators", "reversal_conditions", "revisit_at"],
+      "required": ["id", "title", "thesis", "status", "register_writes", "horizon_blocks", "deltas", "supporting_source_ids", "challenging_source_ids", "indicators", "reversal_conditions", "revisit_at"],
       "properties": {
         "id": { "type": "string", "pattern": "^trajectory_[a-z0-9_]+$" },
         "title": { "type": "string", "minLength": 1 },
         "thesis": { "type": "string", "minLength": 1 },
         "status": { "type": "string", "enum": ["proposed", "strengthening", "weakening", "superseded", "unresolved"] },
+        "register_writes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/registerWrite" } },
         "horizon_blocks": {
           "type": "array",
           "minItems": 1,
