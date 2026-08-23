@@ -26,18 +26,27 @@ import { DemoTwoMinutePage } from './pages/DemoTwoMinutePage'
 import { MachinePage } from './pages/MachinePage'
 import { emitIntegrationEvent } from './integrations/events'
 
+/**
+ * Every route below matches an exact string, so a shared link carrying a
+ * trailing slash — `/v2/` rather than `/v2` — missed all of them and fell
+ * through to the dossier. The host serves 200 for any path (SPA fallback),
+ * so the failure was invisible to a status check and only showed up in what
+ * rendered. Normalise once, here, rather than per route.
+ */
+const normalise = (raw: string) => (raw.length > 1 ? raw.replace(/\/+$/, '') : raw)
+
 export function App({ source, caseSources }: { source: DataSource; caseSources?: Record<string, DataSource> }) {
-  const [path, setPath] = useState(window.location.pathname)
+  const [path, setPath] = useState(() => normalise(window.location.pathname))
 
   useEffect(() => {
-    const onPop = () => setPath(window.location.pathname)
+    const onPop = () => setPath(normalise(window.location.pathname))
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 
   const navigate = (next: string) => {
     window.history.pushState({}, '', next)
-    setPath(next)
+    setPath(normalise(next))
   }
 
   if (path === '/') return <HomePage source={source} navigate={navigate} />

@@ -58,3 +58,33 @@ describe('two-minute tour', () => {
     expect(screen.getByRole('button', { name: /^play$/i })).toBeInTheDocument()
   })
 })
+
+// A shared link routinely carries a trailing slash. Every route matches an
+// exact string, and the host answers 200 for any path, so this class of break
+// is invisible to a status check — only what renders reveals it.
+describe('trailing-slash routes', () => {
+  const renderAt = (p: string) => {
+    window.history.replaceState({}, '', p)
+    render(<App source={createFixtureSource(fixture)} />)
+  }
+
+  it('serves /v2/ the machine, not the dossier', () => {
+    renderAt('/v2/')
+    expect(screen.getByRole('heading', { name: /an agent should remember what it predicted/i })).toBeInTheDocument()
+  })
+
+  it('serves /demo2min/ the tour', () => {
+    renderAt('/demo2min/')
+    expect(screen.getByRole('main', { name: /two-minute product tour/i })).toBeInTheDocument()
+  })
+
+  it('serves /brief/ the executive brief', () => {
+    renderAt('/brief/')
+    expect(document.querySelector('.executive-page')).toBeTruthy()
+  })
+
+  it('leaves the root alone', () => {
+    renderAt('/')
+    expect(screen.getByText('SovereignLens.ai')).toBeInTheDocument()
+  })
+})
