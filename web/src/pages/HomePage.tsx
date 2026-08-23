@@ -15,9 +15,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         <section className="home-hero">
           <div className="home-hero__brand">
             <strong>Sovereign Lens</strong>
-            <span>Independent multi-agent intelligence for AI geopolitics</span>
           </div>
-          <div className="eyebrow">Long-horizon intelligence · Open source</div>
           <figure className="home-film">
             <video autoPlay muted loop playsInline controls preload="metadata" poster="/media/sovereign-lens-executive-v2-poster.jpg">
               <source src="/media/sovereign-lens-executive-v2-20s.mp4" type="video/mp4" />
