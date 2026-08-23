@@ -24,7 +24,7 @@ and does not spend credits or contact providers.
 | OpenAI | `OPENAI_API_KEY` | [OpenAI project API keys](https://platform.openai.com/api-keys) | `gpt-5.6-sol` |
 | Alibaba Model Studio / Qwen | `DASHSCOPE_API_KEY` | [Create a Model Studio API key](https://help.aliyun.com/en/model-studio/get-api-key) | `qwen3.8-max` |
 | Mistral | `MISTRAL_API_KEY` | [Mistral API keys](https://console.mistral.ai/api-keys/) | `mistral-large-2512` |
-| Anthropic | `ANTHROPIC_API_KEY` | [Anthropic Console API keys](https://console.anthropic.com/settings/keys) | `claude-opus-4-1` pending verification of the proposed `claude-fable-5` ID |
+| Anthropic | `ANTHROPIC_API_KEY` | [Anthropic Console API keys](https://console.anthropic.com/settings/keys) | `claude-opus-5` |
 | xAI | `XAI_API_KEY` | [xAI Console](https://console.x.ai/) | `grok-4.6` |
 | Google Gemini | `GEMINI_API_KEY` | [Google AI Studio API keys](https://aistudio.google.com/app/apikey) | `gemini-3.1-pro-preview` |
 | DeepSeek | `DEEPSEEK_API_KEY` | [DeepSeek API keys](https://platform.deepseek.com/api_keys) | `deepseek-v4-pro` |
