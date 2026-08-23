@@ -72,6 +72,8 @@ The first-party Claude Fable 5 run is recorded separately in
 - [25-second feature overview](https://sovereignlens.ai/build-day)
 - [35-second UAE evidence-to-calibration walkthrough](https://sovereignlens.ai/cases/uae-us-ai-infrastructure)
 - 30-second executive-first UAE alternate, selectable on the same case page
+- [90-second automated full-product demo](https://sovereignlens.ai/demo), with a
+  downloadable offline MP4 and presenter controls
 
 The UAE films use real screenshots from the live instrument. Captions are limited
 to one short wayfinding line per scene so the product remains readable. HappyHorse

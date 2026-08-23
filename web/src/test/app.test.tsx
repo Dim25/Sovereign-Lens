@@ -45,6 +45,15 @@ describe('product navigation', () => {
 })
 
 describe('build-day and multi-model story routes', () => {
+  it('runs the automated product demo from the central thesis', () => {
+    window.history.replaceState({}, '', '/demo')
+    render(<App source={createFixtureSource(fixture)} />)
+    expect(screen.getByRole('main', { name: /automated product demo/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /the horizon already exists/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /pause demo/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /mp4/i })).toHaveAttribute('href', '/media/sovereign-lens-demo-loop-90s.mp4')
+  })
+
   it('shows genuine Alibaba perspectives and the completed Fable challenger', () => {
     window.history.replaceState({}, '', '/cases/multi-alignment-option-space')
     render(<App source={createFixtureSource(fixture)} />)
