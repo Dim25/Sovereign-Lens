@@ -56,6 +56,17 @@ Treat this as account-scoped availability, not a permanent global model catalog.
 The API key and CLI bootstrap token are separate secrets. Neither belongs in the
 repository, frontend, screenshots, chat, shell history, or captured agent logs.
 
+Run the same evidence package through the three models available on this plan:
+
+```bash
+python3 scripts/run_alibaba_panel.py
+```
+
+This produces `data/model_runs/alibaba-uae-us-panel.json` with one attributed
+record each for `qwen3.8-max`, `glm-5.2`, and `deepseek-v4-pro`. The site must not
+label an assessment with one of these model IDs until that output exists and its
+metadata has been reviewed.
+
 ## Optional regional and self-hosted probes
 
 - Hugging Face (`HF_TOKEN`) can cover gated/open-weight downloads and hosted

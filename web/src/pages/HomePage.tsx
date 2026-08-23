@@ -54,7 +54,7 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
           <div className="model-parallax">
             <div className="model-parallax__head">
               <span>Model parallax · same evidence</span>
-              <span>Qwen / Alibaba Model Studio configured in the evaluation panel</span>
+              <span>Prototype perspectives · Qwen, GLM + DeepSeek authenticated runs pending</span>
             </div>
             <div className="model-parallax__grid">
               {perspectives.slice(0, 3).map((item) => (
@@ -69,20 +69,32 @@ export function HomePage({ source, navigate }: { source: DataSource; navigate: (
         </section>
 
         <section className="interface-proof">
-          <div className="section-index">02 · Observe + program</div>
+          <div className="section-index">02 · See the instrument</div>
           <div className="interface-proof__intro">
-            <h2>See the writes.<br />Shape the Horizon.</h2>
-            <p>The strategy atlas observes how sovereignty is being programmed. Horizon Studio turns those writes into a versioned object that can be inspected, simulated, revised, and governed.</p>
+            <h2>From public evidence<br />to sovereign trajectory.</h2>
+            <div>
+              <p>The interface preserves the graph, competing interpretations, prediction ledger, later outcome, and source-level provenance in one auditable temporal record.</p>
+              <div className="interface-proof__links">
+                <button onClick={() => navigate('/cases')}>Open strategy atlas →</button>
+                <button onClick={() => navigate('/horizon')}>Program a Horizon →</button>
+              </div>
+            </div>
           </div>
-          <div className="instrument-pair">
-            <button className="instrument-preview" onClick={() => navigate('/cases')}>
-              <img src="/media/interface/strategy-map.png" alt="Sovereign Lens strategy atlas mapping conditional compute access, capability formation, and evaluation sovereignty" loading="lazy" />
-              <span><b>01 · Observe</b><strong>Strategy atlas</strong><em>Relationships under observation—not political blocs.</em></span>
+          <div className="interface-montage">
+            <button className="interface-shot interface-shot--primary" onClick={() => navigate('/cases/uae-us-ai-infrastructure')}>
+              <img src="/media/interface/temporal-dossier.png" alt="Sovereign Lens temporal dossier showing evidence graph, model perspectives, prediction resolution, and calibration" loading="lazy" />
+              <span><b>01</b> Temporal dossier · later evidence resolves the prior commitment</span>
             </button>
-            <button className="instrument-preview" onClick={() => navigate('/horizon')}>
-              <img src="/media/interface/horizon-studio.png" alt="Horizon Studio visual editor showing capacity, priors, permissions, institutions, timers, verification, and human governance" loading="lazy" />
-              <span><b>02 · Program</b><strong>Horizon Studio</strong><em>Classical assets and agents compiled into a governed future object.</em></span>
-            </button>
+            <div className="interface-montage__stack">
+              <button className="interface-shot" onClick={() => navigate('/brief')}>
+                <img src="/media/interface/executive-brief.png" alt="Sovereign Lens executive situation brief" loading="lazy" />
+                <span><b>02</b> Executive state · changes, dependencies, what to watch next</span>
+              </button>
+              <button className="interface-shot" onClick={() => navigate('/cases/uae-us-ai-infrastructure')}>
+                <img src="/media/interface/evidence-provenance.png" alt="Sovereign Lens evidence drawer with source-level provenance" loading="lazy" />
+                <span><b>03</b> Provenance · every visible claim resolves to its source</span>
+              </button>
+            </div>
           </div>
         </section>
 
